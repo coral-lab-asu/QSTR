@@ -34,7 +34,7 @@ validate_table = _react.validate_table
 
 
 DEFAULTS = {
-    "dataset": "dataset-cricket/cricket-overall.json",
+    "dataset": "artifacts/runs/benchmark/dataset.jsonl",
     "n": -1,
     "seed": 0,
     "shuffle": False,
@@ -599,7 +599,7 @@ def run() -> None:
         record_id = str(sample_id)
         original_record_id = item.get("record_id")
         question = item.get("question", "")
-        context = item.get("context_full_with_overs", item.get("context", ""))
+        context = (item.get("context_full_with_overs") or item.get("context") or item.get("context_full") or "")
         headers = (item.get("answer") or {}).get("columns") or []
         expected_rows = item.get("answer_rows")
         primary_key = normalize_primary_key(item.get("primary_key"))

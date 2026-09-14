@@ -21,6 +21,9 @@ compatible package versions.
 
 ## Capability map
 
+See [benchmark preparation and evaluation](benchmarks.md) for the complete
+data-to-inference workflow, input format, and historical subset handling.
+
 | Goal | Canonical entry point | Inputs | Outputs |
 | --- | --- | --- | --- |
 | Generate and curate CMT2 data | `python -m pipelines.cmt2.pipeline.run run` | template files and match CSVs | generated, validation, invalid, deduped, removal, and manifest files |

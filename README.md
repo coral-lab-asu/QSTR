@@ -88,6 +88,10 @@ doctor reports whether credentials are present but never displays their values.
 
 ## Data and artifacts
 
+For model comparisons, follow the [benchmark workflow](docs/benchmarks.md).
+Run `python -m scripts.prepare_benchmark` to create the default benchmark
+input from published ground truth before launching a runner.
+
 The paper-facing cricket release is versioned under `data/`: 638 source
 tables, 121 hand-authored seeds, 4,256 generated queries, and their historical
 ground-truth enrichment. Verify it with:

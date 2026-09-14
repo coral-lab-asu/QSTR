@@ -33,9 +33,9 @@ sum_usage_from_attempts = _cot.sum_usage_from_attempts
 
 
 DEFAULTS = {
-    "dataset": "dataset-cricket/cricket-overall.json",
+    "dataset": "artifacts/runs/benchmark/dataset.jsonl",
     "n": -1,
-    "only_universal_ids": True,
+    "only_universal_ids": False,
     "seed": 0,
     "shuffle": False,
     "provider": "gemini",
@@ -57,7 +57,7 @@ DEFAULTS["run_id"] = f"{BASELINE_NAME}_run_{DEFAULTS['seed']}"
 DEFAULTS["out"] = f"baseline-results/{DEFAULTS['model']}/{BASELINE_NAME}/predictions.jsonl"
 DEFAULTS["summary_out"] = f"baseline-results/{DEFAULTS['model']}/{BASELINE_NAME}/summary.json"
 
-UNIVERSAL_IDS_PATH = "dataset-cricket/universal_sample_ids.json"
+UNIVERSAL_IDS_PATH = os.getenv("QSTR_SAMPLE_IDS", "dataset-cricket/universal_sample_ids.json")
 
 
 CRICKET_POLICIES = """
@@ -445,7 +445,7 @@ def run() -> None:
         record_id = str(sample_id)
         original_record_id = item.get("record_id")
         question = item.get("question", "")
-        context = item.get("context_full_with_overs", item.get("context", ""))
+        context = (item.get("context_full_with_overs") or item.get("context") or item.get("context_full") or "")
         ans = item.get("answer") or {}
         headers = ans.get("columns") or []
         expected_rows = item.get("answer_rows")

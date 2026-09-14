@@ -193,7 +193,7 @@ def build_prompts_and_metadata(
     module = adapter.module
     sample_id = module.get_sample_id(item, idx)
     question = item.get("question", "")
-    context = item.get("context_full_with_overs", item.get("context", ""))
+    context = (item.get("context_full_with_overs") or item.get("context") or item.get("context_full") or "")
     answer = item.get("answer") or {}
     headers = answer.get("columns") or []
     expected_rows = item.get("answer_rows")
@@ -279,7 +279,8 @@ def cmd_build(args: argparse.Namespace) -> None:
     batch_dir = args.batch_dir or derive_default_batch_dir(args.model, adapter)
     ensure_dir(batch_dir)
 
-    tag = args.tag or f"{adapter.result_subdir.lower()}_universal_a{args.attempt}"
+    subset = "universal" if args.only_universal_ids else "dataset"
+    tag = args.tag or f"{adapter.result_subdir.lower()}_{subset}_a{args.attempt}"
     requests_out = args.requests_out or os.path.join(batch_dir, f"{tag}.input.jsonl")
     manifest_out = args.manifest_out or os.path.join(batch_dir, f"{tag}.manifest.json")
 
@@ -699,9 +700,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     build_parser_cmd = subparsers.add_parser("build", help="Build OpenAI Batch input JSONL from a baseline")
     build_parser_cmd.add_argument("--baseline", choices=sorted(BASELINE_SPECS), required=True)
-    build_parser_cmd.add_argument("--dataset", default=os.path.join(ROOT, "dataset-cricket", "cricket-overall.json"))
+    build_parser_cmd.add_argument("--dataset", default=os.path.join(ROOT, "artifacts", "runs", "benchmark", "dataset.jsonl"))
     build_parser_cmd.add_argument("--n", type=int, default=-1)
-    build_parser_cmd.add_argument("--only-universal-ids", action="store_true", default=True)
+    build_parser_cmd.add_argument("--only-universal-ids", action="store_true", default=False)
     build_parser_cmd.add_argument("--seed", type=int, default=0)
     build_parser_cmd.add_argument("--shuffle", action="store_true", default=False)
     build_parser_cmd.add_argument("--attempt", type=int, default=0)

@@ -63,6 +63,14 @@ is not a complete transitive environment lock.
 
 ## Scope and remaining gaps
 
+Benchmark integration was subsequently checked with all 15 baseline loaders,
+offline batch prompt construction, and an evaluator regression test using
+synthetic perfect predictions. These checks do not involve model inference.
+Full benchmark preparation accepted 4,218 records and logged 38 exclusions
+in that run. This is an observed subset, not a guaranteed future count;
+preserve `dataset.manifest.json` and the prepared JSONL for model comparisons.
+See the [benchmark workflow](benchmarks.md) for the commands and context policy.
+
 No hosted-model expansion or model inference was run in this audit. The
 documented 5,000-example command is a recipe, not a reported completed run.
 SQL checks do not verify question semantics, paper metrics, or exact

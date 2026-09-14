@@ -15,7 +15,7 @@ from src.inference import InferenceConfig, InferenceService  # noqa: E402
 
 
 DEFAULTS = {
-    "dataset": "dataset-cricket/dataset.split_analysis.json",
+    "dataset": "artifacts/runs/benchmark/dataset.jsonl",
     "n": -1,
     "seed": 0,
     "shuffle": False,
@@ -151,23 +151,9 @@ USER_PROMPT_TEMPLATE = """
 """.strip()
 
 
-def read_dataset(path: str) -> List[Dict[str, Any]]:
-    if path.endswith(".jsonl"):
-        rows = []
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                rows.append(json.loads(line))
-        return rows
-    with open(path, "r", encoding="utf-8") as f:
-        obj = json.load(f)
-    if isinstance(obj, dict) and "records" in obj:
-        return obj["records"]
-    if isinstance(obj, list):
-        return obj
-    raise ValueError(f"Unsupported dataset format: {path}")
+def read_dataset(path):
+    from src.benchmark_data import read_dataset as load_benchmark
+    return load_benchmark(path)
 
 
 def ensure_dir(path: str) -> None:

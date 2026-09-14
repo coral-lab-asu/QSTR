@@ -13,7 +13,7 @@ if ROOT not in sys.path:
 from src.eval.table_metrics_evaluator import TableMetricsEvaluator  # noqa: E402
 
 DEFAULTS = {
-    "dataset": "dataset-cricket/cricket-overall.json",
+    "dataset": "artifacts/runs/benchmark/dataset.jsonl",
     "model": "gpt-4.1",
     "baseline": "REACT",
     "seed": 0,

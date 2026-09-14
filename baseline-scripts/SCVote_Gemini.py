@@ -17,9 +17,9 @@ if ROOT not in sys.path:
 from src.inference import InferenceConfig, InferenceService  # noqa: E402
 
 DEFAULTS = {
-    "dataset": "dataset-cricket/cricket-overall.json",
+    "dataset": "artifacts/runs/benchmark/dataset.jsonl",
     "n": -1,
-    "only_universal_ids": True,
+    "only_universal_ids": False,
     "seed": 0,
     "shuffle": False,
     "provider": "gemini",
@@ -50,7 +50,7 @@ def derive_output_paths(model: str, seed: int, num_votes: int) -> Dict[str, str]
 
 
 DEFAULTS.update(derive_output_paths(DEFAULTS["model"], DEFAULTS["seed"], DEFAULTS["num_votes"]))
-UNIVERSAL_IDS_PATH = "dataset-cricket/universal_sample_ids.json"
+UNIVERSAL_IDS_PATH = os.getenv("QSTR_SAMPLE_IDS", "dataset-cricket/universal_sample_ids.json")
 
 SYSTEM_PROMPT_TEMPLATE = """
 You are an expert cricket analyst and data annotator.
@@ -137,23 +137,9 @@ def load_universal_sample_ids() -> set[int]:
     return {int(x) for x in sample_ids}
 
 
-def read_dataset(path: str) -> List[Dict[str, Any]]:
-    if path.endswith(".jsonl"):
-        rows = []
-        with open(path, "r", encoding="utf-8") as f:
-            for line in f:
-                line = line.strip()
-                if not line:
-                    continue
-                rows.append(json.loads(line))
-        return rows
-    with open(path, "r", encoding="utf-8") as f:
-        obj = json.load(f)
-    if isinstance(obj, dict) and "records" in obj:
-        return obj["records"]
-    if isinstance(obj, list):
-        return obj
-    raise ValueError(f"Unsupported dataset format: {path}")
+def read_dataset(path):
+    from src.benchmark_data import read_dataset as load_benchmark
+    return load_benchmark(path)
 
 
 def ensure_dir(p: str) -> None:
@@ -1135,7 +1121,7 @@ def run() -> None:
         record_id = str(sample_id)
         original_record_id = item.get("record_id")
         question = item.get("question", "")
-        context = item.get("context_full_with_overs", item.get("context", ""))
+        context = (item.get("context_full_with_overs") or item.get("context") or item.get("context_full") or "")
         ans = item.get("answer") or {}
         headers = ans.get("columns") or []
         expected_rows = item.get("answer_rows")
