@@ -7,18 +7,22 @@
 # - outputs a JSONL file with one session per line containing: session_id, events, transcript, product_aggregation, customer_aggregation
 # - Also writes a plain text transcript file for each session.
 #
-# Usage: run as a script or import functions. This demo writes generated sessions
-# to the current working directory unless an output path is supplied.
+# Usage: run as a script or import functions. The CLI writes beside this script
+# by default and accepts an explicit output directory.
 #
 
 # Set working directory to the directory of this script
 # import os
 # os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+import argparse
 import json, random, os
 from collections import defaultdict
 import pandas as pd
-from datetime import datetime
+from datetime import datetime, timezone
+
+
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # === Full product catalog (50 items) ===
 PRODUCT_CATALOG = [
@@ -355,7 +359,8 @@ def aggregate_events(events):
     return prod_df, cust_df
 
 # === Session file writer ===
-def write_sessions_jsonl(sessions, out_dir="synData/shopkeeper_sessions"):
+def write_sessions_jsonl(sessions, out_dir=None):
+    out_dir = out_dir or os.path.join(_SCRIPT_DIR, "shopkeeper_sessions")
     os.makedirs(out_dir, exist_ok=True)
     jsonl_path = os.path.join(out_dir, "sessions.jsonl")
     with open(jsonl_path, "w", encoding="utf-8") as fw:
@@ -370,10 +375,10 @@ def write_sessions_jsonl(sessions, out_dir="synData/shopkeeper_sessions"):
     return jsonl_path, out_dir
 
 # === Demo: generate 3 sessions and save ===
-def demo_generate_and_save():
-    random.seed(12345)
+def demo_generate_and_save(out_dir=None, num_sessions=3, seed=12345, include_timestamp=False):
+    random.seed(seed)
     sessions = []
-    for i in range(3):
+    for i in range(num_sessions):
         sid = f"session_{i+1:03d}"
         sess = generate_events_session(session_id=sid,
                                        num_customers=4 + i,
@@ -384,35 +389,50 @@ def demo_generate_and_save():
                                        prob_inventory_adjust=0.02,
                                        max_items_per_turn=3,
                                        allow_fractional_kg=True,
-                                       seed=12345 + i)
+                                       seed=seed + i)
         events = sess["events"]
         transcript_lines = events_to_transcript_lines(events)
         prod_df, cust_df = aggregate_events(events)
         session_record = {
             "session_id": sid,
-            "generated_at": datetime.utcnow().isoformat()+"Z",
             "params": sess["params"],
             "events": events,
             "transcript": transcript_lines,
             "product_aggregation": prod_df.to_dict(orient="records"),
             "customer_aggregation": cust_df.to_dict(orient="records")
         }
+        if include_timestamp:
+            session_record["generated_at"] = datetime.now(timezone.utc).isoformat()
         sessions.append(session_record)
-    jsonl_path, out_dir = write_sessions_jsonl(sessions)
+    jsonl_path, out_dir = write_sessions_jsonl(sessions, out_dir=out_dir)
     return jsonl_path, out_dir, sessions
 
-# Run demo and show a preview
-jsonl_path, out_dir, sessions = demo_generate_and_save()
-print("Saved sessions JSONL to:", jsonl_path)
-print("Sample transcript (session_001, first 30 lines):\n")
-for i, line in enumerate(sessions[0]["transcript"][:30],1):
-    print(f"{i:02d}. {line}")
-print("\nSample product aggregation (session_001, non-zero qty rows):")
-import pandas as pd
-df = pd.DataFrame(sessions[0]["product_aggregation"])
-nz = df[df["qty_sold"] != 0].reset_index(drop=True)
-print(nz.to_string(index=False))
+def main():
+    parser = argparse.ArgumentParser(description="Generate deterministic synthetic shopkeeper sessions.")
+    parser.add_argument("--out-dir", default=os.path.join(_SCRIPT_DIR, "shopkeeper_sessions"))
+    parser.add_argument("--num-sessions", type=int, default=3)
+    parser.add_argument("--seed", type=int, default=12345)
+    parser.add_argument(
+        "--include-timestamp",
+        action="store_true",
+        help="Add a wall-clock generated_at field (disabled by default for byte-for-byte reproducibility).",
+    )
+    args = parser.parse_args()
+    if args.num_sessions < 1:
+        parser.error("--num-sessions must be at least 1")
 
-# Inform user where files are
-print(f"\nAll session files and transcripts are in: {out_dir}")
-print(f"You can download the JSONL: file://{jsonl_path}")
+    jsonl_path, out_dir, sessions = demo_generate_and_save(
+        out_dir=args.out_dir,
+        num_sessions=args.num_sessions,
+        seed=args.seed,
+        include_timestamp=args.include_timestamp,
+    )
+    print("Saved sessions JSONL to:", jsonl_path)
+    print("Sample transcript (first 10 lines):\n")
+    for index, line in enumerate(sessions[0]["transcript"][:10], 1):
+        print(f"{index:02d}. {line}")
+    print(f"\nAll session files and transcripts are in: {out_dir}")
+
+
+if __name__ == "__main__":
+    main()

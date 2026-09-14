@@ -8,7 +8,7 @@ Requirements:
 Usage:
   - Set GOOGLE_API_KEY or GEMINI_API_KEY in the environment or in .env at project root.
   - Ensure gold_questions_answers.json and question_schemas.json exist in synData/.
-  - Run: python synData/prompt_and_eval.py  (or from synData: python prompt_and_eval.py)
+  - Run from QSTR root: python pipelines/synthetic_data/synData/prompt_and_eval.py
 
 Outputs:
   - synData/experiment/<session_id>/Q1.txt .. Q10.txt  (per-question prompt + model output)
@@ -16,6 +16,7 @@ Outputs:
   - synData/model_eval_summary.csv
 """
 
+import argparse
 import json
 import os
 import re
@@ -25,23 +26,29 @@ import numpy as np
 import pandas as pd
 from typing import List, Dict, Any, Tuple, Optional
 
-# Load .env from project root (parent of synData) if python-dotenv is available
+# Load .env from the QSTR root if python-dotenv is available.
 _SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 try:
     from dotenv import load_dotenv
-    _env_path = os.path.join(os.path.dirname(_SCRIPT_DIR), ".env")
+    _repo_root = os.path.abspath(os.path.join(_SCRIPT_DIR, "..", "..", ".."))
+    _env_root = _repo_root if os.path.exists(os.path.join(_repo_root, "pyproject.toml")) else os.getcwd()
+    _env_path = os.path.join(_env_root, ".env")
     load_dotenv(_env_path)
 except ImportError:
     pass
 
-from google import genai
-from google.genai import types
+try:
+    from google import genai
+    from google.genai import types
+except ImportError:  # Keep --help and non-model imports usable without the optional extra.
+    genai = None
+    types = None
 
 # ----------------------------
 # Config: Gemini 2.5 Flash via google-genai
 # ----------------------------
-GEMINI_MODEL = "gemini-2.5-flash"
-API_KEY = os.environ.get("GEMINI_API_KEY") or ""
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+API_KEY = os.environ.get("GOOGLE_API_KEY") or os.environ.get("GEMINI_API_KEY") or ""
 
 # How model responses are parsed from text into JSON
 JSON_EXTRACTOR_RE = re.compile(r"(\[.*\])", re.DOTALL)  # naive: extract the first JSON array in the text
@@ -88,6 +95,8 @@ PRODUCT_CATALOG = _load_product_catalog()
 # Gemini client (google-genai) — created once, reused
 # ----------------------------
 def _get_gemini_client():
+    if genai is None or types is None:
+        raise RuntimeError("Install the synthetic dependencies with: pip install -e '.[synthetic]'")
     if not API_KEY:
         raise ValueError(
             "Set GOOGLE_API_KEY or GEMINI_API_KEY in the environment or in .env at the project root."
@@ -567,47 +576,61 @@ def write_results_file(all_results: List[Dict[str, Any]], out_path: str) -> None
 
 
 # ----------------------------
-# Example main loop (load from gold_questions_answers.json; write experiment logs + results)
+# CLI: load gold answers, run model inference, and write evaluation artifacts.
 # ----------------------------
-if __name__ == "__main__":
-    # Load sessions with gold answers (from gold_questions_answers.json)
-    if os.path.exists(GOLD_QA_JSON):
-        with open(GOLD_QA_JSON, "r", encoding="utf-8") as f:
+def main() -> None:
+    parser = argparse.ArgumentParser(description="Run Gemini inference and evaluation on shopkeeper sessions.")
+    parser.add_argument("--gold", default=GOLD_QA_JSON, help="Gold-answer JSON produced by generate_gold_qa.py.")
+    parser.add_argument("--sessions", default=SESSIONS_JSONL, help="Fallback sessions JSONL containing gold_answers.")
+    parser.add_argument("--experiment-dir", default=EXPERIMENT_DIR, help="Directory for per-question logs and reports.")
+    parser.add_argument("--summary-output", help="Summary CSV path; defaults inside --experiment-dir.")
+    args = parser.parse_args()
+
+    if os.path.exists(args.gold):
+        with open(args.gold, "r", encoding="utf-8") as f:
             sessions = json.load(f)
-        print(f"Loaded {len(sessions)} sessions from {GOLD_QA_JSON}")
+        print(f"Loaded {len(sessions)} sessions from {args.gold}")
     else:
-        if not os.path.exists(SESSIONS_JSONL):
-            raise FileNotFoundError(f"Neither {GOLD_QA_JSON} nor {SESSIONS_JSONL} found. Run generate_gold_qa.py first.")
+        if not os.path.exists(args.sessions):
+            raise FileNotFoundError(
+                f"Neither {args.gold} nor {args.sessions} found. Run generate_gold_qa.py first."
+            )
         sessions = []
-        with open(SESSIONS_JSONL, "r", encoding="utf-8") as fr:
+        with open(args.sessions, "r", encoding="utf-8") as fr:
             for line in fr:
-                sessions.append(json.loads(line))
-        for s in sessions:
-            if "gold_answers" not in s:
-                raise RuntimeError("Sessions from JSONL lack gold_answers. Use gold_questions_answers.json (run generate_gold_qa.py).")
+                if line.strip():
+                    sessions.append(json.loads(line))
+        for session in sessions:
+            if "gold_answers" not in session:
+                raise RuntimeError(
+                    "Sessions from JSONL lack gold_answers. Use generate_gold_qa.py and pass its output with --gold."
+                )
 
-    os.makedirs(EXPERIMENT_DIR, exist_ok=True)
-
+    os.makedirs(args.experiment_dir, exist_ok=True)
     all_results = []
-    for s in sessions:
-        print("Evaluating", s["session_id"])
-        res = evaluate_session_with_model(s, verbose=True, experiment_dir=EXPERIMENT_DIR)
-        all_results.append(res)
+    for session in sessions:
+        print("Evaluating", session["session_id"])
+        result = evaluate_session_with_model(session, verbose=True, experiment_dir=args.experiment_dir)
+        all_results.append(result)
 
-    # Summary CSV (legacy location)
     rows = []
-    for sess in all_results:
-        for qres in sess["per_question"]:
+    for session_result in all_results:
+        for question_result in session_result["per_question"]:
             rows.append({
-                "session_id": sess["session_id"],
-                "qid": qres["qid"],
-                "schema_ok": qres["schema_ok"],
-                "accuracy": qres["accuracy"],
-                "rmse": qres["rmse"],
+                "session_id": session_result["session_id"],
+                "qid": question_result["qid"],
+                "schema_ok": question_result["schema_ok"],
+                "accuracy": question_result["accuracy"],
+                "rmse": question_result["rmse"],
             })
-    pd.DataFrame(rows).to_csv(os.path.join(_SCRIPT_DIR, "model_eval_summary.csv"), index=False)
+    summary_output = args.summary_output or os.path.join(args.experiment_dir, "model_eval_summary.csv")
+    os.makedirs(os.path.dirname(os.path.abspath(summary_output)), exist_ok=True)
+    pd.DataFrame(rows).to_csv(summary_output, index=False)
 
-    # Results file: avg by session + overall
-    results_path = os.path.join(EXPERIMENT_DIR, "results.txt")
+    results_path = os.path.join(args.experiment_dir, "results.txt")
     write_results_file(all_results, results_path)
     print("Done.")
+
+
+if __name__ == "__main__":
+    main()

@@ -10,7 +10,10 @@ from typing import List, Dict, Any, Optional, Tuple
 import pandas as pd
 from pathlib import Path
 
-from sql_agent_tools import run_sql_on_df
+try:
+    from .sql_agent_tools import run_sql_on_df
+except ImportError:  # Supports direct execution from the CMT2 directory.
+    from sql_agent_tools import run_sql_on_df
 
 
 # =========================

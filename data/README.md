@@ -12,5 +12,9 @@ data/raw/soccer/
 data/generated/
 ```
 
+The tiny files in `pipelines/cmt2/examples/` are synthetic smoke fixtures and
+are intentionally tracked. They let a new maintainer verify the complete CMT2
+flow before obtaining the production corpora.
+
 Record the source location, checksum, schema version, and licensing status in
 the run manifest for any experiment that uses local data.

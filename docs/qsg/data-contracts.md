@@ -24,12 +24,20 @@ Validation reports contain one entry per input record and include:
 - normalized result signature
 - whether the stored answer matches re-execution
 
+Validation executes only one read-only `SELECT` or `WITH` statement against
+the registered `df` table. Mutation, extension loading, and external-file scan
+operations are rejected.
+
 ## Deduplication
 
 Deduplication is scoped by source table. The preferred fingerprint is the
 normalized answer; normalized SQL is the fallback when an answer is absent.
 The first record is retained and later records are written to a removal report
 with their original index and duplicate predecessor.
+
+The combined CMT2 command deduplicates only records that passed validation.
+Invalid records are preserved separately for diagnosis and are never promoted
+to the final deduplicated dataset.
 
 ## Compatibility
 

@@ -1,69 +1,114 @@
 # CMT2 data-generation pipeline
 
 CMT2 is the retained data-generation pipeline for cricket and soccer question
-sets. It includes template generation, CrewAI SQL/NL generation, SQL execution
-validation, answer validation, and deduplication.
+sets. Its canonical flow is:
 
-## Pipeline stages
+```text
+templates + CSV tables -> generation -> SQL/answer validation -> valid-only deduplication
+```
 
-1. Generate records from templates:
+Run commands from the QSTR repository root. Paths are accepted explicitly, so
+the commands also work from another directory after QSTR is installed.
 
-   ```bash
-   python pipeline/run.py generate \
-     --templates template_q_param_cricket_pk.py \
-     --matches-glob 'Cricket_tables/*.csv' \
-     --out-dir output/dataset_runs/cmt2 \
-     --max-matches 10 \
-     --total-examples 5000 \
-     --seed 42
-   ```
+## Verify the installation
 
-2. Validate generated SQL and stored answers:
+The included fixture needs no API key:
 
-   ```bash
-   python pipeline/run.py validate \
-     --input output/dataset_runs/cmt2/dataset.no_overs.jsonl \
-     --report output/dataset_runs/cmt2/validation.no_overs.json
-   ```
+```bash
+python -m pipelines.cmt2.pipeline.run run \
+  --templates pipelines/cmt2/examples/smoke_templates.py \
+  --matches-glob 'pipelines/cmt2/examples/smoke_match.csv' \
+  --out-dir artifacts/runs/cmt2-smoke \
+  --max-matches 1 \
+  --total-examples 3 \
+  --seed 42
+```
 
-3. Deduplicate records by source and normalized result (or SQL fallback):
+The combined command writes:
 
-   ```bash
-   python pipeline/run.py deduplicate \
-     --input output/dataset_runs/cmt2/dataset.no_overs.jsonl \
-     --output output/dataset_runs/cmt2/dataset.no_overs.deduped.jsonl \
-     --removed-output output/dataset_runs/cmt2/dataset.no_overs.removed.json
-   ```
+- `dataset.no_overs.jsonl`: all successfully generated records;
+- `validation.no_overs.json`: execution and answer comparison details;
+- `dataset.no_overs.invalid.json`: invalid records with validation details;
+- `dataset.no_overs.deduped.jsonl`: valid, unique final records;
+- `dataset.no_overs.removed.json`: duplicate-removal audit records;
+- `run_manifest.json`: commit, environment, configuration, and output paths.
 
-The combined `run` command performs all three stages and writes a validation
-report, deduplicated dataset, and removal report beside the generated dataset.
+The command returns a non-zero status if validation finds invalid records. Use
+`--allow-invalid` only when reports should be retained without failing an
+automation job.
+
+## Production template generation
+
+Place source tables under `data/raw/cricket/` or pass any explicit glob:
+
+```bash
+python -m pipelines.cmt2.pipeline.run run \
+  --templates pipelines/cmt2/template_q_param_cricket_pk.py \
+  --matches-glob 'data/raw/cricket/*.csv' \
+  --out-dir artifacts/runs/cmt2-cricket \
+  --max-matches 10 \
+  --total-examples 5000 \
+  --seed 42
+```
+
+Record IDs are derived from the seed, source, template, sample index, question,
+and SQL, so equivalent reruns over the same paths are stable.
+
+## Separate stages
+
+Generate only:
+
+```bash
+python -m pipelines.cmt2.pipeline.run generate \
+  --templates pipelines/cmt2/template_q_param_cricket_pk.py \
+  --matches-glob 'data/raw/cricket/*.csv' \
+  --out-dir artifacts/runs/cmt2-cricket \
+  --seed 42
+```
+
+Validate an existing JSON or JSONL dataset:
+
+```bash
+python -m pipelines.cmt2.pipeline.run validate \
+  --input artifacts/runs/cmt2-cricket/dataset.no_overs.jsonl \
+  --report artifacts/runs/cmt2-cricket/validation.manual.json
+```
+
+Deduplicate an existing dataset:
+
+```bash
+python -m pipelines.cmt2.pipeline.run deduplicate \
+  --input artifacts/runs/cmt2-cricket/dataset.no_overs.jsonl \
+  --output artifacts/runs/cmt2-cricket/dataset.manual.deduped.jsonl \
+  --removed-output artifacts/runs/cmt2-cricket/dataset.manual.removed.json
+```
+
+Validation accepts one read-only `SELECT`/`WITH` statement per record and
+rejects mutation, extension loading, and external-file scan SQL.
 
 ## CrewAI SQL/NL generation
 
-The existing resumable generator remains available:
+Install the LLM profile and set the key in the environment or QSTR `.env`:
 
 ```bash
+python -m pip install -e '.[llm]'
 export GEMINI_API_KEY='...'
-python run_sql_generation_dedup.py \
-  --csv 'Cricket_tables/<match>.csv' \
-  --output output/cmt2_sql.json \
-  --progress output/cmt2_sql.progress.json \
+python -m pipelines.cmt2.run_sql_generation_dedup \
+  --csv data/raw/cricket/example.csv \
+  --output artifacts/runs/cmt2-crewai/sql.json \
+  --progress artifacts/runs/cmt2-crewai/sql.progress.json \
   --target 5000
 ```
 
-Validate and deduplicate its output through `pipeline/run.py` using the same
-commands above. The source modules remain available for compatibility; new
-automation should call the pipeline CLI or import `pipeline.dataset_pipeline`.
+The files directly under `pipelines/cmt2/` remain compatibility entry points.
+New automation should use `pipelines.cmt2.pipeline.run` and import reusable
+functions from `pipelines.cmt2.pipeline.dataset_pipeline`.
 
-## Data and artifacts
-
-`Cricket_tables/` and `Soccer_tables/` are source data. Existing `output/`,
-evaluation logs, and run directories are generated artifacts and are not part
-of the canonical code path. The local `.gitignore` excludes transient output
-and credentials while preserving the source code and templates.
-
-## Development check
+## Tests
 
 ```bash
-python -m unittest discover -s tests -p 'test_*.py'
+python -m pytest pipelines/cmt2/tests -q
 ```
+
+The integration test runs the same credential-free fixture and is skipped only
+when `pandas` or `duckdb` is not installed.

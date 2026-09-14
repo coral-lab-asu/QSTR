@@ -4,6 +4,11 @@ import time
 from dataclasses import dataclass, field
 from typing import Any, Dict, Optional, Tuple
 
+from src.config import load_project_env
+
+
+load_project_env()
+
 try:
     import google.generativeai as genai  # type: ignore
 except Exception:

@@ -34,18 +34,37 @@ from pathlib import Path
 from textwrap import dedent
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
+try:
+    from .config import load_project_env
+except ImportError:
+    from config import load_project_env
+
+
+load_project_env()
+
 from crewai import Agent, Crew, Task, LLM
 from crewai.tools import BaseTool
 
-from sql_agent_tools import (
-    CRICKET_TABLE_DIR,
-    list_csvs,
-    load_templates,
-    pretty_json,
-    run_sql_on_df,
-    sample_table_schema,
-)
-from sql_param_initializer import initialize_sql_items
+try:
+    from .sql_agent_tools import (
+        CRICKET_TABLE_DIR,
+        list_csvs,
+        load_templates,
+        pretty_json,
+        run_sql_on_df,
+        sample_table_schema,
+    )
+    from .sql_param_initializer import initialize_sql_items
+except ImportError:  # Supports direct execution from the CMT2 directory.
+    from sql_agent_tools import (
+        CRICKET_TABLE_DIR,
+        list_csvs,
+        load_templates,
+        pretty_json,
+        run_sql_on_df,
+        sample_table_schema,
+    )
+    from sql_param_initializer import initialize_sql_items
 
 
 # ---------------------------------------------------------------------------

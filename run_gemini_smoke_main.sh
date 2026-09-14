@@ -4,20 +4,21 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="${SCRIPT_DIR}"
 PYTHON_BIN="${PYTHON_BIN:-python}"
+if [[ -f "${ROOT_DIR}/.env" ]]; then
+  set -a
+  # shellcheck disable=SC1091
+  source "${ROOT_DIR}/.env"
+  set +a
+fi
 if [[ -z "${GEMINI_API_KEY:-}" ]]; then
   echo "GEMINI_API_KEY must be set in the environment before running this script." >&2
   exit 1
 fi
 cd "${ROOT_DIR}"
 
-if [[ -z "${GEMINI_API_KEY:-}" ]]; then
-  echo "GEMINI_API_KEY is not set. Export it before running this script."
-  exit 1
-fi
-
 MODEL="${MODEL:-gemini-2.5-flash}"
 PROVIDER="${PROVIDER:-gemini}"
-DATASET="${DATASET:-dataset-cricket/cricket-overall.json}"
+DATASET="${DATASET:-data/raw/cricket/dataset.json}"
 N_SAMPLES="${N_SAMPLES:-5}"
 SEED="${SEED:-0}"
 WORKERS="${WORKERS:-8}"
@@ -25,10 +26,15 @@ MAX_RETRIES="${MAX_RETRIES:-3}"
 SCVOTE_NUM_VOTES="${SCVOTE_NUM_VOTES:-5}"
 RUN_TAG="${RUN_TAG:-gemini_smoke_main_$(date +%Y%m%d_%H%M%S)}"
 
+if [[ ! -f "${DATASET}" ]]; then
+  echo "Dataset not found: ${DATASET}" >&2
+  echo "Set DATASET to a QSTR-compatible dataset JSON file." >&2
+  exit 1
+fi
+
 run_baseline() {
   local script_name="$1"
   shift
-  local baseline_name="${script_name%.py}"
   local out_dir=""
   local log_dir=""
   local out_file=""
@@ -71,7 +77,6 @@ run_baseline() {
   "${PYTHON_BIN}" "${ROOT_DIR}/baseline-scripts/${script_name}" \
     --provider "${PROVIDER}" \
     --model "${MODEL}" \
-    --api-key "${GEMINI_API_KEY}" \
     --dataset "${DATASET}" \
     --n "${N_SAMPLES}" \
     --seed "${SEED}" \

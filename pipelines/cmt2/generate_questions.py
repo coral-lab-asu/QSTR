@@ -2,7 +2,7 @@ import os
 import re
 import json
 import glob
-import uuid
+import hashlib
 import math
 import random
 import argparse
@@ -1085,7 +1085,7 @@ def generate_dataset(cfg: PipelineConfig) -> Dict[str, Any]:
             if len(variables) == 0:
                 K = 1
 
-            for _ in range(K):
+            for sample_idx in range(K):
                 if stop():
                     break
 
@@ -1162,7 +1162,21 @@ def generate_dataset(cfg: PipelineConfig) -> Dict[str, Any]:
                     if cfg.drop_zeroish and zeroish:
                         continue
 
-                    rid_base = f"{match_idx:02d}-{uuid.uuid4().hex[:8]}"
+                    rid_payload = json.dumps(
+                        {
+                            "seed": cfg.seed,
+                            "match_path": match_path,
+                            "template_id": template_id,
+                            "item_id": item_id,
+                            "sample_idx": sample_idx,
+                            "question": question_text,
+                            "sql": sql_text,
+                        },
+                        sort_keys=True,
+                        ensure_ascii=False,
+                    )
+                    rid_digest = hashlib.sha256(rid_payload.encode("utf-8")).hexdigest()[:12]
+                    rid_base = f"{match_idx:02d}-{rid_digest}"
 
                     base_record = {
                         "match_idx": match_idx,

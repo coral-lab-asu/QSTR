@@ -17,9 +17,6 @@ import argparse
 import json
 from pathlib import Path
 
-from sql_crew_agents import kickoff_for_csv
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run the CrewAI SQL generation & validation pipeline for one CSV."
@@ -43,6 +40,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    try:
+        from .sql_crew_agents import kickoff_for_csv
+    except ImportError:  # Supports direct execution from the CMT2 directory.
+        from sql_crew_agents import kickoff_for_csv
+
     csv_path = Path(args.csv).resolve()
     if not csv_path.exists():
         raise SystemExit(f"CSV not found: {csv_path}")
@@ -58,10 +60,10 @@ def main() -> None:
 
     if args.output:
         out_path = Path(args.output).resolve()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False), encoding="utf-8")
         print(f"\n[run_sql_generation] Saved results to {out_path}")
 
 
 if __name__ == "__main__":
     main()
-

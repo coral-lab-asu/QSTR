@@ -36,7 +36,10 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 from collections import deque
 
-import sql_crew_agents_v2 as base
+try:
+    from . import sql_crew_agents_v2 as base
+except ImportError:  # Supports direct execution from the CMT2 directory.
+    import sql_crew_agents_v2 as base
 
 
 # -----------------------------------------------------------------------------

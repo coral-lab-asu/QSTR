@@ -6,13 +6,22 @@ venv/
 env/
 .env
 .env.*
+!.env.example
 *.log
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/
+.cache/
 
 # Large or generated artifacts.
 data/raw/
 data/generated/
 artifacts/runs/
 artifacts/results/
+baseline-results/
 notebooks/
 tmp/
 

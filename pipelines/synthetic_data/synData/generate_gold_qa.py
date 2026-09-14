@@ -1,14 +1,13 @@
 """
 Generate a JSON file with all questions and their gold answers per session/transcript.
 
-Usage (from repo root or from synData):
-  python synData/generate_gold_qa.py
-  # or
-  cd synData && python generate_gold_qa.py
+Usage from the QSTR root:
+  python pipelines/synthetic_data/synData/generate_gold_qa.py
 
-Output: synData/gold_questions_answers.json
+Output: pipelines/synthetic_data/synData/gold_questions_answers.json
 """
 
+import argparse
 import json
 import os
 from collections import defaultdict
@@ -174,14 +173,20 @@ def compute_gold_answers(session: Dict[str, Any], catalog: List[Dict[str, Any]])
 
 
 def main():
-    if not os.path.exists(SESSIONS_JSONL):
-        raise FileNotFoundError(f"Sessions not found: {SESSIONS_JSONL}. Run generate_op_sequence.py first.")
-    if not os.path.exists(PRODUCTS_JSON):
-        raise FileNotFoundError(f"Catalog not found: {PRODUCTS_JSON}")
+    parser = argparse.ArgumentParser(description="Generate gold answers for synthetic shopkeeper sessions.")
+    parser.add_argument("--sessions", default=SESSIONS_JSONL, help="Input sessions JSONL.")
+    parser.add_argument("--products", default=PRODUCTS_JSON, help="Product catalog JSON.")
+    parser.add_argument("--output", default=OUT_JSON, help="Output gold-answer JSON.")
+    args = parser.parse_args()
 
-    catalog = _load_json(PRODUCTS_JSON)
+    if not os.path.exists(args.sessions):
+        raise FileNotFoundError(f"Sessions not found: {args.sessions}. Run generate_op_sequence.py first.")
+    if not os.path.exists(args.products):
+        raise FileNotFoundError(f"Catalog not found: {args.products}")
+
+    catalog = _load_json(args.products)
     sessions = []
-    with open(SESSIONS_JSONL, "r", encoding="utf-8") as f:
+    with open(args.sessions, "r", encoding="utf-8") as f:
         for line in f:
             sessions.append(json.loads(line))
 
@@ -206,10 +211,12 @@ def main():
             "gold_answers": gold,
         })
 
-    with open(OUT_JSON, "w", encoding="utf-8") as f:
+    output_parent = os.path.dirname(os.path.abspath(args.output))
+    os.makedirs(output_parent, exist_ok=True)
+    with open(args.output, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
 
-    print(f"Wrote {len(output)} sessions to {OUT_JSON}")
+    print(f"Wrote {len(output)} sessions to {args.output}")
     print(f"Each session has {len(QUESTION_LIST)} questions with gold answers.")
 
 

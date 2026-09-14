@@ -6,6 +6,11 @@ import argparse
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+from src.config import load_project_env
+
+
+load_project_env()
+
 # Parallelization imports
 from concurrent.futures import ThreadPoolExecutor, as_completed
 

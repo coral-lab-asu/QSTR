@@ -724,12 +724,12 @@ def analyze_sql_difficulty(sql_text: str) -> Dict[str, Any]:
 def _ensure_supported_select(select_expr: exp.Expression, table_name: str = "df") -> Tuple[bool, Optional[str]]:
     if not isinstance(select_expr, exp.Select):
         return False, "only_select_supported"
-    # if select_expr.args.get("joins"):
-    #     return False, "joins_not_supported"
-    # if any(isinstance(node, (exp.Union, exp.Intersect, exp.Except)) for node in select_expr.walk()):
-    #     return False, "set_ops_not_supported"
-    # if any(isinstance(node, exp.Window) for node in select_expr.walk()):
-    #     return False, "window_not_supported"
+    if select_expr.args.get("joins"):
+        return False, "joins_not_supported"
+    if any(isinstance(node, (exp.Union, exp.Intersect, exp.Except)) for node in select_expr.walk()):
+        return False, "set_ops_not_supported"
+    if any(isinstance(node, exp.Window) for node in select_expr.walk()):
+        return False, "window_not_supported"
     from_items = _from_items(select_expr)
     if not from_items:
         return True, None

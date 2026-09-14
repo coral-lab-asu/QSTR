@@ -87,6 +87,13 @@ class GenerateQuestionsSplitProvenanceTests(unittest.TestCase):
         self.assertEqual(out["row_indices_contributing"], [])
         self.assertEqual(out["provenance_steps"], [])
 
+    def test_unsupported_window_falls_back_cleanly(self) -> None:
+        q = "SELECT batsman, ROW_NUMBER() OVER (ORDER BY overs) AS row_num FROM df"
+        out = extract_row_indices_from_query(q, self.df, None)
+        self.assertFalse(out["provenance_supported"])
+        self.assertEqual(out["provenance_error"], "window_not_supported")
+        self.assertEqual(out["row_indices_contributing"], [])
+
     def test_generate_split_dataset_emits_primary_key_and_sample_idx(self) -> None:
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp = Path(tmpdir)

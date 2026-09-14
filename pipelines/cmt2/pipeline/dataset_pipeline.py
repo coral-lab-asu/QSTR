@@ -16,6 +16,14 @@ from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+_FORBIDDEN_SQL = re.compile(
+    r"\b(attach|call|copy|create|delete|detach|drop|export|import|insert|install|load|pragma|update)\b",
+    flags=re.IGNORECASE,
+)
+_EXTERNAL_SCAN_SQL = re.compile(
+    r"\b(glob|httpfs|parquet_scan|postgres_scan|read_blob|read_csv|read_csv_auto|read_json|read_json_auto|read_parquet|read_text|sqlite_scan)\s*\(",
+    flags=re.IGNORECASE,
+)
 
 
 def _records_from_payload(payload: Any) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
@@ -104,6 +112,23 @@ def canonical_sql(sql: Any) -> str:
     return re.sub(r"\s+", " ", sql.strip().lower())
 
 
+def is_read_only_sql(sql: Any) -> bool:
+    """Allow one SELECT/WITH statement and reject mutation or external-scan operations."""
+    if not isinstance(sql, str) or not sql.strip():
+        return False
+    scrubbed = re.sub(r"/\*.*?\*/", " ", sql, flags=re.DOTALL)
+    scrubbed = re.sub(r"--[^\n]*", " ", scrubbed)
+    scrubbed = re.sub(r"'(?:''|[^'])*'", "''", scrubbed)
+    statement = scrubbed.strip()
+    if statement.endswith(";"):
+        statement = statement[:-1].strip()
+    if ";" in statement:
+        return False
+    if not re.match(r"^(select|with)\b", statement, flags=re.IGNORECASE):
+        return False
+    return not _FORBIDDEN_SQL.search(statement) and not _EXTERNAL_SCAN_SQL.search(statement)
+
+
 def _resolve_csv(record: Dict[str, Any], default_csv: Optional[str | Path]) -> Optional[Path]:
     candidate = record.get("match_path") or record.get("csv_path") or default_csv
     if not candidate:
@@ -149,6 +174,10 @@ def validate_records(
         }
         if not detail["sql_present"]:
             detail["error"] = "missing sql/query"
+            details.append(detail)
+            continue
+        if not is_read_only_sql(sql):
+            detail["error"] = "non-read-only or external-access SQL rejected"
             details.append(detail)
             continue
         if csv_path is None or not csv_path.exists():

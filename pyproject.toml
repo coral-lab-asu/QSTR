@@ -7,6 +7,46 @@ name = "qstr"
 version = "0.1.0"
 description = "Knowledge-transfer monorepo for question, SQL, and synthetic-data generation"
 requires-python = ">=3.10"
+dependencies = [
+  "duckdb>=1.0.0",
+  "numpy>=1.24.0",
+  "pandas>=1.5.0",
+  "rapidfuzz>=2.0.0",
+  "scipy>=1.4.0",
+  "sqlglot>=20.0.0",
+  "tqdm>=4.0.0",
+]
+
+[project.optional-dependencies]
+llm = [
+  "crewai>=0.28.0",
+  "crewai-tools>=0.2.0",
+  "google-generativeai>=0.8.0",
+  "google-genai>=1.0.0",
+  "openai>=1.0.0",
+  "python-dotenv>=1.0.0",
+]
+synthetic = [
+  "datasets>=2.0.0",
+  "google-genai>=1.0.0",
+  "python-dotenv>=1.0.0",
+]
+local = ["transformers>=4.40.0"]
+notebooks = ["nbformat>=5.0.0"]
+legacy = ["pandasql>=0.7.3"]
+dev = ["pytest>=7.0.0"]
+
+[project.scripts]
+qstr-cmt2 = "pipelines.cmt2.pipeline.run:main"
+qstr-doctor = "scripts.doctor:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "pipelines*", "scripts*"]
+
+[tool.setuptools.package-data]
+"pipelines.cmt2.examples" = ["*.csv", "*.md"]
+"pipelines.synthetic_data.synData" = ["*.json", "*.csv", "*.md", "shopkeeper_sessions/*.jsonl", "shopkeeper_sessions/*.txt"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]

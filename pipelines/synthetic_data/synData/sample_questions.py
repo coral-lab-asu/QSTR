@@ -119,8 +119,11 @@ QUESTION_SCHEMAS = [
   }
 ]
 
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # -- write JSON file utility
-def write_question_schemas(path="synData/question_schemas.json"):
+def write_question_schemas(path=None):
+    path = path or os.path.join(_SCRIPT_DIR, "question_schemas.json")
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
     with open(path, "w", encoding="utf-8") as fw:
         json.dump(QUESTION_SCHEMAS, fw, indent=2, ensure_ascii=False)
@@ -215,7 +218,7 @@ def validate_table(schema: Dict[str,Any], table_rows: List[Dict[str,Any]], relax
 
 # Example: write schema json to cwd
 if __name__ == "__main__":
-    path = write_question_schemas("question_schemas.json")
+    path = write_question_schemas()
     print("Wrote question schema to", path)
     # Example of validation usage (pseudo)
     # ok, errs = validate_table(QUESTION_SCHEMAS[0], model_rows_for_Q1)

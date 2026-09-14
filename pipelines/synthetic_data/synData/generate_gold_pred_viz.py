@@ -5,10 +5,11 @@ builds a superpositioned table (gold/pred per cell) and highlights:
   - rows only in gold (missing from prediction)
   - rows only in prediction (extra predicted).
 
-Usage: python synData/generate_gold_pred_viz.py
-Output: synData/experiment/gold_vs_predicted.html
+Usage: python pipelines/synthetic_data/synData/generate_gold_pred_viz.py
+Output: pipelines/synthetic_data/synData/experiment/gold_vs_predicted.html
 """
 
+import argparse
 import json
 import os
 import re
@@ -29,8 +30,8 @@ QID_KEY_COLUMN = {
 }
 
 
-def _load_gold() -> List[Dict[str, Any]]:
-    with open(GOLD_QA_JSON, "r", encoding="utf-8") as f:
+def _load_gold(path: str = GOLD_QA_JSON) -> List[Dict[str, Any]]:
+    with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -133,9 +134,9 @@ def _build_comparison(
     return {"scalar": False, "columns": columns, "rows": rows}
 
 
-def _get_columns_for_qid(qid: str) -> List[str]:
+def _get_columns_for_qid(qid: str, schema_path: Optional[str] = None) -> List[str]:
     """Column names for this qid (from question schema)."""
-    schema_path = os.path.join(_SCRIPT_DIR, "question_schemas.json")
+    schema_path = schema_path or os.path.join(_SCRIPT_DIR, "question_schemas.json")
     if not os.path.isfile(schema_path):
         return []
     with open(schema_path, "r", encoding="utf-8") as f:
@@ -147,7 +148,14 @@ def _get_columns_for_qid(qid: str) -> List[str]:
 
 
 def main() -> None:
-    gold_sessions = _load_gold()
+    parser = argparse.ArgumentParser(description="Generate an HTML gold/prediction comparison.")
+    parser.add_argument("--gold", default=GOLD_QA_JSON)
+    parser.add_argument("--experiment-dir", default=EXPERIMENT_DIR)
+    parser.add_argument("--schemas", default=os.path.join(_SCRIPT_DIR, "question_schemas.json"))
+    parser.add_argument("--output", default=OUT_HTML)
+    args = parser.parse_args()
+
+    gold_sessions = _load_gold(args.gold)
     payload: Dict[str, Dict[str, Any]] = {}
     for sess in gold_sessions:
         sid = sess["session_id"]
@@ -155,9 +163,9 @@ def main() -> None:
         payload[sid] = {}
         for qid in ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10"]:
             gold = gold_answers.get(qid)
-            log_path = os.path.join(EXPERIMENT_DIR, sid, f"{qid}.txt")
+            log_path = os.path.join(args.experiment_dir, sid, f"{qid}.txt")
             pred = _parse_output_from_log(log_path)
-            columns = _get_columns_for_qid(qid)
+            columns = _get_columns_for_qid(qid, args.schemas)
             comp = _build_comparison(gold, pred, qid, columns)
             qa = next((q for q in sess.get("questions_and_answers", []) if q.get("qid") == qid), None)
             comp["question"] = qa.get("question", "") if qa else ""
@@ -165,10 +173,10 @@ def main() -> None:
 
     # Embed in HTML
     html = _make_html(payload, list(payload.keys()))
-    os.makedirs(os.path.dirname(OUT_HTML), exist_ok=True)
-    with open(OUT_HTML, "w", encoding="utf-8") as f:
+    os.makedirs(os.path.dirname(os.path.abspath(args.output)), exist_ok=True)
+    with open(args.output, "w", encoding="utf-8") as f:
         f.write(html)
-    print(f"Wrote {OUT_HTML}")
+    print(f"Wrote {args.output}")
 
 
 def _fmt(v: Any) -> str:

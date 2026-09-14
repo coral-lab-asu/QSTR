@@ -3,6 +3,14 @@ import json
 import time
 import random
 import argparse
+
+try:
+    from .config import load_project_env
+except ImportError:
+    from config import load_project_env
+
+
+load_project_env()
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
@@ -10,7 +18,10 @@ from typing import Any, Dict, List, Optional, Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-import google.generativeai as genai
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
 import pandas as pd
 import numpy as np
 import duckdb
@@ -424,6 +435,8 @@ def run_experiment(
     model_name: str = "gemini-2.5-flash",
     workers: int = 8,
 ) -> None:
+    if genai is None:
+        raise RuntimeError("Install hosted-model dependencies with: pip install -e '.[llm]'")
     ensure_dir(out_dir)
 
     genai.configure(api_key=api_key)
@@ -821,4 +834,4 @@ if __name__ == "__main__":
 #   --out_dir runs_sql_table_settings \
 #   --seed 42 \
 #   --model gemini-2.5-flash \
-#   --workers 8 
+#   --workers 8

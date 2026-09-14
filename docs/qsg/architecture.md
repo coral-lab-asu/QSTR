@@ -47,5 +47,9 @@ CMT2 preserves the older but still useful data-generation path under
    deduplication.
 5. `pipelines/cmt2/pipeline/run.py` exposes the stages through one command-line interface.
 
+The combined command promotes only validation-passing records, writes rejected
+records separately, and records the QSTR commit, dirty-worktree state,
+configuration, runtime, and output paths in `run_manifest.json`.
+
 The legacy scripts remain available for compatibility while the pipeline
 module becomes the documented integration point.

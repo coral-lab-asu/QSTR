@@ -13,9 +13,6 @@ import argparse
 import json
 from pathlib import Path
 
-from sql_crew_agents_dedup import kickoff_until_target
-
-
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Run deduplicated SQL+NL generation with resume support."
@@ -76,6 +73,11 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
 
+    try:
+        from .sql_crew_agents_dedup import kickoff_until_target
+    except ImportError:  # Supports direct execution from the CMT2 directory.
+        from sql_crew_agents_dedup import kickoff_until_target
+
     csv_path = Path(args.csv).resolve()
     if not csv_path.exists():
         raise SystemExit(f"CSV not found: {csv_path}")
@@ -96,6 +98,7 @@ def main() -> None:
 
     if args.output:
         out_path = Path(args.output).resolve()
+        out_path.parent.mkdir(parents=True, exist_ok=True)
         out_path.write_text(
             json.dumps(result, indent=2, ensure_ascii=False),
             encoding="utf-8",

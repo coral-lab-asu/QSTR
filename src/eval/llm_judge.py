@@ -8,7 +8,15 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Any, Dict, List
 from tqdm import tqdm
 
-import google.generativeai as genai
+from src.config import load_project_env
+
+
+load_project_env()
+
+try:
+    import google.generativeai as genai
+except ImportError:
+    genai = None
 
 
 MODEL_NAME = "gemini-2.5-flash"
@@ -203,6 +211,8 @@ def extract_json_obj(text: str) -> Dict[str, Any]:
 
 
 def build_model(model_name: str):
+    if genai is None:
+        raise RuntimeError("Install hosted-model dependencies with: pip install -e '.[llm]'")
     api_key = os.getenv("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY environment variable not set.")
