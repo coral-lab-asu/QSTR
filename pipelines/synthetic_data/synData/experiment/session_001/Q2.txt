@@ -1,0 +1,252 @@
+session_id=session_001
+qid=Q2
+
+---INPUT---
+You are given a shopkeeper transcript. Answer the question by returning a JSON array (not prose).
+Question: What is the total revenue per product?
+Return an array of objects where each object has these fields (exact names and types): product_id (string), name (string), total_revenue (number): Total revenue from this product in same currency as transcript (round to 2 decimals)..
+Numeric (number) fields must be numbers (floats allowed) and monetary values rounded to 2 decimals.
+Return ONLY the JSON array (no additional text). If you cannot answer, return an empty array [].
+Example: [{"product_id": ..., "name": ..., "total_revenue": ...}]
+
+Product Catalog:
+P001 -> Whole Milk 1L
+P002 -> Skim Milk 1L
+P003 -> Large Eggs (12 pack)
+P004 -> Salted Butter 200g
+P005 -> Cheddar Cheese 250g
+P006 -> Plain Yogurt 500g
+P007 -> Greek Yogurt 500g
+P008 -> White Bread Loaf
+P009 -> Whole Wheat Bread
+P010 -> Croissants (4 pack)
+P011 -> Bagels (6 pack)
+P012 -> Hamburger Buns (8 pack)
+P013 -> Bananas
+P014 -> Apples (Gala)
+P015 -> Oranges
+P016 -> Tomatoes
+P017 -> Potatoes
+P018 -> Onions
+P019 -> Carrots
+P020 -> Broccoli
+P021 -> Basmati Rice 1kg
+P022 -> White Rice 1kg
+P023 -> Pasta 500g
+P024 -> Spaghetti 500g
+P025 -> All-Purpose Flour 1kg
+P026 -> Granulated Sugar 1kg
+P027 -> Canned Tuna 150g
+P028 -> Canned Beans 400g
+P029 -> Tomato Ketchup 500ml
+P030 -> Olive Oil 1L
+P031 -> Orange Juice 1L
+P032 -> Apple Juice 1L
+P033 -> Cola 2L
+P034 -> Lemon Soda 2L
+P035 -> Bottled Water 1.5L
+P036 -> Sparkling Water 1L
+P037 -> Ground Coffee 250g
+P038 -> Black Tea (100 bags)
+P039 -> Potato Chips 150g
+P040 -> Tortilla Chips 200g
+P041 -> Chocolate Bar 100g
+P042 -> Biscuits 300g
+P043 -> Salted Peanuts 200g
+P044 -> Popcorn 100g
+P045 -> Chicken Breast (boneless)
+P046 -> Ground Beef
+P047 -> Frozen Pizza
+P048 -> Fish Fillets
+P049 -> Dishwashing Liquid 500ml
+P050 -> Toilet Paper (12 rolls)
+
+Transcript:
+Clerk: Next customer please.
+Customer CUST_1: I'd like 0.5 kg Carrots.
+Clerk: That's 0.5 × $1.39 = $0.69. (Order #1001)
+Customer CUST_3: I'd like 2 Popcorn 100g.
+Clerk: That's 2 × $1.79 = $3.58. (Order #1002)
+Customer CUST_3: Add 1 White Rice 1kg to #1002.
+Clerk: Added 1 × $3.99 = $3.99 to #1002.
+Customer CUST_2: I'd like 2.0 kg Apples (Gala).
+Clerk: That's 2.0 × $2.49 = $4.98. (Order #1003)
+Customer CUST_2: I'd like 2 Dishwashing Liquid 500ml.
+Clerk: That's 2 × $2.49 = $4.98. (Order #1003)
+Customer CUST_3: Add 2 Bagels (6 pack) to #1002.
+Clerk: Added 2 × $3.49 = $6.98 to #1002.
+Customer CUST_4: I'd like 2 Croissants (4 pack).
+Clerk: That's 2 × $3.99 = $7.98. (Order #1004)
+Customer CUST_2: Add 2 Salted Butter 200g to #1003.
+Clerk: Added 2 × $2.79 = $5.58 to #1003.
+Customer CUST_3: I'd like 3 Whole Milk 1L.
+Clerk: That's 3 × $2.49 = $7.47. (Order #1005)
+Customer CUST_1: Actually make Tortilla Chips 200g 1 instead of 1 in #1001.
+Clerk: Updated — Tortilla Chips 200g changed from 1 to 1 in #1001.
+Customer CUST_4: Add 1 Sparkling Water 1L to #1004.
+Clerk: Added 1 × $1.19 = $1.19 to #1004.
+Customer CUST_3: I'd like 2 Sparkling Water 1L.
+Clerk: That's 2 × $1.19 = $2.38. (Order #1006)
+Customer CUST_2: Add 1 Bagels (6 pack) to #1003.
+Clerk: Added 1 × $3.49 = $3.49 to #1003.
+Customer CUST_2: Add 2 Whole Milk 1L to #1003.
+Clerk: Added 2 × $2.49 = $4.98 to #1003.
+Customer CUST_3: I'd like 1.5 kg Potatoes.
+Clerk: That's 1.5 × $1.79 = $2.69. (Order #1007)
+Customer CUST_1: Add 1 Hamburger Buns (8 pack) to #1001.
+Clerk: Added 1 × $2.99 = $2.99 to #1001.
+Customer CUST_4: Add 1 Hamburger Buns (8 pack) to #1004.
+Clerk: Added 1 × $2.99 = $2.99 to #1004.
+Customer CUST_2: I'd like 4 Canned Tuna 150g.
+Clerk: That's 4 × $1.29 = $5.16. (Order #1008)
+Customer CUST_2: Add 3 Tortilla Chips 200g to #1008.
+Clerk: Added 3 × $2.29 = $6.87 to #1008.
+Customer CUST_2: Add 0.5 kg Carrots to #1008.
+Clerk: Added 0.5 × $1.39 = $0.69 to #1008.
+Customer CUST_1: I'd like 3 Salted Butter 200g.
+Clerk: That's 3 × $2.79 = $8.37. (Order #1009)
+Customer CUST_1: I'd like 4 Toilet Paper (12 rolls).
+Clerk: That's 4 × $6.99 = $27.96. (Order #1009)
+Customer CUST_1: I'd like 3 Large Eggs (12 pack).
+Clerk: That's 3 × $3.99 = $11.97. (Order #1009)
+Customer CUST_2: Actually make Dishwashing Liquid 500ml 2 instead of 1 in #1008.
+Clerk: Updated — Dishwashing Liquid 500ml changed from 1 to 2 in #1008.
+Customer CUST_3: I'd like 2.0 kg Onions.
+Clerk: That's 2.0 × $1.59 = $3.18. (Order #1010)
+Customer CUST_3: Add 1.5 kg Broccoli to #1010.
+Clerk: Added 1.5 × $2.79 = $4.19 to #1010.
+Customer CUST_1: Add 1 Whole Wheat Bread to #1009.
+Clerk: Added 1 × $2.49 = $2.49 to #1009.
+Customer CUST_4: I'd like 1 Skim Milk 1L.
+Clerk: That's 1 × $2.49 = $2.49. (Order #1011)
+Customer CUST_3: Add 1 Pasta 500g to #1010.
+Clerk: Added 1 × $1.79 = $1.79 to #1010.
+Customer CUST_1: I'd like 3 Cheddar Cheese 250g.
+Clerk: That's 3 × $4.49 = $13.47. (Order #1012)
+Customer CUST_1: I'd like 1 Spaghetti 500g.
+Clerk: That's 1 × $1.79 = $1.79. (Order #1012)
+Customer CUST_4: Actually make Broccoli 3 kg instead of 1 kg in #1011.
+Clerk: Updated — Broccoli changed from 1 to 3 in #1011.
+Customer CUST_1: Actually make Cola 2L 3 instead of 1 in #1012.
+Clerk: Updated — Cola 2L changed from 1 to 3 in #1012.
+
+Return JSON array now:
+
+---OUTPUT---
+[
+  {
+    "product_id": "P001",
+    "name": "Whole Milk 1L",
+    "total_revenue": 12.45
+  },
+  {
+    "product_id": "P002",
+    "name": "Skim Milk 1L",
+    "total_revenue": 2.49
+  },
+  {
+    "product_id": "P003",
+    "name": "Large Eggs (12 pack)",
+    "total_revenue": 11.97
+  },
+  {
+    "product_id": "P004",
+    "name": "Salted Butter 200g",
+    "total_revenue": 13.95
+  },
+  {
+    "product_id": "P005",
+    "name": "Cheddar Cheese 250g",
+    "total_revenue": 13.47
+  },
+  {
+    "product_id": "P009",
+    "name": "Whole Wheat Bread",
+    "total_revenue": 2.49
+  },
+  {
+    "product_id": "P010",
+    "name": "Croissants (4 pack)",
+    "total_revenue": 7.98
+  },
+  {
+    "product_id": "P011",
+    "name": "Bagels (6 pack)",
+    "total_revenue": 10.47
+  },
+  {
+    "product_id": "P012",
+    "name": "Hamburger Buns (8 pack)",
+    "total_revenue": 5.98
+  },
+  {
+    "product_id": "P014",
+    "name": "Apples (Gala)",
+    "total_revenue": 4.98
+  },
+  {
+    "product_id": "P017",
+    "name": "Potatoes",
+    "total_revenue": 2.69
+  },
+  {
+    "product_id": "P018",
+    "name": "Onions",
+    "total_revenue": 3.18
+  },
+  {
+    "product_id": "P019",
+    "name": "Carrots",
+    "total_revenue": 1.39
+  },
+  {
+    "product_id": "P020",
+    "name": "Broccoli",
+    "total_revenue": 12.56
+  },
+  {
+    "product_id": "P022",
+    "name": "White Rice 1kg",
+    "total_revenue": 3.99
+  },
+  {
+    "product_id": "P023",
+    "name": "Pasta 500g",
+    "total_revenue": 1.79
+  },
+  {
+    "product_id": "P024",
+    "name": "Spaghetti 500g",
+    "total_revenue": 1.79
+  },
+  {
+    "product_id": "P027",
+    "name": "Canned Tuna 150g",
+    "total_revenue": 5.16
+  },
+  {
+    "product_id": "P036",
+    "name": "Sparkling Water 1L",
+    "total_revenue": 3.57
+  },
+  {
+    "product_id": "P040",
+    "name": "Tortilla Chips 200g",
+    "total_revenue": 9.16
+  },
+  {
+    "product_id": "P044",
+    "name": "Popcorn 100g",
+    "total_revenue": 3.58
+  },
+  {
+    "product_id": "P049",
+    "name": "Dishwashing Liquid 500ml",
+    "total_revenue": 9.96
+  },
+  {
+    "product_id": "P050",
+    "name": "Toilet Paper (12 rolls)",
+    "total_revenue": 27.96
+  }
+]

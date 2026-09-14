@@ -1,0 +1,116 @@
+[
+  {
+    "qid": "Q1",
+    "question": "What is the total quantity sold per product?",
+    "type": "table",
+    "include_all_products": true,
+    "columns": [
+      {"name": "product_id", "type": "string", "description": "Product identifier (e.g., P001)"},
+      {"name": "name", "type": "string", "description": "Product canonical name"},
+      {"name": "total_qty_sold", "type": "number", "description": "Total quantity sold (units or kg). Use floats for kg; round to 2 decimals if fractional."}
+    ],
+    "sorting": {"primary": "product_id", "order": "asc"},
+    "notes": "Return one row per product (all products if include_all_products=true)."
+  },
+  {
+    "qid": "Q2",
+    "question": "What is the total revenue per product?",
+    "type": "table",
+    "include_all_products": true,
+    "columns": [
+      {"name": "product_id", "type": "string"},
+      {"name": "name", "type": "string"},
+      {"name": "total_revenue", "type": "number", "description": "Total revenue from this product in same currency as transcript (round to 2 decimals)."}
+    ],
+    "sorting": {"primary": "product_id", "order": "asc"},
+    "notes": "Return one row per product."
+  },
+  {
+    "qid": "Q3",
+    "question": "What is the total quantity bought by each customer?",
+    "type": "table",
+    "columns": [
+      {"name": "customer_id", "type": "string"},
+      {"name": "total_qty", "type": "number", "description": "Total quantity bought by that customer (sum of units and kg as recorded)."}
+    ],
+    "sorting": {"primary": "customer_id", "order": "asc"},
+    "notes": "Return rows for every customer who appears in the transcript."
+  },
+  {
+    "qid": "Q4",
+    "question": "How much did each customer spend?",
+    "type": "table",
+    "columns": [
+      {"name": "customer_id", "type": "string"},
+      {"name": "total_spent", "type": "number", "description": "Total money spent by customer; round to 2 decimals."}
+    ],
+    "sorting": {"primary": "customer_id", "order": "asc"},
+    "notes": "Return rows for every customer who appears in the transcript."
+  },
+  {
+    "qid": "Q5",
+    "question": "Which 5 products had the highest revenue?",
+    "type": "table",
+    "columns": [
+      {"name": "rank", "type": "integer", "description": "1 = highest revenue"},
+      {"name": "product_id", "type": "string"},
+      {"name": "name", "type": "string"},
+      {"name": "revenue", "type": "number", "description": "Revenue, round to 2 decimals"}
+    ],
+    "constraints": {"top_k": 5},
+    "sorting": {"primary": "rank", "order": "asc"},
+    "notes": "Ties may be broken arbitrarily but must preserve rank order starting at 1."
+  },
+  {
+    "qid": "Q6",
+    "question": "Which 5 products had the highest quantity sold?",
+    "type": "table",
+    "columns": [
+      {"name": "rank", "type": "integer"},
+      {"name": "product_id", "type": "string"},
+      {"name": "name", "type": "string"},
+      {"name": "qty_sold", "type": "number", "description": "Total qty sold; round to 2 decimals"}
+    ],
+    "constraints": {"top_k": 5},
+    "sorting": {"primary": "rank", "order": "asc"}
+  },
+  {
+    "qid": "Q7",
+    "question": "What is the total revenue across all products?",
+    "type": "table",
+    "columns": [
+      {"name": "total_revenue", "type": "number", "description": "Single-row table with total revenue (round to 2 decimals)"}
+    ],
+    "notes": "Return a single row with the scalar."
+  },
+  {
+    "qid": "Q8",
+    "question": "What is the total number of units (or kg) sold across all products?",
+    "type": "table",
+    "columns": [
+      {"name": "total_qty_all", "type": "number", "description": "Scalar sum of all quantities (units and kg as recorded). Round to 2 decimals."}
+    ]
+  },
+  {
+    "qid": "Q9",
+    "question": "What is the total revenue per category?",
+    "type": "table",
+    "columns": [
+      {"name": "category", "type": "string"},
+      {"name": "revenue", "type": "number", "description": "Total revenue for that category; round to 2 decimals"}
+    ],
+    "sorting": {"primary": "category", "order": "asc"},
+    "notes": "Return one row per category present in the catalog."
+  },
+  {
+    "qid": "Q10",
+    "question": "What is the average order value per customer?",
+    "type": "table",
+    "columns": [
+      {"name": "customer_id", "type": "string"},
+      {"name": "average_order_value", "type": "number", "description": "Average revenue per order for that customer; round to 2 decimals"}
+    ],
+    "sorting": {"primary": "customer_id", "order": "asc"},
+    "notes": "Include customers who had at least one order."
+  }
+]

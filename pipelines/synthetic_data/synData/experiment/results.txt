@@ -1,0 +1,12 @@
+=== EVALUATION RESULTS ===
+
+--- By session ---
+ session_id  avg_accuracy  avg_rmse  n_questions
+session_001      0.578810  1.597974           10
+session_002      0.722500  5.376054           10
+session_003      0.503947 12.530872           10
+
+--- Overall (all sessions, all questions) ---
+mean accuracy: 0.6017522974101922
+mean RMSE:     6.501633140425943
+total (session, question) pairs: 30

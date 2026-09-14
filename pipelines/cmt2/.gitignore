@@ -1,0 +1,16 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+*.log
+
+# Generated pipeline outputs and transient analysis artifacts.
+output/
+eval_logs*/
+runs_sql_table_settings*/
+*.progress.json
+*.tmp

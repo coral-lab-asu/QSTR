@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.env
+.env.*
+*.log
+
+# Large or generated artifacts.
+data/raw/
+data/generated/
+artifacts/runs/
+artifacts/results/
+notebooks/
+tmp/
+
+# Local CMT2 outputs.
+pipelines/cmt2/output/
+pipelines/cmt2/eval_logs*/
+pipelines/cmt2/runs_sql_table_settings*/

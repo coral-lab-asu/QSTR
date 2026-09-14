@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Table Prediction Viewer</title>
+    <style>
+      :root {
+        --bg: #0f1115;
+        --panel: #171a21;
+        --text: #e6e6e6;
+        --muted: #9aa3b2;
+        --accent: #5ea1ff;
+        --border: #2a2f3a;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+        color: var(--text);
+        background: var(--bg);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 24px auto 64px;
+        padding: 0 16px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 12px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 16px;
+        margin-bottom: 16px;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      input[type="file"], input[type="text"] {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #0c0e12;
+        color: var(--text);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .controls {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      select, button {
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: #0c0e12;
+        color: var(--text);
+      }
+      button {
+        cursor: pointer;
+        background: var(--accent);
+        color: #0b0f16;
+        font-weight: 600;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 13px;
+      }
+      th, td {
+        border: 1px solid var(--border);
+        padding: 6px 8px;
+        vertical-align: top;
+      }
+      th {
+        background: #10131a;
+        text-align: left;
+        position: sticky;
+        top: 0;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      pre {
+        white-space: pre-wrap;
+        word-break: break-word;
+        background: #0c0e12;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 10px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .badge {
+        font-size: 11px;
+        padding: 2px 6px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Prediction vs Gold Table Viewer</h1>
+
+      <div class="panel" id="filePanel">
+        <div class="controls">
+          <div>
+            <label>Dataset file (JSON / JSONL)</label>
+            <input id="datasetFile" type="file" accept=".json,.jsonl" />
+          </div>
+          <div>
+            <label>Predictions file (JSONL)</label>
+            <input id="predFile" type="file" accept=".jsonl,.json" />
+          </div>
+          <div>
+            <label>Optional eval samplewise (JSONL)</label>
+            <input id="evalFile" type="file" accept=".jsonl,.json" />
+          </div>
+          <div>
+            <label>Pred table key (default: pred_table)</label>
+            <input id="predKey" type="text" value="pred_table" />
+          </div>
+        </div>
+        <div class="row" style="margin-top:12px;">
+          <button id="loadBtn">Load</button>
+          <span id="status" class="muted"></span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="row">
+          <label style="margin:0;">Record</label>
+          <select id="recordSelect"></select>
+          <span id="successBadge" class="badge"></span>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="muted">Question</div>
+          <div id="questionText"></div>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="muted">Context (truncated)</div>
+          <pre id="contextText"></pre>
+        </div>
+        <div style="margin-top:10px;">
+          <div class="muted">Metrics</div>
+          <pre id="metricsText">None</pre>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="panel">
+          <div class="muted">Predicted Table</div>
+          <div id="predTable"></div>
+        </div>
+        <div class="panel">
+          <div class="muted">Gold Table</div>
+          <div id="goldTable"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Embedded data block will be injected by build_table_viewer.py if used. -->
+    <script>
+      const state = {
+        dataset: [],
+        preds: [],
+        evals: [],
+        dsMap: new Map(),
+        predMap: new Map(),
+        evalMap: new Map(),
+      };
+
+      function parseJSONL(text) {
+        const lines = text.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+        return lines.map(l => JSON.parse(l));
+      }
+
+      function parseDataset(text) {
+        try {
+          const obj = JSON.parse(text);
+          if (Array.isArray(obj)) return obj;
+          if (obj && Array.isArray(obj.records)) return obj.records;
+        } catch (e) {
+          // fallthrough
+        }
+        return parseJSONL(text);
+      }
+
+      function normalizePredTable(pred) {
+        if (!pred) return null;
+        if (pred.columns && pred.rows) {
+          return { columns: pred.columns || [], rows: pred.rows || [] };
+        }
+        if (pred.table && Array.isArray(pred.table)) {
+          const t = pred.table;
+          if (t.length === 0) return { columns: [], rows: [] };
+          if (typeof t[0] === "object") {
+            const cols = Object.keys(t[0]);
+            const rows = t.map(r => cols.map(c => r[c]));
+            return { columns: cols, rows };
+          }
+        }
+        if (Array.isArray(pred) && pred.length && typeof pred[0] === "object") {
+          const cols = Object.keys(pred[0]);
+          const rows = pred.map(r => cols.map(c => r[c]));
+          return { columns: cols, rows };
+        }
+        return null;
+      }
+
+      function renderTable(el, table) {
+        if (!table || !table.columns) {
+          el.innerHTML = "<div class='muted'>No table</div>";
+          return;
+        }
+        const cols = table.columns || [];
+        const rows = table.rows || [];
+        let html = "<table><thead><tr>";
+        for (const c of cols) html += `<th>${c}</th>`;
+        html += "</tr></thead><tbody>";
+        for (const r of rows) {
+          html += "<tr>";
+          for (const cell of r) {
+            html += `<td>${cell === null ? "null" : String(cell)}</td>`;
+          }
+          html += "</tr>";
+        }
+        html += "</tbody></table>";
+        el.innerHTML = html;
+      }
+
+      function setStatus(msg) {
+        document.getElementById("status").textContent = msg;
+      }
+
+      async function loadFiles() {
+        const dsFile = document.getElementById("datasetFile").files[0];
+        const predFile = document.getElementById("predFile").files[0];
+        const evalFile = document.getElementById("evalFile").files[0];
+
+        if (!dsFile || !predFile) {
+          setStatus("Please select dataset and predictions files.");
+          return;
+        }
+
+        setStatus("Loading...");
+        const dsText = await dsFile.text();
+        const predText = await predFile.text();
+        const evalText = evalFile ? await evalFile.text() : null;
+
+        state.dataset = parseDataset(dsText);
+        state.preds = parseJSONL(predText);
+        state.evals = evalText ? parseJSONL(evalText) : [];
+
+        state.dsMap = new Map(state.dataset.map(d => [d.record_id, d]));
+        state.predMap = new Map(state.preds.map(p => [p.record_id, p]));
+        state.evalMap = new Map(state.evals.map(e => [e.record_id, e]));
+
+        const select = document.getElementById("recordSelect");
+        select.innerHTML = "";
+        for (const rid of state.predMap.keys()) {
+          const opt = document.createElement("option");
+          opt.value = rid;
+          opt.textContent = rid;
+          select.appendChild(opt);
+        }
+
+        setStatus(`Loaded ${state.dataset.length} records, ${state.preds.length} preds`);
+        if (select.options.length > 0) {
+          select.selectedIndex = 0;
+          renderRecord(select.value);
+        }
+      }
+
+      function renderRecord(rid) {
+        const predKey = document.getElementById("predKey").value || "pred_table";
+        const ds = state.dsMap.get(rid) || {};
+        const pred = state.predMap.get(rid) || {};
+        const ev = state.evalMap.get(rid) || null;
+
+        document.getElementById("questionText").textContent = ds.question || "";
+        const ctx = (ds.context || "").toString();
+        const trunc = ctx.length > 1200 ? ctx.slice(0, 1200) + " ..." : ctx;
+        document.getElementById("contextText").textContent = trunc;
+
+        const success = pred.success;
+        const badge = document.getElementById("successBadge");
+        badge.textContent = success === undefined ? "" : (success ? "success" : "failed");
+
+        const metricsEl = document.getElementById("metricsText");
+        metricsEl.textContent = ev ? JSON.stringify(ev, null, 2) : "None";
+
+        const predTbl = normalizePredTable(pred[predKey]);
+        const goldTbl = ds.answer ? { columns: ds.answer.columns || [], rows: ds.answer.rows || [] } : null;
+
+        renderTable(document.getElementById("predTable"), predTbl);
+        renderTable(document.getElementById("goldTable"), goldTbl);
+      }
+
+      document.getElementById("loadBtn").addEventListener("click", loadFiles);
+      document.getElementById("recordSelect").addEventListener("change", (e) => {
+        renderRecord(e.target.value);
+      });
+
+      function loadEmbeddedData() {
+        const embedded = window.__TABLE_VIEWER_DATA__;
+        if (!embedded) return false;
+        state.dataset = embedded.dataset || [];
+        state.preds = embedded.preds || [];
+        state.evals = embedded.evals || [];
+        state.dsMap = new Map(state.dataset.map(d => [d.record_id, d]));
+        state.predMap = new Map(state.preds.map(p => [p.record_id, p]));
+        state.evalMap = new Map(state.evals.map(e => [e.record_id, e]));
+
+        const predKey = embedded.pred_key || "pred_table";
+        document.getElementById("predKey").value = predKey;
+
+        const select = document.getElementById("recordSelect");
+        select.innerHTML = "";
+        for (const rid of state.predMap.keys()) {
+          const opt = document.createElement("option");
+          opt.value = rid;
+          opt.textContent = rid;
+          select.appendChild(opt);
+        }
+        setStatus(`Loaded embedded data: ${state.dataset.length} records, ${state.preds.length} preds`);
+        if (select.options.length > 0) {
+          select.selectedIndex = 0;
+          renderRecord(select.value);
+        }
+        const panel = document.getElementById("filePanel");
+        if (panel) {
+          panel.style.display = "none";
+        }
+        return true;
+      }
+
+      // Auto-load embedded data if present
+      loadEmbeddedData();
+      window.addEventListener("load", () => {
+        loadEmbeddedData();
+      });
+    </script>
+  </body>
+</html>

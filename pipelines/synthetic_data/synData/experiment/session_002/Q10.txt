@@ -1,0 +1,193 @@
+session_id=session_002
+qid=Q10
+
+---INPUT---
+You are given a shopkeeper transcript. Answer the question by returning a JSON array (not prose).
+Question: What is the average order value per customer?
+Return an array of objects where each object has these fields (exact names and types): customer_id (string), average_order_value (number): Average revenue per order for that customer; round to 2 decimals.
+Numeric (number) fields must be numbers (floats allowed) and monetary values rounded to 2 decimals.
+Return ONLY the JSON array (no additional text). If you cannot answer, return an empty array [].
+Example: [{"customer_id": ..., "average_order_value": ...}]
+
+Product Catalog:
+P001 -> Whole Milk 1L
+P002 -> Skim Milk 1L
+P003 -> Large Eggs (12 pack)
+P004 -> Salted Butter 200g
+P005 -> Cheddar Cheese 250g
+P006 -> Plain Yogurt 500g
+P007 -> Greek Yogurt 500g
+P008 -> White Bread Loaf
+P009 -> Whole Wheat Bread
+P010 -> Croissants (4 pack)
+P011 -> Bagels (6 pack)
+P012 -> Hamburger Buns (8 pack)
+P013 -> Bananas
+P014 -> Apples (Gala)
+P015 -> Oranges
+P016 -> Tomatoes
+P017 -> Potatoes
+P018 -> Onions
+P019 -> Carrots
+P020 -> Broccoli
+P021 -> Basmati Rice 1kg
+P022 -> White Rice 1kg
+P023 -> Pasta 500g
+P024 -> Spaghetti 500g
+P025 -> All-Purpose Flour 1kg
+P026 -> Granulated Sugar 1kg
+P027 -> Canned Tuna 150g
+P028 -> Canned Beans 400g
+P029 -> Tomato Ketchup 500ml
+P030 -> Olive Oil 1L
+P031 -> Orange Juice 1L
+P032 -> Apple Juice 1L
+P033 -> Cola 2L
+P034 -> Lemon Soda 2L
+P035 -> Bottled Water 1.5L
+P036 -> Sparkling Water 1L
+P037 -> Ground Coffee 250g
+P038 -> Black Tea (100 bags)
+P039 -> Potato Chips 150g
+P040 -> Tortilla Chips 200g
+P041 -> Chocolate Bar 100g
+P042 -> Biscuits 300g
+P043 -> Salted Peanuts 200g
+P044 -> Popcorn 100g
+P045 -> Chicken Breast (boneless)
+P046 -> Ground Beef
+P047 -> Frozen Pizza
+P048 -> Fish Fillets
+P049 -> Dishwashing Liquid 500ml
+P050 -> Toilet Paper (12 rolls)
+
+Transcript:
+Clerk: Next customer please.
+Customer CUST_4: I'd like 4 All-Purpose Flour 1kg.
+Clerk: That's 4 × $2.49 = $9.96. (Order #1001)
+Customer CUST_4: I'd like 3 Spaghetti 500g.
+Clerk: That's 3 × $1.79 = $5.37. (Order #1002)
+Customer CUST_4: I'd like 4 White Bread Loaf.
+Clerk: That's 4 × $2.19 = $8.76. (Order #1002)
+Customer CUST_4: I'd like 2 Cheddar Cheese 250g.
+Clerk: That's 2 × $4.49 = $8.98. (Order #1002)
+Customer CUST_4: I'd like 0.75 kg Fish Fillets.
+Clerk: That's 0.75 × $10.99 = $8.24. (Order #1003)
+Customer CUST_4: I'd like 3 Spaghetti 500g.
+Clerk: That's 3 × $1.79 = $5.37. (Order #1003)
+Customer CUST_1: I'd like 1.0 kg Fish Fillets.
+Clerk: That's 1.0 × $10.99 = $10.99. (Order #1004)
+Customer CUST_2: I'd like 2 White Rice 1kg.
+Clerk: That's 2 × $3.99 = $7.98. (Order #1005)
+Customer CUST_2: I'd like 1 Apple Juice 1L.
+Clerk: That's 1 × $2.79 = $2.79. (Order #1005)
+Customer CUST_3: I'd like 2 Frozen Pizza.
+Clerk: That's 2 × $5.99 = $11.98. (Order #1006)
+Customer CUST_3: I'd like 1 Bagels (6 pack).
+Clerk: That's 1 × $3.49 = $3.49. (Order #1006)
+Customer CUST_3: I'd like 4 Croissants (4 pack).
+Clerk: That's 4 × $3.99 = $15.96. (Order #1006)
+Customer CUST_3: I'd like 1 Tomato Ketchup 500ml.
+Clerk: That's 1 × $2.49 = $2.49. (Order #1007)
+Customer CUST_3: I'd like 1 Tortilla Chips 200g.
+Clerk: That's 1 × $2.29 = $2.29. (Order #1007)
+Customer CUST_3: I'd like to return 1 Pasta 500g from #1007.
+Clerk: Processed return of 1 Pasta 500g for #1007.
+Customer CUST_5: I'd like 4 Dishwashing Liquid 500ml.
+Clerk: That's 4 × $2.49 = $9.96. (Order #1008)
+Customer CUST_5: I'd like 1.5 kg Fish Fillets.
+Clerk: That's 1.5 × $10.99 = $16.48. (Order #1008)
+Customer CUST_5: I'd like 3 Toilet Paper (12 rolls).
+Clerk: That's 3 × $6.99 = $20.97. (Order #1008)
+Customer CUST_4: I'd like 1 Popcorn 100g.
+Clerk: That's 1 × $1.79 = $1.79. (Order #1009)
+Customer CUST_4: I'd like 2.0 kg Broccoli.
+Clerk: That's 2.0 × $2.79 = $5.58. (Order #1009)
+Customer CUST_3: Add 2 Large Eggs (12 pack) to #1007.
+Clerk: Added 2 × $3.99 = $7.98 to #1007.
+Customer CUST_1: Add 1 All-Purpose Flour 1kg to #1004.
+Clerk: Added 1 × $2.49 = $2.49 to #1004.
+Customer CUST_4: Add 1 Canned Beans 400g to #1009.
+Clerk: Added 1 × $0.99 = $0.99 to #1009.
+Customer CUST_5: Add 1 Tomato Ketchup 500ml to #1008.
+Clerk: Added 1 × $2.49 = $2.49 to #1008.
+Customer CUST_3: I'd like 2.0 kg Bananas.
+Clerk: That's 2.0 × $1.29 = $2.58. (Order #1010)
+Customer CUST_3: I'd like 1 Spaghetti 500g.
+Clerk: That's 1 × $1.79 = $1.79. (Order #1010)
+Customer CUST_3: I'd like 3 Bagels (6 pack).
+Clerk: That's 3 × $3.49 = $10.47. (Order #1010)
+Customer CUST_4: Add 1 Spaghetti 500g to #1009.
+Clerk: Added 1 × $1.79 = $1.79 to #1009.
+Customer CUST_2: Add 1.0 kg Potatoes to #1005.
+Clerk: Added 1.0 × $1.79 = $1.79 to #1005.
+Customer CUST_3: Add 2 Cola 2L to #1010.
+Clerk: Added 2 × $2.49 = $4.98 to #1010.
+Customer CUST_4: I'd like 2 Sparkling Water 1L.
+Clerk: That's 2 × $1.19 = $2.38. (Order #1011)
+Customer CUST_1: I'd like 1 Bagels (6 pack).
+Clerk: That's 1 × $3.49 = $3.49. (Order #1012)
+Customer CUST_1: I'd like 1.5 kg Ground Beef.
+Clerk: That's 1.5 × $9.49 = $14.23. (Order #1012)
+Customer CUST_2: I'd like 0.75 kg Chicken Breast (boneless).
+Clerk: That's 0.75 × $8.99 = $6.74. (Order #1013)
+Customer CUST_2: I'd like 1 White Bread Loaf.
+Clerk: That's 1 × $2.19 = $2.19. (Order #1013)
+Customer CUST_2: I'd like 3 Apple Juice 1L.
+Clerk: That's 3 × $2.79 = $8.37. (Order #1013)
+Customer CUST_3: I'd like 1 Large Eggs (12 pack).
+Clerk: That's 1 × $3.99 = $3.99. (Order #1014)
+Customer CUST_3: Add 1 White Bread Loaf to #1014.
+Clerk: Added 1 × $2.19 = $2.19 to #1014.
+Customer CUST_4: I'd like 2.0 kg Fish Fillets.
+Clerk: That's 2.0 × $10.99 = $21.98. (Order #1015)
+Customer CUST_4: I'd like 4 Frozen Pizza.
+Clerk: That's 4 × $5.99 = $23.96. (Order #1015)
+Customer CUST_3: Remove 1 Pasta 500g from #1014.
+Clerk: Removed 1 Pasta 500g from #1014.
+Customer CUST_1: Add 3 Toilet Paper (12 rolls) to #1012.
+Clerk: Added 3 × $6.99 = $20.97 to #1012.
+Customer CUST_2: Add 3 Croissants (4 pack) to #1013.
+Clerk: Added 3 × $3.99 = $11.97 to #1013.
+Customer CUST_3: I'd like 1.5 kg Chicken Breast (boneless).
+Clerk: That's 1.5 × $8.99 = $13.48. (Order #1016)
+Customer CUST_3: I'd like 4 Black Tea (100 bags).
+Clerk: That's 4 × $4.49 = $17.96. (Order #1016)
+Customer CUST_3: I'd like 1 Plain Yogurt 500g.
+Clerk: That's 1 × $3.29 = $3.29. (Order #1016)
+Clerk: Order #1016 charged $2.77.
+Customer CUST_3: I'd like 3 Black Tea (100 bags).
+Clerk: That's 3 × $4.49 = $13.47. (Order #1017)
+Customer CUST_2: Add 1.0 kg Tomatoes to #1013.
+Clerk: Added 1.0 × $2.99 = $2.99 to #1013.
+Customer CUST_3: Add 2 Lemon Soda 2L to #1017.
+Clerk: Added 2 × $2.39 = $4.78 to #1017.
+Customer CUST_3: Add 1.5 kg Carrots to #1017.
+Clerk: Added 1.5 × $1.39 = $2.08 to #1017.
+Customer CUST_5: I'd like 1.5 kg Broccoli.
+Clerk: That's 1.5 × $2.79 = $4.19. (Order #1018)
+Customer CUST_1: I'd like 2 Skim Milk 1L.
+Clerk: That's 2 × $2.49 = $4.98. (Order #1019)
+Customer CUST_1: I'd like 4 White Rice 1kg.
+Clerk: That's 4 × $3.99 = $15.96. (Order #1020)
+Customer CUST_1: I'd like 1.0 kg Oranges.
+Clerk: That's 1.0 × $2.29 = $2.29. (Order #1020)
+Customer CUST_1: I'd like 1.0 kg Onions.
+Clerk: That's 1.0 × $1.59 = $1.59. (Order #1020)
+Customer CUST_1: I'd like 3 Bottled Water 1.5L.
+Clerk: That's 3 × $0.89 = $2.67. (Order #1021)
+Customer CUST_1: I'd like 1 Tortilla Chips 200g.
+Clerk: That's 1 × $2.29 = $2.29. (Order #1021)
+Customer CUST_1: I'd like 3 Bottled Water 1.5L.
+Clerk: That's 3 × $0.89 = $2.67. (Order #1021)
+Customer CUST_5: I'd like 1 Greek Yogurt 500g.
+Clerk: That's 1 × $4.99 = $4.99. (Order #1022)
+Customer CUST_5: I'd like 1.25 kg Fish Fillets.
+Clerk: That's 1.25 × $10.99 = $13.74. (Order #1022)
+Customer CUST_5: I'd like 1.25 kg Tomatoes.
+Clerk: That's 1.25 × $2.99 = $3.74. (Order #1022)
+
+Return JSON array now:
+
+---OUTPUT---
+[{"customer_id": "CUST_4", "average_order_value": 17.53}, {"customer_id": "CUST_1", "average_order_value": 16.93}, {"customer_id": "CUST_2", "average_order_value": 22.41}, {"customer_id": "CUST_3", "average_order_value": 20.88}, {"customer_id": "CUST_5", "average_order_value": 25.52}]
