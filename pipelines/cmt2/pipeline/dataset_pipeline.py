@@ -206,10 +206,13 @@ def validate_records(
             connection.close()
 
         expected = record.get("answer")
+        if not isinstance(expected, dict):
+            expected = record.get("ground_truth_table")
         answer_match = not isinstance(expected, dict) or answer_signature(expected) == answer_signature(actual_answer)
         detail.update({
             "ok": bool(answer_match),
             "answer_match": bool(answer_match),
+            "answer_checked": isinstance(expected, dict),
             "row_count": int(len(result)),
             "column_count": int(result.shape[1]),
             "result_signature": answer_signature(actual_answer),

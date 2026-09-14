@@ -102,6 +102,10 @@ experiment. New generated runs, model outputs, notebooks, and result trees
 belong under `artifacts/runs/` and remain ignored. Compact synthetic fixtures
 from `naman_syn_data` are also retained as examples and provenance.
 
+The [verification record](docs/verification.md) distinguishes release integrity,
+SQL/answer checks, and the workflows actually tested. Historical ground truth
+includes known unresolved records and answer mismatches.
+
 Continue with the [KT runbook](docs/kt-runbook.md), the
 [CMT2 guide](pipelines/cmt2/README.md), and the
 [repository map](docs/repository-map.md).

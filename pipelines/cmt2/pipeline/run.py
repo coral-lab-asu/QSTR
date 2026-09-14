@@ -32,7 +32,7 @@ def _add_generation_args(parser: argparse.ArgumentParser) -> None:
     )
     parser.add_argument(
         "--matches-glob",
-        default=str(CMT2_ROOT / "Cricket_tables/*.csv"),
+        default=str(REPO_ROOT / "data/Cricket_tables/*.csv"),
         help="Glob for source match CSV files.",
     )
     parser.add_argument(

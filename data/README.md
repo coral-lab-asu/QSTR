@@ -11,7 +11,7 @@ obtaining the original authors' workstation.
 | --- | --- | ---: |
 | `Cricket_tables/*.csv` | Ball-by-ball source tables | 638 tables / 150,666 rows |
 | `data_manual_template/template_q_param_cricket_pk.py` | Hand-authored seed queries with primary keys | 121 templates |
-| `data_manual_template/cricket_sql_question_templates_1000.csv` | Auxiliary diversity prompts used during LLM expansion | 1,000 prompts |
+| `data_manual_template/cricket_sql_question_templates_1000.csv` | Surviving auxiliary diversity bank; exact historical input unverified | 1,000 prompts |
 | `data_final/test_generated_sql_nl.json` | Curated queries generated from the seed layer | 4,256 queries |
 | `data_final/test_generated_sql_nl.ground_truth.json` | Generated queries enriched with source-table paths and executed results | 4,256 records |
 | `MANIFEST.sha256` | SHA-256 checksum for every released data file | 642 entries |
@@ -46,10 +46,17 @@ python scripts/verify_cricket_release.py
 
 It checks every checksum, table count and schema, seed count, generated-record
 count, and source-table reference. Of the 4,256 ground-truth records, 4,239
-have a source table and stored execution result. The remaining 17 historical
+have a source table and stored execution result. This is a structural count,
+not a claim that all 4,239 answers pass current SQL re-execution. The verifier
+does not execute SQL. The remaining 17 historical
 records have both fields set to null and are retained for a transparent audit
 trail; downstream evaluation should exclude them unless they are repaired and
 revalidated.
+
+A full re-execution during the documentation audit passed 4,222 records,
+with 17 missing sources and 17 stored-answer mismatches. See the
+[verification record](../docs/verification.md) for reproduction commands and
+affected indices. The historical files remain unchanged.
 
 The generated query IDs are not globally unique: there are 3,709 distinct
 `item_id` values among 4,256 records. Consumers should use list position or

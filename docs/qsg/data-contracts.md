@@ -31,6 +31,18 @@ row order is undefined without a complete ordering and tied sort keys can be
 returned in either order. Column order and duplicate-row multiplicity remain
 significant.
 
+The published legacy dataset calls its answer field `ground_truth_table`;
+the validator accepts it as a fallback for `answer`. Reports set
+`answer_checked` to distinguish comparison with a stored result from SQL-only
+execution checks. Null source paths remain invalid. Validation compares
+result content, not ranking order or the natural-language question's meaning.
+Numbers are normalized to 12 decimal places for signatures.
+
+CMT2 row attribution is approximate. If its parser fails, generation keeps
+the executable query, uses the full table as context, and records
+`analysis.row_analysis_error`. Such records should not be used to claim
+exact supporting-row annotations.
+
 ## Deduplication
 
 Deduplication is scoped by source table. The preferred fingerprint is the

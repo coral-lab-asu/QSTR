@@ -12,6 +12,12 @@ The original SHAs and branch roles remain documented for reproducibility.
 
 ## Migration rules
 
+The cricket release under `data/` includes 638 tables, 121 seed templates,
+an auxiliary diversity bank, and the 4,256-query snapshot plus ground truth.
+See the [data card](../data/README.md) and
+[reproduction instructions](cricket-reproduction.md). New experiment outputs
+remain ignored under `artifacts/runs/`.
+
 - Prefer `src/` for reusable QSG functionality.
 - Prefer `pipelines/cmt2/pipeline/` for CMT2 record loading, validation, and
   deduplication.

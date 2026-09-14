@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent
 TEMPLATE_FILE = BASE_DIR / "template_q_param_cricket_pk.py"
 
 # Default directory of cricket CSV tables
-CRICKET_TABLE_DIR = BASE_DIR / "Cricket_tables"
+CRICKET_TABLE_DIR = BASE_DIR.parents[1] / "data" / "Cricket_tables"
 
 
 # ---------------------------------------------------------------------------
@@ -167,4 +167,3 @@ __all__ = [
     "run_sql_on_df",
     "pretty_json",
 ]
-

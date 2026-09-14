@@ -48,11 +48,30 @@ the provider, exact model/version, dependency lock, prompt configuration,
 temperature if configurable, timestamps, and response IDs in the run manifest.
 Never commit an API key or place it in a command argument.
 
-The exact historical post-generation curation inputs were not all retained:
-the old deduplication script depended on intermediate duplicate-result and
-zero/NaN reports. Therefore the checked-in 4,256-query file is the authoritative
-historical artifact, while the current CMT2 validation/deduplication flow is the
-reproducible process for new runs.
+The original CMT2 workspace retains duplicate-result and zero/NaN reports,
+but those intermediate reports are not included in this QSTR release.
+The 4,256 records match the item-ID sequence of CMT2's historical
+`test_generated_sql_nl_progress_5k_4_removed.json`; subsequent QSG edits changed
+SQL and some question text. This is not the 3,781-record CMT2 retained subset,
+and its historical selection should not be described as current validation.
+The checked-in files preserve the QSG snapshot; the current CMT2 flow provides
+validation and deduplication for new runs.
+
+The hosted command above writes generation/progress files, not the combined
+CMT2 run manifest. Preserve its configuration separately. To validate those
+new SQL candidates, supply the source CSV explicitly (the historical JSON
+container stores it outside individual records):
+
+```bash
+python -m pipelines.cmt2.pipeline.run validate \
+  --input artifacts/runs/cricket-query-bank/generated.json \
+  --csv 'data/Cricket_tables/Ball by Ball Commentary & Live Score - AFG vs AUS, 10th Match, Group B.csv' \
+  --report artifacts/runs/cricket-query-bank/validation.json
+```
+
+Without stored answers this checks SQL execution only. Review the report and
+pass the generated query bank through the combined command in step 4 to
+materialize answers and obtain valid-only deduplicated records.
 
 ## 3. Enrich the checked-in queries with cricket tables
 
@@ -101,10 +120,27 @@ checked-in curated query bank already stores those fields as JSON arrays.
 
 ## 5. Paper artifact checklist
 
+### Recheck the historical answers
+
+```bash
+python -m pipelines.cmt2.pipeline.run validate \
+  --input data/data_final/test_generated_sql_nl.ground_truth.json \
+  --report artifacts/runs/cricket-audit/validation.json
+```
+
+This command returns status 1 when any record fails. Use `--allow-invalid`
+only to collect diagnostics without a failing exit status. The validator
+compares `ground_truth_table` with SQL execution, preserving row multiplicity
+while ignoring row order. It does not establish that the SQL answers the
+natural-language question correctly. See the [verification record](verification.md)
+for the observed results and limits of testing.
+
 - Cite the exact QSTR commit and archive it with a persistent DOI/tag.
 - Report 638 tables, 150,666 table rows, 121 hand-authored seeds, and 4,256
   generated queries.
 - Report that 4,239 ground-truth records are resolved and 17 are unresolved.
+- Report current execution/answer validation separately from those structural
+  counts; do not equate a stored answer with a verified answer.
 - Preserve `data/MANIFEST.sha256` with the archived release.
 - Supply the missing cricket-table source URL, retrieval date, attribution,
   and license before making the artifact public.

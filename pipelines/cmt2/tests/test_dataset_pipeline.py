@@ -117,6 +117,14 @@ class DatasetPipelineTests(unittest.TestCase):
             self.assertEqual(1, mismatch_report["invalid_records"])
             self.assertFalse(mismatch_report["records"][0]["answer_match"])
 
+            legacy = dict(first_rows[0])
+            legacy["ground_truth_table"] = legacy.pop("answer")
+            legacy_report = validate_records([legacy])
+            self.assertEqual(1, legacy_report["valid_records"])
+            self.assertTrue(legacy_report["records"][0]["answer_checked"])
+            legacy["ground_truth_table"] = {"columns": ["total_runs"], "rows": [[999]]}
+            self.assertEqual(1, validate_records([legacy])["invalid_records"])
+
             kept, removed = deduplicate_records(first_rows)
             self.assertEqual(2, len(kept))
             self.assertEqual(1, len(removed))
