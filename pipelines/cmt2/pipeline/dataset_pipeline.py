@@ -102,6 +102,10 @@ def answer_signature(answer: Any) -> str:
         return ""
     columns = [_json_value(value) for value in (answer.get("columns") or [])]
     rows = [[_json_value(value) for value in row] for row in (answer.get("rows") or [])]
+    # SQL does not guarantee row order without a complete ORDER BY, and ties
+    # may still be returned in either order. Preserve duplicate rows while
+    # comparing the result as a multiset.
+    rows.sort(key=lambda row: json.dumps(row, sort_keys=True, separators=(",", ":"), ensure_ascii=False))
     payload = json.dumps({"columns": columns, "rows": rows}, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 

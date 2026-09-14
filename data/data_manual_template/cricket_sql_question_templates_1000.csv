@@ -1,0 +1,1001 @@
+template_id,category,question_template
+1,innings_overall,Compute the total team score for an innings (MAX(team_runs)).
+2,innings_overall,Compute total runs in an innings (SUM(runs)).
+3,innings_overall,Compute total runs off the bat in an innings (SUM(batsman_runs)).
+4,innings_overall,Compute implied extras in an innings (SUM(runs - batsman_runs)).
+5,innings_overall,Compute total balls in an innings (COUNT(*)).
+6,innings_overall,Compute total overs in an innings (COUNT(DISTINCT FLOOR(overs))).
+7,innings_overall,Compute run rate for an innings (SUM(runs) / (COUNT(*)/6.0)).
+8,innings_overall,Compute boundary balls in an innings (SUM(batsman_fours + batsman_sixes)).
+9,innings_overall,Compute total fours in an innings (SUM(batsman_fours)).
+10,innings_overall,Compute total sixes in an innings (SUM(batsman_sixes)).
+11,innings_overall,Compute percentage of balls that are dots in an innings (AVG(CASE WHEN runs=0 THEN 1 ELSE 0 END)).
+12,innings_overall,"Compute percentage of balls that are boundaries in an innings (AVG(CASE WHEN batsman_runs IN (4,6) THEN 1 ELSE 0 END))."
+13,innings_overall,Compute runs per ball distribution for an innings (frequency of each runs value).
+14,innings_overall,Compute batsman_runs distribution for an innings (frequency of each batsman_runs value).
+15,innings_overall,Compute the highest runs scored on a single delivery in an innings (MAX(runs)).
+16,innings_overall,Compute the highest batsman_runs on a single delivery in an innings (MAX(batsman_runs)).
+17,innings_overall,Compute the number of deliveries with implied extras (COUNT where runs <> batsman_runs).
+18,innings_overall,Compute the number of deliveries where bowler_runs_given differs from runs (data validation).
+19,innings_overall,Compute the number of deliveries where batsman_fours=1 but batsman_runs<>4 (data validation).
+20,innings_overall,Compute the number of deliveries where batsman_sixes=1 but batsman_runs<>6 (data validation).
+21,over_level,List total runs scored in each over (GROUP BY FLOOR(overs)).
+22,over_level,List total batsman_runs in each over.
+23,over_level,List implied extras in each over.
+24,over_level,List boundary balls in each over.
+25,over_level,List dot balls in each over (runs=0).
+26,over_level,Find the highest scoring over in an innings (ORDER BY over_runs DESC LIMIT 1).
+27,over_level,Find the lowest scoring over in an innings (ORDER BY over_runs ASC LIMIT 1).
+28,over_level,Count maiden overs in an innings (overs where SUM(runs)=0).
+29,over_level,Count overs with at least one boundary ball (SUM(boundary_flag)>0).
+30,over_level,Count overs with at least two boundary balls.
+31,over_level,Count overs with at least one six.
+32,over_level,Count overs with at least one four.
+33,over_level,Count overs with at least {k} runs.
+34,over_level,Count overs with at most {k} runs.
+35,over_level,Find overs where implied extras exceed {k}.
+36,over_level,Find overs where dot-ball percentage is above {k}% (within-over dot rate).
+37,over_level,Find overs where boundary percentage is above {k}% (within-over boundary rate).
+38,over_level,Find overs where a wicket fell (wicket event inferred from bowler_wickets change).
+39,over_level,Find overs that contain both a wicket and at least one boundary.
+40,over_level,Compute runs scored in the last over (max over number).
+41,over_level,Compute runs scored in the first over.
+42,over_level,Compute cumulative team_runs at the end of each over (MAX(team_runs) per over).
+43,over_level,Compute the over number where team_runs first exceeds {k}.
+44,over_level,Compute the over number where team_runs reaches its maximum (end of innings marker).
+45,phase_analysis,Compute team total runs in powerplay overs {over_start}-{over_end}.
+46,phase_analysis,Compute team total runs in middle overs {over_start}-{over_end}.
+47,phase_analysis,Compute team total runs in death overs {over_start}-{over_end}.
+48,phase_analysis,Compute team run rate in powerplay overs {over_start}-{over_end}.
+49,phase_analysis,Compute team run rate in death overs {over_start}-{over_end}.
+50,phase_analysis,Compute team dot-ball percentage in powerplay overs {over_start}-{over_end}.
+51,phase_analysis,Compute team boundary-ball percentage in death overs {over_start}-{over_end}.
+52,phase_analysis,Compute total fours in powerplay overs {over_start}-{over_end}.
+53,phase_analysis,Compute total sixes in death overs {over_start}-{over_end}.
+54,phase_analysis,Compute implied extras in death overs {over_start}-{over_end}.
+55,phase_analysis,Compute wickets taken in powerplay overs {over_start}-{over_end} (wicket event inferred).
+56,phase_analysis,Compute wickets taken in death overs {over_start}-{over_end} (wicket event inferred).
+57,phase_analysis,Compare run rates across phases (powerplay vs middle vs death) for an innings.
+58,phase_analysis,Identify which phase has the highest boundary percentage for an innings.
+59,phase_analysis,Identify which phase has the highest dot-ball percentage for an innings.
+60,batsman_agg,Compute batsman total runs (SUM(batsman_runs)) for each batsman (GROUP BY batsman).
+61,batsman_agg,Compute total runs (SUM(batsman_runs)) for {batsman}.
+62,batsman_agg,Compute batsman balls faced (COUNT(*)) for each batsman (GROUP BY batsman).
+63,batsman_agg,Compute balls faced (COUNT(*)) for {batsman}.
+64,batsman_agg,Compute batsman strike rate (100*SUM(batsman_runs)/COUNT(*)) for each batsman (GROUP BY batsman).
+65,batsman_agg,Compute strike rate (100*SUM(batsman_runs)/COUNT(*)) for {batsman}.
+66,batsman_agg,Compute batsman fours hit (SUM(batsman_fours)) for each batsman (GROUP BY batsman).
+67,batsman_agg,Compute fours hit (SUM(batsman_fours)) for {batsman}.
+68,batsman_agg,Compute batsman sixes hit (SUM(batsman_sixes)) for each batsman (GROUP BY batsman).
+69,batsman_agg,Compute sixes hit (SUM(batsman_sixes)) for {batsman}.
+70,batsman_agg,Compute batsman boundary balls (SUM(batsman_fours + batsman_sixes)) for each batsman (GROUP BY batsman).
+71,batsman_agg,Compute boundary balls (SUM(batsman_fours + batsman_sixes)) for {batsman}.
+72,batsman_agg,Compute batsman dot balls faced (SUM(CASE WHEN batsman_runs=0 THEN 1 ELSE 0 END)) for each batsman (GROUP BY batsman).
+73,batsman_agg,Compute dot balls faced (SUM(CASE WHEN batsman_runs=0 THEN 1 ELSE 0 END)) for {batsman}.
+74,batsman_agg,Compute batsman singles (SUM(CASE WHEN batsman_runs=1 THEN 1 ELSE 0 END)) for each batsman (GROUP BY batsman).
+75,batsman_agg,Compute singles (SUM(CASE WHEN batsman_runs=1 THEN 1 ELSE 0 END)) for {batsman}.
+76,batsman_agg,Compute batsman twos (SUM(CASE WHEN batsman_runs=2 THEN 1 ELSE 0 END)) for each batsman (GROUP BY batsman).
+77,batsman_agg,Compute twos (SUM(CASE WHEN batsman_runs=2 THEN 1 ELSE 0 END)) for {batsman}.
+78,batsman_agg,Compute batsman threes (SUM(CASE WHEN batsman_runs=3 THEN 1 ELSE 0 END)) for each batsman (GROUP BY batsman).
+79,batsman_agg,Compute threes (SUM(CASE WHEN batsman_runs=3 THEN 1 ELSE 0 END)) for {batsman}.
+80,batsman_agg,Compute batsman average runs per ball (AVG(batsman_runs)) for each batsman (GROUP BY batsman).
+81,batsman_agg,Compute average runs per ball (AVG(batsman_runs)) for {batsman}.
+82,batsman_agg,Compute batsman implied extra benefit (SUM(runs - batsman_runs)) while on strike for each batsman (GROUP BY batsman).
+83,batsman_agg,Compute implied extra benefit (SUM(runs - batsman_runs)) while on strike for {batsman}.
+84,batsman_patterns,Rank batsmen by total runs in an innings.
+85,batsman_patterns,Return the top {k} batsmen by total runs.
+86,batsman_patterns,Return the top {k} batsmen by strike rate with at least {min_balls} balls faced.
+87,batsman_patterns,Return batsmen with strike rate above {k} and at least {min_balls} balls faced.
+88,batsman_patterns,Return batsmen with dot-ball percentage above {k}% and at least {min_balls} balls faced.
+89,batsman_patterns,Return batsmen with boundary percentage above {k}% and at least {min_balls} balls faced.
+90,batsman_patterns,Find the batsman with the most sixes in an innings.
+91,batsman_patterns,Find the batsman with the most fours in an innings.
+92,batsman_patterns,Find the batsman with the most dot balls faced in an innings.
+93,batsman_patterns,Compute each batsman’s run contribution percentage of the innings total.
+94,batsman_patterns,Compute each batsman’s boundary-run contribution percentage (runs from 4s and 6s / batsman runs).
+95,batsman_patterns,Compute each batsman’s runs in overs {over_start}-{over_end}.
+96,batsman_patterns,Compute each batsman’s strike rate in overs {over_start}-{over_end}.
+97,batsman_patterns,Compute {batsman}’s runs by over number (GROUP BY FLOOR(overs)).
+98,batsman_patterns,Compute {batsman}’s boundary count by over number.
+99,batsman_patterns,Find {batsman}’s highest scoring over (max batsman_runs in an over).
+100,batsman_patterns,Find the longest consecutive dot-ball streak faced by {batsman}.
+101,batsman_patterns,Find the longest consecutive boundary streak by {batsman}.
+102,batsman_patterns,Compute {batsman}’s fastest time to {k} runs (fewest balls to reach cumulative batsman_runs >= {k}).
+103,batsman_patterns,Compute {batsman}’s runs in the last {window_balls} balls faced.
+104,bowler_agg,Compute bowler balls bowled (COUNT(*)) for each bowler (GROUP BY bowler).
+105,bowler_agg,Compute balls bowled (COUNT(*)) for {bowler}.
+106,bowler_agg,Compute bowler runs conceded (SUM(bowler_runs_given)) for each bowler (GROUP BY bowler).
+107,bowler_agg,Compute runs conceded (SUM(bowler_runs_given)) for {bowler}.
+108,bowler_agg,Compute bowler economy rate (SUM(bowler_runs_given)/(COUNT(*)/6.0)) for each bowler (GROUP BY bowler).
+109,bowler_agg,Compute economy rate (SUM(bowler_runs_given)/(COUNT(*)/6.0)) for {bowler}.
+110,bowler_agg,Compute bowler dot balls (SUM(CASE WHEN runs=0 THEN 1 ELSE 0 END)) for each bowler (GROUP BY bowler).
+111,bowler_agg,Compute dot balls (SUM(CASE WHEN runs=0 THEN 1 ELSE 0 END)) for {bowler}.
+112,bowler_agg,Compute bowler boundary balls conceded (SUM(batsman_fours + batsman_sixes)) for each bowler (GROUP BY bowler).
+113,bowler_agg,Compute boundary balls conceded (SUM(batsman_fours + batsman_sixes)) for {bowler}.
+114,bowler_agg,Compute bowler fours conceded (SUM(batsman_fours)) for each bowler (GROUP BY bowler).
+115,bowler_agg,Compute fours conceded (SUM(batsman_fours)) for {bowler}.
+116,bowler_agg,Compute bowler sixes conceded (SUM(batsman_sixes)) for each bowler (GROUP BY bowler).
+117,bowler_agg,Compute sixes conceded (SUM(batsman_sixes)) for {bowler}.
+118,bowler_agg,Compute bowler implied extras conceded (SUM(runs - batsman_runs)) for each bowler (GROUP BY bowler).
+119,bowler_agg,Compute implied extras conceded (SUM(runs - batsman_runs)) for {bowler}.
+120,bowler_agg,Compute bowler wickets taken (wicket events inferred from bowler_wickets change) for each bowler (GROUP BY bowler).
+121,bowler_agg,Compute wickets taken (wicket events inferred from bowler_wickets change) for {bowler}.
+122,bowler_agg,Compute bowler bowling strike rate (COUNT(*)/wickets) for each bowler (GROUP BY bowler).
+123,bowler_agg,Compute bowling strike rate (COUNT(*)/wickets) for {bowler}.
+124,bowler_agg,Compute bowler bowling average (runs/wickets) for each bowler (GROUP BY bowler).
+125,bowler_agg,Compute bowling average (runs/wickets) for {bowler}.
+126,bowler_patterns,Rank bowlers by wickets taken in an innings.
+127,bowler_patterns,Return the top {k} bowlers by wickets taken.
+128,bowler_patterns,Return the top {k} bowlers by economy rate with at least {min_overs} overs bowled.
+129,bowler_patterns,Return bowlers with economy rate below {k} and at least {min_overs} overs bowled.
+130,bowler_patterns,Return bowlers with dot-ball percentage above {k}% and at least {min_overs} overs bowled.
+131,bowler_patterns,Find the bowler with the most dot balls in an innings.
+132,bowler_patterns,Find the bowler who conceded the most sixes in an innings.
+133,bowler_patterns,Find the bowler who conceded the most fours in an innings.
+134,bowler_patterns,Compute each bowler’s share of team wickets in an innings.
+135,bowler_patterns,Compute each bowler’s share of runs conceded in an innings.
+136,bowler_patterns,Compute each bowler’s runs conceded in overs {over_start}-{over_end}.
+137,bowler_patterns,Compute each bowler’s economy rate in overs {over_start}-{over_end}.
+138,bowler_patterns,Find each bowler’s most expensive over (max runs conceded in a single over).
+139,bowler_patterns,Find each bowler’s best over (min runs conceded in a single over).
+140,bowler_patterns,Count maiden overs per bowler.
+141,bowler_patterns,Find the longest consecutive dot-ball streak bowled by {bowler}.
+142,bowler_patterns,Find {bowler}’s worst {window_balls}-ball spell by runs conceded (max in any sliding window).
+143,head_to_head,"Compute runs scored by each batsman against each bowler (GROUP BY batsman, bowler)."
+144,head_to_head,Compute balls faced by each batsman against each bowler.
+145,head_to_head,Compute strike rate for each batsman-bowler pair.
+146,head_to_head,Compute dot-ball percentage for each batsman-bowler pair.
+147,head_to_head,Compute boundary percentage for each batsman-bowler pair.
+148,head_to_head,Return the top {k} batsman-bowler pairs by runs (min {min_balls} balls).
+149,head_to_head,Return the top {k} batsman-bowler pairs by strike rate (min {min_balls} balls).
+150,head_to_head,Return the top {k} batsman-bowler pairs by dot-ball percentage (min {min_balls} balls).
+151,head_to_head,Return the top {k} batsman-bowler pairs by boundary percentage (min {min_balls} balls).
+152,head_to_head,Compute runs scored by {batsman} against each bowler.
+153,head_to_head,Compute runs conceded by {bowler} to each batsman.
+154,head_to_head,"Compute {batsman} vs {bowler}: runs, balls, strike rate, boundaries, dots."
+155,head_to_head,Find which bowler {batsman} scores fastest against (min balls threshold).
+156,head_to_head,Find which bowler {batsman} scores slowest against (min balls threshold).
+157,head_to_head,Find which batsman scores fastest against {bowler} (min balls threshold).
+158,head_to_head,Find which batsman scores slowest against {bowler} (min balls threshold).
+159,windows_streaks,Compute rolling {window_balls}-ball runs for the innings and return the maximum rolling sum.
+160,windows_streaks,Compute rolling {window_balls}-ball runs for the innings and return the minimum rolling sum.
+161,windows_streaks,Identify the {window_balls}-ball window with the highest runs (start over/ball).
+162,windows_streaks,Identify the {window_balls}-ball window with the lowest runs (start over/ball).
+163,windows_streaks,Compute rolling {window_overs}-over runs and return the maximum rolling sum.
+164,windows_streaks,Compute rolling {window_overs}-over runs and return the minimum rolling sum.
+165,windows_streaks,Identify the {window_overs}-over span with the highest run rate.
+166,windows_streaks,Identify the {window_overs}-over span with the lowest run rate.
+167,windows_streaks,Compute rolling {window_balls}-ball runs for each batsman (in batting order) and return each batsman’s max window.
+168,windows_streaks,Compute rolling {window_balls}-ball runs conceded for each bowler (in bowling order) and return each bowler’s max window.
+169,windows_streaks,Compute the longest consecutive dot-ball streak in an innings (runs=0) using row_number gaps.
+170,windows_streaks,"Compute the longest consecutive boundary-ball streak in an innings (batsman_runs IN (4,6))."
+171,windows_streaks,Compute the longest consecutive scoring-ball streak in an innings (runs>0).
+172,windows_streaks,Compute the longest consecutive dot-ball streak for each batsman.
+173,windows_streaks,Compute the longest consecutive dot-ball streak for each bowler.
+174,windows_streaks,Compute the largest single-ball jump in team_runs (team_runs - LAG(team_runs)).
+175,windows_streaks,"Compute the biggest 2-over acceleration (over_runs - LAG(over_runs,2))."
+176,windows_streaks,Compute the biggest over-on-over run increase (over_runs - LAG(over_runs)).
+177,windows_streaks,Compute the biggest over-on-over run decrease (over_runs - LAG(over_runs)).
+178,windows_streaks,Compute the overs where momentum swings: over_runs differs from previous by at least {k}.
+179,commentary_text,Count deliveries where commentary contains the term '{term}'.
+180,commentary_text,Count overs where any delivery commentary contains '{term}'.
+181,commentary_text,"List deliveries (overs, bowler, batsman, runs) where commentary contains '{term}'."
+182,commentary_text,Return the top {k} most frequent commentary strings.
+183,commentary_text,Return the top {k} most frequent words in commentary (tokenize with SQL string functions).
+184,commentary_text,Find deliveries where commentary suggests a SIX but batsman_runs is not 6 (text/data mismatch).
+185,commentary_text,Find deliveries where commentary suggests a FOUR but batsman_runs is not 4 (text/data mismatch).
+186,commentary_text,Find deliveries where commentary suggests OUT but bowler_wickets did not change (text/data mismatch).
+187,commentary_text,Compute average commentary length per over (AVG(LENGTH(commentary))).
+188,commentary_text,Compute average commentary length per bowler.
+189,commentary_text,Compute average commentary length per batsman.
+190,commentary_text,Find the first over where commentary contains '{term}'.
+191,commentary_text,Find the last over where commentary contains '{term}'.
+192,data_quality,Detect overs that do not have exactly 6 deliveries (GROUP BY FLOOR(overs) HAVING COUNT(*)<>6).
+193,data_quality,Detect innings segments where team_runs decreases compared to previous ball (team_runs < LAG(team_runs)).
+194,data_quality,Detect deliveries where runs < 0 or batsman_runs < 0 (invalid values).
+195,data_quality,Detect deliveries where batsman_runs > runs (invalid).
+196,data_quality,Detect deliveries where batsman_fours=1 and batsman_sixes=1 (invalid).
+197,data_quality,"Detect duplicate deliveries by (overs, bowler, batsman, team_runs)."
+198,data_quality,Count NULL values per column.
+199,data_quality,Detect bowlers whose bowler_bowls_done does not increase by 1 per delivery (by bowler sequence).
+200,data_quality,Detect batsmen whose batsman_bowls_faced does not increase by 1 per delivery (by batsman sequence).
+201,data_quality,Validate that MAX(team_runs) equals SUM(runs) for each innings (if innings id exists; otherwise by reset detection).
+202,data_quality,Identify probable innings boundaries where team_runs resets to a smaller value.
+203,data_quality,Identify overs where bowler changes within the over (should not happen in standard cricket).
+204,combinatorial_templates,Compute dot balls by over on boundary balls only and sort highest first.
+205,combinatorial_templates,Compute total runs by batsman on boundary balls only and sort lowest first.
+206,combinatorial_templates,Compute fours by batsman where implied extras > 0 and sort lowest first.
+207,combinatorial_templates,Compute bat runs by batsman vs bowler in the final {window_overs} overs and sort highest first.
+208,combinatorial_templates,Compute sixes by bowler where batsman is {batsman} and sort highest first.
+209,combinatorial_templates,Compute max ball runs by batsman on dot balls only and sort lowest first.
+210,combinatorial_templates,Compute implied extras by over on boundary balls only and sort lowest first.
+211,combinatorial_templates,Compute bat runs by batsman vs bowler where implied extras > 0 and sort highest first.
+212,combinatorial_templates,Compute avg bat runs/ball by batsman where implied extras > 0 and sort lowest first.
+213,combinatorial_templates,Compute avg bat runs/ball by bowler and over where commentary contains '{term}' and sort highest first.
+214,combinatorial_templates,Compute implied extras by bowler and over on dot balls only and sort highest first.
+215,combinatorial_templates,Compute implied extras by bowler and over on boundary balls only and sort highest first.
+216,combinatorial_templates,Compute total runs by batsman on dot balls only and sort highest first.
+217,combinatorial_templates,Compute avg bat runs/ball by bowler and over in overs {over_start}-{over_end} and sort highest first.
+218,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler on dot balls only and sort lowest first.
+219,combinatorial_templates,Compute dot balls by batsman and over on dot balls only and sort highest first.
+220,combinatorial_templates,Compute sixes by batsman in the final {window_overs} overs and sort lowest first.
+221,combinatorial_templates,Compute sixes by batsman in the final {window_overs} overs and sort highest first.
+222,combinatorial_templates,Compute fours by batsman and over on boundary balls only and sort lowest first.
+223,combinatorial_templates,Compute max ball runs by batsman vs bowler where batsman is {batsman} and sort highest first.
+224,combinatorial_templates,Compute max bat runs by batsman on non-boundary scoring balls and sort lowest first.
+225,combinatorial_templates,Compute max ball runs by batsman vs bowler on dot balls only and sort highest first.
+226,combinatorial_templates,Compute max ball runs by over where implied extras > 0 and sort highest first.
+227,combinatorial_templates,Compute bat runs by batsman vs bowler on dot balls only and sort highest first.
+228,combinatorial_templates,Compute max ball runs by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+229,combinatorial_templates,Compute sixes by bowler and over on boundary balls only and sort lowest first.
+230,combinatorial_templates,Compute avg bat runs/ball by batsman on boundary balls only and sort highest first.
+231,combinatorial_templates,Compute dot balls by batsman vs bowler on dot balls only and sort lowest first.
+232,combinatorial_templates,Compute max bat runs by batsman and over on dot balls only and sort lowest first.
+233,combinatorial_templates,Compute boundary balls by batsman vs bowler where bowler is {bowler} and sort highest first.
+234,combinatorial_templates,Compute bat runs by batsman where commentary contains '{term}' and sort lowest first.
+235,combinatorial_templates,Compute total runs by batsman and over on dot balls only and sort highest first.
+236,combinatorial_templates,Compute max bat runs by over on dot balls only and sort highest first.
+237,combinatorial_templates,Compute max bat runs by over where implied extras > 0 and sort highest first.
+238,combinatorial_templates,Compute max bat runs by over on dot balls only and sort lowest first.
+239,combinatorial_templates,Compute max bat runs by over where bowler is {bowler} and sort highest first.
+240,combinatorial_templates,Compute avg runs/ball by bowler where bowler is {bowler} and sort highest first.
+241,combinatorial_templates,Compute sixes by over in overs {over_start}-{over_end} and sort highest first.
+242,combinatorial_templates,Compute fours by batsman vs bowler in the final {window_overs} overs and sort highest first.
+243,combinatorial_templates,Compute sixes by batsman and over in the final {window_overs} overs and sort lowest first.
+244,combinatorial_templates,Compute total runs by batsman and over in the final {window_overs} overs and sort highest first.
+245,combinatorial_templates,Compute avg runs/ball by bowler and over on dot balls only and sort highest first.
+246,combinatorial_templates,Compute max ball runs by bowler where implied extras > 0 and sort highest first.
+247,combinatorial_templates,Compute total runs by batsman where batsman is {batsman} and sort highest first.
+248,combinatorial_templates,Compute dot balls by batsman vs bowler on dot balls only and sort highest first.
+249,combinatorial_templates,Compute total runs by bowler and over on non-boundary scoring balls and sort lowest first.
+250,combinatorial_templates,Compute avg bat runs/ball by batsman and over where implied extras > 0 and sort highest first.
+251,combinatorial_templates,Compute max bat runs by bowler on non-boundary scoring balls and sort lowest first.
+252,combinatorial_templates,Compute dot balls by batsman and over where commentary contains '{term}' and sort lowest first.
+253,combinatorial_templates,Compute sixes by batsman and over in overs {over_start}-{over_end} and sort highest first.
+254,combinatorial_templates,Compute max bat runs by bowler where commentary contains '{term}' and sort lowest first.
+255,combinatorial_templates,Compute max ball runs by bowler in overs {over_start}-{over_end} and sort lowest first.
+256,combinatorial_templates,Compute avg bat runs/ball by batsman where batsman is {batsman} and sort highest first.
+257,combinatorial_templates,Compute sixes by batsman and over where commentary contains '{term}' and sort lowest first.
+258,combinatorial_templates,Compute max bat runs by bowler and over in overs {over_start}-{over_end} and sort highest first.
+259,combinatorial_templates,Compute boundary balls by over where bowler is {bowler} and sort highest first.
+260,combinatorial_templates,Compute boundary balls by batsman on dot balls only and sort lowest first.
+261,combinatorial_templates,Compute implied extras by batsman and over on dot balls only and sort highest first.
+262,combinatorial_templates,Compute max ball runs by over in overs {over_start}-{over_end} and sort lowest first.
+263,combinatorial_templates,Compute dot balls by over where implied extras > 0 and sort lowest first.
+264,combinatorial_templates,Compute avg bat runs/ball by batsman and over where batsman is {batsman} and sort lowest first.
+265,combinatorial_templates,Compute total runs by bowler and over where commentary contains '{term}' and sort lowest first.
+266,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler where batsman is {batsman} and sort lowest first.
+267,combinatorial_templates,Compute fours by batsman vs bowler on dot balls only and sort lowest first.
+268,combinatorial_templates,Compute sixes by batsman and over where bowler is {bowler} and sort highest first.
+269,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where bowler is {bowler} and sort highest first.
+270,combinatorial_templates,Compute max bat runs by batsman vs bowler in the final {window_overs} overs and sort highest first.
+271,combinatorial_templates,Compute sixes by batsman where bowler is {bowler} and sort highest first.
+272,combinatorial_templates,Compute fours by batsman and over on dot balls only and sort highest first.
+273,combinatorial_templates,Compute boundary balls by batsman vs bowler on non-boundary scoring balls and sort highest first.
+274,combinatorial_templates,Compute avg runs/ball by batsman and over on non-boundary scoring balls and sort highest first.
+275,combinatorial_templates,Compute implied extras by batsman and over where implied extras > 0 and sort lowest first.
+276,combinatorial_templates,Compute max ball runs by bowler on non-boundary scoring balls and sort lowest first.
+277,combinatorial_templates,Compute bat runs by batsman and over in the final {window_overs} overs and sort highest first.
+278,combinatorial_templates,Compute dot balls by bowler on boundary balls only and sort highest first.
+279,combinatorial_templates,Compute avg bat runs/ball by bowler and over on dot balls only and sort highest first.
+280,combinatorial_templates,Compute bat runs by over where batsman is {batsman} and sort highest first.
+281,combinatorial_templates,Compute max bat runs by over in the final {window_overs} overs and sort lowest first.
+282,combinatorial_templates,Compute bat runs by bowler and over on dot balls only and sort lowest first.
+283,combinatorial_templates,Compute fours by over where batsman is {batsman} and sort lowest first.
+284,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler in the final {window_overs} overs and sort highest first.
+285,combinatorial_templates,Compute fours by bowler and over where batsman is {batsman} and sort highest first.
+286,combinatorial_templates,Compute boundary balls by over on dot balls only and sort highest first.
+287,combinatorial_templates,Compute boundary balls by bowler and over in overs {over_start}-{over_end} and sort highest first.
+288,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where batsman is {batsman} and sort lowest first.
+289,combinatorial_templates,Compute avg bat runs/ball by over in overs {over_start}-{over_end} and sort highest first.
+290,combinatorial_templates,Compute avg bat runs/ball by batsman and over where bowler is {bowler} and sort lowest first.
+291,combinatorial_templates,Compute fours by bowler and over on non-boundary scoring balls and sort lowest first.
+292,combinatorial_templates,Compute avg runs/ball by bowler and over on non-boundary scoring balls and sort lowest first.
+293,combinatorial_templates,Compute sixes by bowler and over where commentary contains '{term}' and sort highest first.
+294,combinatorial_templates,Compute boundary balls by batsman vs bowler in the final {window_overs} overs and sort highest first.
+295,combinatorial_templates,Compute implied extras by bowler where bowler is {bowler} and sort lowest first.
+296,combinatorial_templates,Compute avg runs/ball by bowler and over in the final {window_overs} overs and sort lowest first.
+297,combinatorial_templates,Compute sixes by batsman vs bowler on dot balls only and sort lowest first.
+298,combinatorial_templates,Compute implied extras by batsman and over where implied extras > 0 and sort highest first.
+299,combinatorial_templates,Compute dot balls by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+300,combinatorial_templates,Compute boundary balls by batsman where bowler is {bowler} and sort lowest first.
+301,combinatorial_templates,Compute dot balls by over in the final {window_overs} overs and sort lowest first.
+302,combinatorial_templates,Compute total runs by batsman where implied extras > 0 and sort lowest first.
+303,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler on dot balls only and sort highest first.
+304,combinatorial_templates,Compute max bat runs by bowler and over where implied extras > 0 and sort highest first.
+305,combinatorial_templates,Compute max bat runs by batsman vs bowler where batsman is {batsman} and sort highest first.
+306,combinatorial_templates,Compute sixes by bowler and over where bowler is {bowler} and sort highest first.
+307,combinatorial_templates,Compute total runs by over on dot balls only and sort lowest first.
+308,combinatorial_templates,Compute max bat runs by over where commentary contains '{term}' and sort lowest first.
+309,combinatorial_templates,Compute boundary balls by bowler and over where bowler is {bowler} and sort lowest first.
+310,combinatorial_templates,Compute avg bat runs/ball by bowler and over where bowler is {bowler} and sort highest first.
+311,combinatorial_templates,Compute avg runs/ball by over where commentary contains '{term}' and sort lowest first.
+312,combinatorial_templates,Compute dot balls by over on boundary balls only and sort lowest first.
+313,combinatorial_templates,Compute max bat runs by batsman in overs {over_start}-{over_end} and sort highest first.
+314,combinatorial_templates,Compute boundary balls by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+315,combinatorial_templates,Compute avg bat runs/ball by bowler on boundary balls only and sort lowest first.
+316,combinatorial_templates,Compute total runs by bowler where implied extras > 0 and sort highest first.
+317,combinatorial_templates,Compute max ball runs by bowler where bowler is {bowler} and sort highest first.
+318,combinatorial_templates,Compute avg bat runs/ball by bowler in overs {over_start}-{over_end} and sort lowest first.
+319,combinatorial_templates,Compute max bat runs by batsman on non-boundary scoring balls and sort highest first.
+320,combinatorial_templates,Compute implied extras by batsman vs bowler on non-boundary scoring balls and sort highest first.
+321,combinatorial_templates,Compute avg bat runs/ball by bowler and over on non-boundary scoring balls and sort lowest first.
+322,combinatorial_templates,Compute boundary balls by bowler and over on boundary balls only and sort lowest first.
+323,combinatorial_templates,Compute boundary balls by batsman on boundary balls only and sort lowest first.
+324,combinatorial_templates,Compute bat runs by over on dot balls only and sort lowest first.
+325,combinatorial_templates,Compute avg runs/ball by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+326,combinatorial_templates,Compute bat runs by batsman on dot balls only and sort lowest first.
+327,combinatorial_templates,Compute avg runs/ball by batsman where implied extras > 0 and sort lowest first.
+328,combinatorial_templates,Compute fours by bowler and over on boundary balls only and sort highest first.
+329,combinatorial_templates,Compute dot balls by batsman on dot balls only and sort lowest first.
+330,combinatorial_templates,Compute total runs by batsman vs bowler where implied extras > 0 and sort lowest first.
+331,combinatorial_templates,Compute sixes by batsman where batsman is {batsman} and sort lowest first.
+332,combinatorial_templates,Compute avg runs/ball by over in the final {window_overs} overs and sort highest first.
+333,combinatorial_templates,Compute max bat runs by bowler where bowler is {bowler} and sort highest first.
+334,combinatorial_templates,Compute avg runs/ball by bowler where implied extras > 0 and sort lowest first.
+335,combinatorial_templates,Compute max ball runs by bowler where batsman is {batsman} and sort highest first.
+336,combinatorial_templates,Compute avg runs/ball by batsman where bowler is {bowler} and sort highest first.
+337,combinatorial_templates,Compute max ball runs by batsman vs bowler where implied extras > 0 and sort lowest first.
+338,combinatorial_templates,Compute avg bat runs/ball by over on non-boundary scoring balls and sort lowest first.
+339,combinatorial_templates,Compute dot balls by bowler where bowler is {bowler} and sort highest first.
+340,combinatorial_templates,Compute avg runs/ball by bowler and over where commentary contains '{term}' and sort lowest first.
+341,combinatorial_templates,Compute fours by batsman and over where batsman is {batsman} and sort lowest first.
+342,combinatorial_templates,Compute max ball runs by over where batsman is {batsman} and sort highest first.
+343,combinatorial_templates,Compute implied extras by bowler and over where bowler is {bowler} and sort lowest first.
+344,combinatorial_templates,Compute sixes by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+345,combinatorial_templates,Compute max ball runs by batsman vs bowler where bowler is {bowler} and sort highest first.
+346,combinatorial_templates,Compute max ball runs by batsman in overs {over_start}-{over_end} and sort highest first.
+347,combinatorial_templates,Compute boundary balls by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+348,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler on non-boundary scoring balls and sort highest first.
+349,combinatorial_templates,Compute sixes by batsman and over where implied extras > 0 and sort lowest first.
+350,combinatorial_templates,Compute total runs by batsman vs bowler in the final {window_overs} overs and sort highest first.
+351,combinatorial_templates,Compute dot balls by batsman vs bowler on non-boundary scoring balls and sort highest first.
+352,combinatorial_templates,Compute total runs by over on dot balls only and sort highest first.
+353,combinatorial_templates,Compute boundary balls by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+354,combinatorial_templates,Compute bat runs by batsman and over where batsman is {batsman} and sort lowest first.
+355,combinatorial_templates,Compute avg runs/ball by over where bowler is {bowler} and sort highest first.
+356,combinatorial_templates,Compute max ball runs by batsman and over on non-boundary scoring balls and sort highest first.
+357,combinatorial_templates,Compute sixes by batsman on boundary balls only and sort highest first.
+358,combinatorial_templates,Compute boundary balls by batsman and over in overs {over_start}-{over_end} and sort lowest first.
+359,combinatorial_templates,Compute bat runs by batsman vs bowler on non-boundary scoring balls and sort highest first.
+360,combinatorial_templates,Compute boundary balls by bowler and over where bowler is {bowler} and sort highest first.
+361,combinatorial_templates,Compute bat runs by batsman and over where commentary contains '{term}' and sort lowest first.
+362,combinatorial_templates,Compute fours by bowler and over on boundary balls only and sort lowest first.
+363,combinatorial_templates,Compute avg bat runs/ball by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+364,combinatorial_templates,Compute total runs by bowler where batsman is {batsman} and sort highest first.
+365,combinatorial_templates,Compute max bat runs by over in overs {over_start}-{over_end} and sort lowest first.
+366,combinatorial_templates,Compute max bat runs by over on non-boundary scoring balls and sort lowest first.
+367,combinatorial_templates,Compute avg bat runs/ball by over in the final {window_overs} overs and sort highest first.
+368,combinatorial_templates,Compute boundary balls by batsman and over where implied extras > 0 and sort highest first.
+369,combinatorial_templates,Compute implied extras by batsman and over where bowler is {bowler} and sort highest first.
+370,combinatorial_templates,Compute avg runs/ball by batsman where bowler is {bowler} and sort lowest first.
+371,combinatorial_templates,Compute avg runs/ball by batsman in overs {over_start}-{over_end} and sort highest first.
+372,combinatorial_templates,Compute total runs by bowler and over on dot balls only and sort highest first.
+373,combinatorial_templates,Compute implied extras by over where implied extras > 0 and sort lowest first.
+374,combinatorial_templates,Compute implied extras by bowler and over on boundary balls only and sort lowest first.
+375,combinatorial_templates,Compute implied extras by bowler on dot balls only and sort highest first.
+376,combinatorial_templates,Compute fours by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+377,combinatorial_templates,Compute total runs by batsman vs bowler on non-boundary scoring balls and sort highest first.
+378,combinatorial_templates,Compute total runs by bowler and over where implied extras > 0 and sort lowest first.
+379,combinatorial_templates,Compute fours by bowler and over in overs {over_start}-{over_end} and sort highest first.
+380,combinatorial_templates,Compute max ball runs by over where bowler is {bowler} and sort lowest first.
+381,combinatorial_templates,Compute avg runs/ball by batsman vs bowler on boundary balls only and sort lowest first.
+382,combinatorial_templates,Compute fours by batsman and over in overs {over_start}-{over_end} and sort lowest first.
+383,combinatorial_templates,Compute boundary balls by bowler and over where batsman is {batsman} and sort lowest first.
+384,combinatorial_templates,Compute fours by bowler and over on dot balls only and sort highest first.
+385,combinatorial_templates,Compute total runs by over on boundary balls only and sort highest first.
+386,combinatorial_templates,Compute avg runs/ball by batsman in overs {over_start}-{over_end} and sort lowest first.
+387,combinatorial_templates,Compute avg runs/ball by batsman and over in the final {window_overs} overs and sort highest first.
+388,combinatorial_templates,Compute sixes by bowler and over where implied extras > 0 and sort highest first.
+389,combinatorial_templates,Compute avg runs/ball by bowler on dot balls only and sort lowest first.
+390,combinatorial_templates,Compute bat runs by batsman on dot balls only and sort highest first.
+391,combinatorial_templates,Compute dot balls by bowler and over where commentary contains '{term}' and sort highest first.
+392,combinatorial_templates,Compute sixes by bowler and over on dot balls only and sort highest first.
+393,combinatorial_templates,Compute implied extras by batsman and over on boundary balls only and sort highest first.
+394,combinatorial_templates,Compute implied extras by batsman on non-boundary scoring balls and sort lowest first.
+395,combinatorial_templates,Compute bat runs by bowler and over on non-boundary scoring balls and sort lowest first.
+396,combinatorial_templates,Compute dot balls by batsman and over in overs {over_start}-{over_end} and sort lowest first.
+397,combinatorial_templates,Compute avg runs/ball by bowler on boundary balls only and sort highest first.
+398,combinatorial_templates,Compute implied extras by over where batsman is {batsman} and sort highest first.
+399,combinatorial_templates,Compute sixes by batsman and over on dot balls only and sort highest first.
+400,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+401,combinatorial_templates,Compute implied extras by batsman vs bowler where commentary contains '{term}' and sort highest first.
+402,combinatorial_templates,Compute max bat runs by bowler and over on non-boundary scoring balls and sort highest first.
+403,combinatorial_templates,Compute boundary balls by over on non-boundary scoring balls and sort highest first.
+404,combinatorial_templates,Compute implied extras by batsman vs bowler on dot balls only and sort lowest first.
+405,combinatorial_templates,Compute fours by over in overs {over_start}-{over_end} and sort lowest first.
+406,combinatorial_templates,Compute dot balls by over where commentary contains '{term}' and sort lowest first.
+407,combinatorial_templates,Compute dot balls by batsman where commentary contains '{term}' and sort highest first.
+408,combinatorial_templates,Compute avg runs/ball by over where bowler is {bowler} and sort lowest first.
+409,combinatorial_templates,Compute bat runs by over where commentary contains '{term}' and sort lowest first.
+410,combinatorial_templates,Compute max ball runs by batsman and over in overs {over_start}-{over_end} and sort lowest first.
+411,combinatorial_templates,Compute fours by batsman vs bowler where implied extras > 0 and sort lowest first.
+412,combinatorial_templates,Compute boundary balls by batsman and over where implied extras > 0 and sort lowest first.
+413,combinatorial_templates,Compute fours by over where batsman is {batsman} and sort highest first.
+414,combinatorial_templates,Compute avg runs/ball by bowler where implied extras > 0 and sort highest first.
+415,combinatorial_templates,Compute avg bat runs/ball by bowler and over on boundary balls only and sort lowest first.
+416,combinatorial_templates,Compute total runs by batsman vs bowler on dot balls only and sort lowest first.
+417,combinatorial_templates,Compute max bat runs by batsman on dot balls only and sort highest first.
+418,combinatorial_templates,Compute fours by batsman vs bowler on dot balls only and sort highest first.
+419,combinatorial_templates,Compute dot balls by bowler where bowler is {bowler} and sort lowest first.
+420,combinatorial_templates,Compute bat runs by batsman on boundary balls only and sort lowest first.
+421,combinatorial_templates,Compute total runs by bowler on dot balls only and sort lowest first.
+422,combinatorial_templates,Compute bat runs by batsman where batsman is {batsman} and sort highest first.
+423,combinatorial_templates,Compute total runs by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+424,combinatorial_templates,Compute fours by over in the final {window_overs} overs and sort lowest first.
+425,combinatorial_templates,Compute implied extras by over where commentary contains '{term}' and sort lowest first.
+426,combinatorial_templates,Compute max bat runs by batsman vs bowler where batsman is {batsman} and sort lowest first.
+427,combinatorial_templates,Compute implied extras by batsman and over where bowler is {bowler} and sort lowest first.
+428,combinatorial_templates,Compute dot balls by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+429,combinatorial_templates,Compute sixes by bowler and over in the final {window_overs} overs and sort lowest first.
+430,combinatorial_templates,Compute avg bat runs/ball by bowler where implied extras > 0 and sort lowest first.
+431,combinatorial_templates,Compute max bat runs by batsman where implied extras > 0 and sort highest first.
+432,combinatorial_templates,Compute avg runs/ball by batsman and over on boundary balls only and sort highest first.
+433,combinatorial_templates,Compute avg runs/ball by batsman where implied extras > 0 and sort highest first.
+434,combinatorial_templates,Compute fours by bowler where batsman is {batsman} and sort highest first.
+435,combinatorial_templates,Compute total runs by batsman and over on non-boundary scoring balls and sort highest first.
+436,combinatorial_templates,Compute max ball runs by batsman and over on boundary balls only and sort lowest first.
+437,combinatorial_templates,Compute avg bat runs/ball by batsman on boundary balls only and sort lowest first.
+438,combinatorial_templates,Compute dot balls by bowler and over on boundary balls only and sort highest first.
+439,combinatorial_templates,Compute total runs by batsman and over in the final {window_overs} overs and sort lowest first.
+440,combinatorial_templates,Compute bat runs by bowler on dot balls only and sort lowest first.
+441,combinatorial_templates,Compute fours by batsman where batsman is {batsman} and sort highest first.
+442,combinatorial_templates,Compute sixes by batsman in overs {over_start}-{over_end} and sort highest first.
+443,combinatorial_templates,Compute avg runs/ball by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+444,combinatorial_templates,Compute implied extras by bowler where batsman is {batsman} and sort lowest first.
+445,combinatorial_templates,Compute boundary balls by over in the final {window_overs} overs and sort highest first.
+446,combinatorial_templates,Compute avg runs/ball by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+447,combinatorial_templates,Compute dot balls by over in overs {over_start}-{over_end} and sort lowest first.
+448,combinatorial_templates,Compute bat runs by over where implied extras > 0 and sort highest first.
+449,combinatorial_templates,Compute bat runs by batsman vs bowler where batsman is {batsman} and sort highest first.
+450,combinatorial_templates,Compute sixes by batsman vs bowler where batsman is {batsman} and sort highest first.
+451,combinatorial_templates,Compute total runs by batsman and over on dot balls only and sort lowest first.
+452,combinatorial_templates,Compute avg runs/ball by bowler where batsman is {batsman} and sort lowest first.
+453,combinatorial_templates,Compute avg bat runs/ball by over where batsman is {batsman} and sort highest first.
+454,combinatorial_templates,Compute max ball runs by bowler and over in overs {over_start}-{over_end} and sort highest first.
+455,combinatorial_templates,Compute total runs by bowler in overs {over_start}-{over_end} and sort highest first.
+456,combinatorial_templates,Compute implied extras by batsman vs bowler where implied extras > 0 and sort highest first.
+457,combinatorial_templates,Compute implied extras by batsman where batsman is {batsman} and sort highest first.
+458,combinatorial_templates,Compute bat runs by batsman and over where implied extras > 0 and sort lowest first.
+459,combinatorial_templates,Compute max bat runs by bowler and over on boundary balls only and sort highest first.
+460,combinatorial_templates,Compute bat runs by over in the final {window_overs} overs and sort lowest first.
+461,combinatorial_templates,Compute sixes by batsman vs bowler where bowler is {bowler} and sort highest first.
+462,combinatorial_templates,Compute total runs by batsman where implied extras > 0 and sort highest first.
+463,combinatorial_templates,Compute sixes by batsman where commentary contains '{term}' and sort lowest first.
+464,combinatorial_templates,Compute implied extras by bowler and over where implied extras > 0 and sort highest first.
+465,combinatorial_templates,Compute fours by batsman where bowler is {bowler} and sort lowest first.
+466,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where implied extras > 0 and sort lowest first.
+467,combinatorial_templates,Compute max ball runs by batsman in the final {window_overs} overs and sort highest first.
+468,combinatorial_templates,Compute dot balls by batsman where batsman is {batsman} and sort highest first.
+469,combinatorial_templates,Compute boundary balls by bowler on dot balls only and sort lowest first.
+470,combinatorial_templates,Compute max bat runs by batsman and over on non-boundary scoring balls and sort highest first.
+471,combinatorial_templates,Compute fours by batsman where batsman is {batsman} and sort lowest first.
+472,combinatorial_templates,Compute total runs by bowler and over where commentary contains '{term}' and sort highest first.
+473,combinatorial_templates,Compute total runs by over where batsman is {batsman} and sort lowest first.
+474,combinatorial_templates,Compute avg runs/ball by bowler and over on boundary balls only and sort highest first.
+475,combinatorial_templates,Compute sixes by batsman and over on non-boundary scoring balls and sort highest first.
+476,combinatorial_templates,Compute avg runs/ball by batsman and over where commentary contains '{term}' and sort highest first.
+477,combinatorial_templates,Compute total runs by over on non-boundary scoring balls and sort highest first.
+478,combinatorial_templates,Compute total runs by bowler on dot balls only and sort highest first.
+479,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where commentary contains '{term}' and sort highest first.
+480,combinatorial_templates,Compute boundary balls by batsman on boundary balls only and sort highest first.
+481,combinatorial_templates,Compute avg runs/ball by bowler in overs {over_start}-{over_end} and sort highest first.
+482,combinatorial_templates,Compute implied extras by batsman on boundary balls only and sort highest first.
+483,combinatorial_templates,Compute dot balls by bowler and over where bowler is {bowler} and sort highest first.
+484,combinatorial_templates,Compute boundary balls by bowler where batsman is {batsman} and sort lowest first.
+485,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where batsman is {batsman} and sort highest first.
+486,combinatorial_templates,Compute bat runs by batsman where bowler is {bowler} and sort lowest first.
+487,combinatorial_templates,Compute bat runs by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+488,combinatorial_templates,Compute avg bat runs/ball by batsman and over where commentary contains '{term}' and sort highest first.
+489,combinatorial_templates,Compute avg bat runs/ball by over on boundary balls only and sort lowest first.
+490,combinatorial_templates,Compute dot balls by over where implied extras > 0 and sort highest first.
+491,combinatorial_templates,Compute bat runs by over on boundary balls only and sort lowest first.
+492,combinatorial_templates,Compute avg bat runs/ball by batsman and over on dot balls only and sort lowest first.
+493,combinatorial_templates,Compute total runs by bowler and over where batsman is {batsman} and sort highest first.
+494,combinatorial_templates,Compute avg runs/ball by bowler in the final {window_overs} overs and sort highest first.
+495,combinatorial_templates,Compute max ball runs by bowler and over on non-boundary scoring balls and sort highest first.
+496,combinatorial_templates,Compute total runs by over in overs {over_start}-{over_end} and sort lowest first.
+497,combinatorial_templates,Compute avg runs/ball by bowler and over in overs {over_start}-{over_end} and sort highest first.
+498,combinatorial_templates,Compute bat runs by batsman vs bowler where bowler is {bowler} and sort lowest first.
+499,combinatorial_templates,Compute total runs by bowler on non-boundary scoring balls and sort lowest first.
+500,combinatorial_templates,Compute boundary balls by over on boundary balls only and sort lowest first.
+501,combinatorial_templates,Compute fours by over on boundary balls only and sort lowest first.
+502,combinatorial_templates,Compute bat runs by bowler in the final {window_overs} overs and sort lowest first.
+503,combinatorial_templates,Compute total runs by bowler where commentary contains '{term}' and sort highest first.
+504,combinatorial_templates,Compute max ball runs by over where bowler is {bowler} and sort highest first.
+505,combinatorial_templates,Compute dot balls by batsman and over where bowler is {bowler} and sort lowest first.
+506,combinatorial_templates,Compute avg runs/ball by bowler and over on non-boundary scoring balls and sort highest first.
+507,combinatorial_templates,Compute implied extras by bowler on boundary balls only and sort lowest first.
+508,combinatorial_templates,Compute sixes by batsman on non-boundary scoring balls and sort highest first.
+509,combinatorial_templates,Compute bat runs by over in overs {over_start}-{over_end} and sort lowest first.
+510,combinatorial_templates,Compute sixes by batsman and over on non-boundary scoring balls and sort lowest first.
+511,combinatorial_templates,Compute max bat runs by batsman and over where bowler is {bowler} and sort lowest first.
+512,combinatorial_templates,Compute max bat runs by batsman vs bowler on dot balls only and sort lowest first.
+513,combinatorial_templates,Compute max ball runs by batsman vs bowler in the final {window_overs} overs and sort highest first.
+514,combinatorial_templates,Compute max ball runs by batsman on boundary balls only and sort lowest first.
+515,combinatorial_templates,Compute bat runs by over where batsman is {batsman} and sort lowest first.
+516,combinatorial_templates,Compute avg runs/ball by over on dot balls only and sort lowest first.
+517,combinatorial_templates,Compute max ball runs by batsman and over on boundary balls only and sort highest first.
+518,combinatorial_templates,Compute max ball runs by batsman vs bowler on non-boundary scoring balls and sort highest first.
+519,combinatorial_templates,Compute bat runs by bowler on non-boundary scoring balls and sort highest first.
+520,combinatorial_templates,Compute fours by over on dot balls only and sort highest first.
+521,combinatorial_templates,Compute max ball runs by bowler where bowler is {bowler} and sort lowest first.
+522,combinatorial_templates,Compute max ball runs by over where commentary contains '{term}' and sort lowest first.
+523,combinatorial_templates,Compute boundary balls by bowler where batsman is {batsman} and sort highest first.
+524,combinatorial_templates,Compute total runs by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+525,combinatorial_templates,Compute bat runs by bowler and over where batsman is {batsman} and sort highest first.
+526,combinatorial_templates,Compute bat runs by batsman where commentary contains '{term}' and sort highest first.
+527,combinatorial_templates,Compute fours by bowler and over where bowler is {bowler} and sort highest first.
+528,combinatorial_templates,Compute max ball runs by batsman on dot balls only and sort highest first.
+529,combinatorial_templates,Compute boundary balls by batsman vs bowler where bowler is {bowler} and sort lowest first.
+530,combinatorial_templates,Compute bat runs by over in overs {over_start}-{over_end} and sort highest first.
+531,combinatorial_templates,Compute dot balls by batsman and over where batsman is {batsman} and sort lowest first.
+532,combinatorial_templates,Compute avg runs/ball by bowler on dot balls only and sort highest first.
+533,combinatorial_templates,Compute implied extras by bowler and over on dot balls only and sort lowest first.
+534,combinatorial_templates,Compute dot balls by batsman and over in the final {window_overs} overs and sort lowest first.
+535,combinatorial_templates,Compute fours by over where commentary contains '{term}' and sort lowest first.
+536,combinatorial_templates,Compute sixes by bowler and over where implied extras > 0 and sort lowest first.
+537,combinatorial_templates,Compute avg runs/ball by batsman and over on dot balls only and sort highest first.
+538,combinatorial_templates,Compute avg runs/ball by over where batsman is {batsman} and sort highest first.
+539,combinatorial_templates,Compute implied extras by batsman and over where batsman is {batsman} and sort highest first.
+540,combinatorial_templates,Compute dot balls by bowler on dot balls only and sort lowest first.
+541,combinatorial_templates,Compute avg runs/ball by bowler and over where batsman is {batsman} and sort highest first.
+542,combinatorial_templates,Compute total runs by batsman vs bowler where commentary contains '{term}' and sort highest first.
+543,combinatorial_templates,Compute max bat runs by batsman on boundary balls only and sort lowest first.
+544,combinatorial_templates,Compute max ball runs by batsman vs bowler on boundary balls only and sort lowest first.
+545,combinatorial_templates,Compute bat runs by bowler in the final {window_overs} overs and sort highest first.
+546,combinatorial_templates,Compute avg runs/ball by batsman on non-boundary scoring balls and sort highest first.
+547,combinatorial_templates,Compute fours by bowler on boundary balls only and sort highest first.
+548,combinatorial_templates,Compute implied extras by batsman where implied extras > 0 and sort highest first.
+549,combinatorial_templates,Compute fours by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+550,combinatorial_templates,Compute fours by batsman in overs {over_start}-{over_end} and sort highest first.
+551,combinatorial_templates,Compute fours by over on boundary balls only and sort highest first.
+552,combinatorial_templates,Compute max ball runs by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+553,combinatorial_templates,Compute bat runs by batsman and over on non-boundary scoring balls and sort highest first.
+554,combinatorial_templates,Compute sixes by batsman and over where batsman is {batsman} and sort highest first.
+555,combinatorial_templates,Compute sixes by over on boundary balls only and sort highest first.
+556,combinatorial_templates,Compute boundary balls by batsman and over where commentary contains '{term}' and sort lowest first.
+557,combinatorial_templates,Compute boundary balls by batsman and over where batsman is {batsman} and sort lowest first.
+558,combinatorial_templates,Compute implied extras by bowler and over where commentary contains '{term}' and sort lowest first.
+559,combinatorial_templates,Compute sixes by batsman and over on boundary balls only and sort highest first.
+560,combinatorial_templates,Compute max ball runs by over on boundary balls only and sort lowest first.
+561,combinatorial_templates,Compute dot balls by bowler and over where batsman is {batsman} and sort lowest first.
+562,combinatorial_templates,Compute dot balls by bowler on dot balls only and sort highest first.
+563,combinatorial_templates,Compute bat runs by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+564,combinatorial_templates,Compute bat runs by batsman where batsman is {batsman} and sort lowest first.
+565,combinatorial_templates,Compute fours by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+566,combinatorial_templates,Compute fours by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+567,combinatorial_templates,Compute avg runs/ball by batsman and over on dot balls only and sort lowest first.
+568,combinatorial_templates,Compute boundary balls by bowler and over where commentary contains '{term}' and sort highest first.
+569,combinatorial_templates,Compute implied extras by bowler where implied extras > 0 and sort lowest first.
+570,combinatorial_templates,Compute dot balls by over where batsman is {batsman} and sort highest first.
+571,combinatorial_templates,Compute max ball runs by bowler and over on dot balls only and sort highest first.
+572,combinatorial_templates,Compute max ball runs by bowler on non-boundary scoring balls and sort highest first.
+573,combinatorial_templates,Compute boundary balls by bowler on boundary balls only and sort lowest first.
+574,combinatorial_templates,Compute max ball runs by batsman where bowler is {bowler} and sort lowest first.
+575,combinatorial_templates,Compute dot balls by batsman and over in the final {window_overs} overs and sort highest first.
+576,combinatorial_templates,Compute sixes by bowler and over where batsman is {batsman} and sort lowest first.
+577,combinatorial_templates,Compute avg runs/ball by over on dot balls only and sort highest first.
+578,combinatorial_templates,Compute dot balls by over where commentary contains '{term}' and sort highest first.
+579,combinatorial_templates,Compute bat runs by batsman on non-boundary scoring balls and sort lowest first.
+580,combinatorial_templates,Compute max ball runs by over on non-boundary scoring balls and sort lowest first.
+581,combinatorial_templates,Compute total runs by batsman vs bowler where bowler is {bowler} and sort lowest first.
+582,combinatorial_templates,Compute implied extras by over on dot balls only and sort highest first.
+583,combinatorial_templates,Compute fours by bowler and over where batsman is {batsman} and sort lowest first.
+584,combinatorial_templates,Compute avg bat runs/ball by bowler where bowler is {bowler} and sort highest first.
+585,combinatorial_templates,Compute avg runs/ball by bowler and over where implied extras > 0 and sort lowest first.
+586,combinatorial_templates,Compute sixes by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+587,combinatorial_templates,Compute fours by batsman on non-boundary scoring balls and sort highest first.
+588,combinatorial_templates,Compute max ball runs by batsman vs bowler where implied extras > 0 and sort highest first.
+589,combinatorial_templates,Compute avg bat runs/ball by bowler and over where implied extras > 0 and sort highest first.
+590,combinatorial_templates,Compute bat runs by bowler where bowler is {bowler} and sort highest first.
+591,combinatorial_templates,Compute avg bat runs/ball by over on non-boundary scoring balls and sort highest first.
+592,combinatorial_templates,Compute bat runs by batsman in overs {over_start}-{over_end} and sort highest first.
+593,combinatorial_templates,Compute avg runs/ball by over where implied extras > 0 and sort highest first.
+594,combinatorial_templates,Compute max bat runs by batsman and over in the final {window_overs} overs and sort lowest first.
+595,combinatorial_templates,Compute sixes by batsman vs bowler on boundary balls only and sort lowest first.
+596,combinatorial_templates,Compute fours by over on non-boundary scoring balls and sort lowest first.
+597,combinatorial_templates,Compute total runs by batsman on non-boundary scoring balls and sort highest first.
+598,combinatorial_templates,Compute bat runs by batsman and over on boundary balls only and sort highest first.
+599,combinatorial_templates,Compute sixes by over where commentary contains '{term}' and sort lowest first.
+600,combinatorial_templates,Compute boundary balls by batsman and over where commentary contains '{term}' and sort highest first.
+601,combinatorial_templates,Compute sixes by bowler and over where commentary contains '{term}' and sort lowest first.
+602,combinatorial_templates,Compute avg runs/ball by bowler and over where batsman is {batsman} and sort lowest first.
+603,combinatorial_templates,Compute implied extras by bowler in the final {window_overs} overs and sort lowest first.
+604,combinatorial_templates,Compute dot balls by batsman and over where bowler is {bowler} and sort highest first.
+605,combinatorial_templates,Compute boundary balls by bowler where commentary contains '{term}' and sort highest first.
+606,combinatorial_templates,Compute sixes by batsman vs bowler on non-boundary scoring balls and sort highest first.
+607,combinatorial_templates,Compute max bat runs by batsman and over where batsman is {batsman} and sort highest first.
+608,combinatorial_templates,Compute total runs by over where commentary contains '{term}' and sort highest first.
+609,combinatorial_templates,Compute bat runs by batsman where implied extras > 0 and sort lowest first.
+610,combinatorial_templates,Compute avg runs/ball by bowler on boundary balls only and sort lowest first.
+611,combinatorial_templates,Compute max ball runs by batsman and over where bowler is {bowler} and sort highest first.
+612,combinatorial_templates,Compute boundary balls by bowler on dot balls only and sort highest first.
+613,combinatorial_templates,Compute dot balls by over on non-boundary scoring balls and sort highest first.
+614,combinatorial_templates,Compute implied extras by batsman where bowler is {bowler} and sort lowest first.
+615,combinatorial_templates,Compute boundary balls by batsman and over in the final {window_overs} overs and sort lowest first.
+616,combinatorial_templates,Compute max ball runs by batsman and over in the final {window_overs} overs and sort highest first.
+617,combinatorial_templates,Compute dot balls by bowler and over in overs {over_start}-{over_end} and sort highest first.
+618,combinatorial_templates,Compute implied extras by batsman and over where batsman is {batsman} and sort lowest first.
+619,combinatorial_templates,Compute avg bat runs/ball by batsman on non-boundary scoring balls and sort lowest first.
+620,combinatorial_templates,Compute max ball runs by batsman and over where batsman is {batsman} and sort lowest first.
+621,combinatorial_templates,Compute sixes by over where batsman is {batsman} and sort highest first.
+622,combinatorial_templates,Compute boundary balls by bowler and over where batsman is {batsman} and sort highest first.
+623,combinatorial_templates,Compute sixes by batsman and over where bowler is {bowler} and sort lowest first.
+624,combinatorial_templates,Compute dot balls by over on non-boundary scoring balls and sort lowest first.
+625,combinatorial_templates,Compute total runs by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+626,combinatorial_templates,Compute avg bat runs/ball by over where batsman is {batsman} and sort lowest first.
+627,combinatorial_templates,Compute avg bat runs/ball by over where commentary contains '{term}' and sort lowest first.
+628,combinatorial_templates,Compute sixes by batsman vs bowler where implied extras > 0 and sort lowest first.
+629,combinatorial_templates,Compute max ball runs by over on dot balls only and sort highest first.
+630,combinatorial_templates,Compute avg bat runs/ball by over on dot balls only and sort highest first.
+631,combinatorial_templates,Compute dot balls by batsman in overs {over_start}-{over_end} and sort lowest first.
+632,combinatorial_templates,Compute bat runs by bowler and over where batsman is {batsman} and sort lowest first.
+633,combinatorial_templates,Compute implied extras by batsman where batsman is {batsman} and sort lowest first.
+634,combinatorial_templates,Compute max bat runs by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+635,combinatorial_templates,Compute max ball runs by bowler and over on boundary balls only and sort highest first.
+636,combinatorial_templates,Compute max ball runs by bowler and over where bowler is {bowler} and sort highest first.
+637,combinatorial_templates,Compute sixes by batsman where bowler is {bowler} and sort lowest first.
+638,combinatorial_templates,Compute boundary balls by batsman in the final {window_overs} overs and sort highest first.
+639,combinatorial_templates,Compute avg runs/ball by bowler and over in the final {window_overs} overs and sort highest first.
+640,combinatorial_templates,Compute bat runs by batsman and over on dot balls only and sort highest first.
+641,combinatorial_templates,Compute dot balls by batsman where bowler is {bowler} and sort lowest first.
+642,combinatorial_templates,Compute implied extras by over where bowler is {bowler} and sort lowest first.
+643,combinatorial_templates,Compute total runs by bowler where implied extras > 0 and sort lowest first.
+644,combinatorial_templates,Compute max bat runs by bowler and over in the final {window_overs} overs and sort highest first.
+645,combinatorial_templates,Compute avg runs/ball by batsman and over on non-boundary scoring balls and sort lowest first.
+646,combinatorial_templates,Compute fours by bowler on dot balls only and sort lowest first.
+647,combinatorial_templates,Compute implied extras by batsman and over in the final {window_overs} overs and sort highest first.
+648,combinatorial_templates,Compute bat runs by batsman and over on non-boundary scoring balls and sort lowest first.
+649,combinatorial_templates,Compute total runs by bowler in the final {window_overs} overs and sort lowest first.
+650,combinatorial_templates,Compute dot balls by bowler and over where batsman is {batsman} and sort highest first.
+651,combinatorial_templates,Compute implied extras by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+652,combinatorial_templates,Compute max ball runs by bowler and over on non-boundary scoring balls and sort lowest first.
+653,combinatorial_templates,Compute max bat runs by batsman vs bowler where bowler is {bowler} and sort highest first.
+654,combinatorial_templates,Compute sixes by bowler where batsman is {batsman} and sort lowest first.
+655,combinatorial_templates,Compute sixes by bowler on boundary balls only and sort highest first.
+656,combinatorial_templates,Compute max bat runs by over where batsman is {batsman} and sort lowest first.
+657,combinatorial_templates,Compute fours by bowler and over in the final {window_overs} overs and sort lowest first.
+658,combinatorial_templates,Compute fours by bowler where implied extras > 0 and sort lowest first.
+659,combinatorial_templates,Compute dot balls by batsman and over where implied extras > 0 and sort lowest first.
+660,combinatorial_templates,Compute dot balls by bowler on non-boundary scoring balls and sort highest first.
+661,combinatorial_templates,Compute avg runs/ball by over where batsman is {batsman} and sort lowest first.
+662,combinatorial_templates,Compute fours by batsman and over on dot balls only and sort lowest first.
+663,combinatorial_templates,Compute sixes by bowler on dot balls only and sort highest first.
+664,combinatorial_templates,Compute avg runs/ball by bowler where commentary contains '{term}' and sort highest first.
+665,combinatorial_templates,Compute sixes by over where implied extras > 0 and sort lowest first.
+666,combinatorial_templates,Compute avg bat runs/ball by over where bowler is {bowler} and sort highest first.
+667,combinatorial_templates,Compute total runs by over in the final {window_overs} overs and sort highest first.
+668,combinatorial_templates,Compute total runs by batsman vs bowler on boundary balls only and sort lowest first.
+669,combinatorial_templates,Compute avg runs/ball by batsman where batsman is {batsman} and sort lowest first.
+670,combinatorial_templates,Compute fours by batsman vs bowler on boundary balls only and sort highest first.
+671,combinatorial_templates,Compute bat runs by bowler and over on dot balls only and sort highest first.
+672,combinatorial_templates,Compute boundary balls by bowler on non-boundary scoring balls and sort highest first.
+673,combinatorial_templates,Compute dot balls by bowler where batsman is {batsman} and sort highest first.
+674,combinatorial_templates,Compute implied extras by bowler and over where bowler is {bowler} and sort highest first.
+675,combinatorial_templates,Compute fours by batsman and over on boundary balls only and sort highest first.
+676,combinatorial_templates,Compute max bat runs by bowler and over on boundary balls only and sort lowest first.
+677,combinatorial_templates,Compute implied extras by bowler and over where commentary contains '{term}' and sort highest first.
+678,combinatorial_templates,Compute max ball runs by batsman in the final {window_overs} overs and sort lowest first.
+679,combinatorial_templates,Compute avg runs/ball by batsman and over in overs {over_start}-{over_end} and sort lowest first.
+680,combinatorial_templates,Compute avg runs/ball by over where commentary contains '{term}' and sort highest first.
+681,combinatorial_templates,Compute dot balls by batsman vs bowler where batsman is {batsman} and sort lowest first.
+682,combinatorial_templates,Compute fours by batsman and over where commentary contains '{term}' and sort lowest first.
+683,combinatorial_templates,Compute max ball runs by bowler and over in the final {window_overs} overs and sort highest first.
+684,combinatorial_templates,Compute dot balls by over where bowler is {bowler} and sort lowest first.
+685,combinatorial_templates,Compute dot balls by batsman and over where batsman is {batsman} and sort highest first.
+686,combinatorial_templates,Compute boundary balls by over on non-boundary scoring balls and sort lowest first.
+687,combinatorial_templates,Compute implied extras by batsman vs bowler where batsman is {batsman} and sort highest first.
+688,combinatorial_templates,Compute boundary balls by batsman vs bowler on dot balls only and sort highest first.
+689,combinatorial_templates,Compute bat runs by bowler and over where commentary contains '{term}' and sort highest first.
+690,combinatorial_templates,Compute sixes by batsman vs bowler where implied extras > 0 and sort highest first.
+691,combinatorial_templates,Compute max ball runs by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+692,combinatorial_templates,Compute boundary balls by bowler and over where commentary contains '{term}' and sort lowest first.
+693,combinatorial_templates,Compute implied extras by bowler where batsman is {batsman} and sort highest first.
+694,combinatorial_templates,Compute max bat runs by batsman and over where implied extras > 0 and sort highest first.
+695,combinatorial_templates,Compute boundary balls by over where implied extras > 0 and sort lowest first.
+696,combinatorial_templates,Compute avg runs/ball by over where implied extras > 0 and sort lowest first.
+697,combinatorial_templates,Compute avg bat runs/ball by bowler where bowler is {bowler} and sort lowest first.
+698,combinatorial_templates,Compute dot balls by bowler in overs {over_start}-{over_end} and sort highest first.
+699,combinatorial_templates,Compute sixes by batsman vs bowler on dot balls only and sort highest first.
+700,combinatorial_templates,Compute total runs by batsman and over on boundary balls only and sort highest first.
+701,combinatorial_templates,Compute avg bat runs/ball by batsman on non-boundary scoring balls and sort highest first.
+702,combinatorial_templates,Compute total runs by bowler and over where bowler is {bowler} and sort highest first.
+703,combinatorial_templates,Compute max bat runs by bowler and over where bowler is {bowler} and sort highest first.
+704,combinatorial_templates,Compute total runs by batsman on boundary balls only and sort highest first.
+705,combinatorial_templates,Compute max ball runs by bowler where commentary contains '{term}' and sort lowest first.
+706,combinatorial_templates,Compute avg runs/ball by bowler and over where implied extras > 0 and sort highest first.
+707,combinatorial_templates,Compute bat runs by bowler in overs {over_start}-{over_end} and sort highest first.
+708,combinatorial_templates,Compute max bat runs by batsman and over on boundary balls only and sort highest first.
+709,combinatorial_templates,Compute max bat runs by bowler in the final {window_overs} overs and sort highest first.
+710,combinatorial_templates,Compute dot balls by batsman and over where commentary contains '{term}' and sort highest first.
+711,combinatorial_templates,Compute fours by bowler in overs {over_start}-{over_end} and sort lowest first.
+712,combinatorial_templates,Compute max bat runs by over on boundary balls only and sort lowest first.
+713,combinatorial_templates,Compute max ball runs by bowler and over where batsman is {batsman} and sort highest first.
+714,combinatorial_templates,Compute avg bat runs/ball by batsman in the final {window_overs} overs and sort lowest first.
+715,combinatorial_templates,Compute avg runs/ball by bowler and over where commentary contains '{term}' and sort highest first.
+716,combinatorial_templates,Compute max ball runs by bowler and over where bowler is {bowler} and sort lowest first.
+717,combinatorial_templates,Compute sixes by bowler and over on boundary balls only and sort highest first.
+718,combinatorial_templates,Compute total runs by over where implied extras > 0 and sort lowest first.
+719,combinatorial_templates,Compute total runs by bowler in overs {over_start}-{over_end} and sort lowest first.
+720,combinatorial_templates,Compute avg runs/ball by over on non-boundary scoring balls and sort highest first.
+721,combinatorial_templates,Compute avg bat runs/ball by bowler where batsman is {batsman} and sort highest first.
+722,combinatorial_templates,Compute implied extras by over where bowler is {bowler} and sort highest first.
+723,combinatorial_templates,Compute dot balls by batsman vs bowler where implied extras > 0 and sort lowest first.
+724,combinatorial_templates,Compute implied extras by batsman and over on non-boundary scoring balls and sort highest first.
+725,combinatorial_templates,Compute fours by batsman vs bowler on boundary balls only and sort lowest first.
+726,combinatorial_templates,Compute dot balls by bowler in the final {window_overs} overs and sort lowest first.
+727,combinatorial_templates,Compute sixes by bowler where bowler is {bowler} and sort highest first.
+728,combinatorial_templates,Compute avg bat runs/ball by batsman and over in overs {over_start}-{over_end} and sort highest first.
+729,combinatorial_templates,Compute implied extras by batsman in overs {over_start}-{over_end} and sort highest first.
+730,combinatorial_templates,Compute dot balls by batsman on boundary balls only and sort lowest first.
+731,combinatorial_templates,Compute sixes by batsman where implied extras > 0 and sort lowest first.
+732,combinatorial_templates,Compute implied extras by over on non-boundary scoring balls and sort highest first.
+733,combinatorial_templates,Compute max bat runs by bowler and over on dot balls only and sort lowest first.
+734,combinatorial_templates,Compute max bat runs by batsman where bowler is {bowler} and sort lowest first.
+735,combinatorial_templates,Compute boundary balls by over where batsman is {batsman} and sort highest first.
+736,combinatorial_templates,Compute bat runs by bowler on dot balls only and sort highest first.
+737,combinatorial_templates,Compute boundary balls by batsman where bowler is {bowler} and sort highest first.
+738,combinatorial_templates,Compute total runs by bowler and over on dot balls only and sort lowest first.
+739,combinatorial_templates,Compute boundary balls by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+740,combinatorial_templates,Compute dot balls by bowler and over where bowler is {bowler} and sort lowest first.
+741,combinatorial_templates,Compute total runs by bowler where commentary contains '{term}' and sort lowest first.
+742,combinatorial_templates,Compute sixes by bowler in the final {window_overs} overs and sort highest first.
+743,combinatorial_templates,Compute max ball runs by batsman where bowler is {bowler} and sort highest first.
+744,combinatorial_templates,Compute bat runs by batsman and over where bowler is {bowler} and sort lowest first.
+745,combinatorial_templates,Compute dot balls by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+746,combinatorial_templates,Compute dot balls by bowler in the final {window_overs} overs and sort highest first.
+747,combinatorial_templates,Compute fours by bowler in the final {window_overs} overs and sort highest first.
+748,combinatorial_templates,Compute total runs by bowler on boundary balls only and sort lowest first.
+749,combinatorial_templates,Compute avg bat runs/ball by batsman and over on non-boundary scoring balls and sort highest first.
+750,combinatorial_templates,Compute sixes by over where bowler is {bowler} and sort highest first.
+751,combinatorial_templates,Compute implied extras by batsman and over where commentary contains '{term}' and sort lowest first.
+752,combinatorial_templates,Compute fours by bowler and over in the final {window_overs} overs and sort highest first.
+753,combinatorial_templates,Compute boundary balls by batsman and over on dot balls only and sort lowest first.
+754,combinatorial_templates,Compute max ball runs by over on boundary balls only and sort highest first.
+755,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+756,combinatorial_templates,Compute avg bat runs/ball by batsman where bowler is {bowler} and sort highest first.
+757,combinatorial_templates,Compute avg bat runs/ball by batsman and over where batsman is {batsman} and sort highest first.
+758,combinatorial_templates,Compute implied extras by bowler and over where implied extras > 0 and sort lowest first.
+759,combinatorial_templates,Compute dot balls by over in overs {over_start}-{over_end} and sort highest first.
+760,combinatorial_templates,Compute max ball runs by batsman vs bowler where batsman is {batsman} and sort lowest first.
+761,combinatorial_templates,Compute avg bat runs/ball by bowler on dot balls only and sort highest first.
+762,combinatorial_templates,Compute dot balls by batsman and over on boundary balls only and sort lowest first.
+763,combinatorial_templates,Compute total runs by bowler in the final {window_overs} overs and sort highest first.
+764,combinatorial_templates,Compute dot balls by bowler and over in the final {window_overs} overs and sort highest first.
+765,combinatorial_templates,Compute sixes by bowler in overs {over_start}-{over_end} and sort highest first.
+766,combinatorial_templates,Compute bat runs by batsman vs bowler on dot balls only and sort lowest first.
+767,combinatorial_templates,Compute total runs by batsman and over where commentary contains '{term}' and sort lowest first.
+768,combinatorial_templates,Compute dot balls by batsman vs bowler on boundary balls only and sort lowest first.
+769,combinatorial_templates,Compute boundary balls by over where commentary contains '{term}' and sort lowest first.
+770,combinatorial_templates,Compute avg bat runs/ball by over in overs {over_start}-{over_end} and sort lowest first.
+771,combinatorial_templates,Compute sixes by bowler on non-boundary scoring balls and sort lowest first.
+772,combinatorial_templates,Compute dot balls by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+773,combinatorial_templates,Compute fours by bowler and over where implied extras > 0 and sort highest first.
+774,combinatorial_templates,Compute max bat runs by bowler on dot balls only and sort highest first.
+775,combinatorial_templates,Compute max ball runs by bowler and over where commentary contains '{term}' and sort lowest first.
+776,combinatorial_templates,Compute bat runs by over on dot balls only and sort highest first.
+777,combinatorial_templates,Compute dot balls by batsman and over on non-boundary scoring balls and sort highest first.
+778,combinatorial_templates,Compute implied extras by bowler in the final {window_overs} overs and sort highest first.
+779,combinatorial_templates,Compute bat runs by over on boundary balls only and sort highest first.
+780,combinatorial_templates,Compute max ball runs by batsman and over where implied extras > 0 and sort highest first.
+781,combinatorial_templates,Compute avg bat runs/ball by bowler where batsman is {batsman} and sort lowest first.
+782,combinatorial_templates,Compute avg bat runs/ball by bowler and over where batsman is {batsman} and sort lowest first.
+783,combinatorial_templates,Compute max bat runs by batsman in the final {window_overs} overs and sort lowest first.
+784,combinatorial_templates,Compute fours by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+785,combinatorial_templates,Compute max bat runs by bowler in the final {window_overs} overs and sort lowest first.
+786,combinatorial_templates,Compute fours by batsman vs bowler where bowler is {bowler} and sort lowest first.
+787,combinatorial_templates,Compute avg bat runs/ball by over where implied extras > 0 and sort lowest first.
+788,combinatorial_templates,Compute total runs by bowler and over where bowler is {bowler} and sort lowest first.
+789,combinatorial_templates,Compute boundary balls by bowler in overs {over_start}-{over_end} and sort highest first.
+790,combinatorial_templates,Compute implied extras by batsman and over on boundary balls only and sort lowest first.
+791,combinatorial_templates,Compute max bat runs by bowler and over on non-boundary scoring balls and sort lowest first.
+792,combinatorial_templates,Compute boundary balls by batsman and over on boundary balls only and sort highest first.
+793,combinatorial_templates,Compute boundary balls by batsman vs bowler on boundary balls only and sort lowest first.
+794,combinatorial_templates,Compute avg runs/ball by over in overs {over_start}-{over_end} and sort lowest first.
+795,combinatorial_templates,Compute implied extras by over in overs {over_start}-{over_end} and sort lowest first.
+796,combinatorial_templates,Compute implied extras by over on dot balls only and sort lowest first.
+797,combinatorial_templates,Compute max ball runs by batsman and over in overs {over_start}-{over_end} and sort highest first.
+798,combinatorial_templates,Compute max ball runs by bowler and over where batsman is {batsman} and sort lowest first.
+799,combinatorial_templates,Compute bat runs by batsman and over in overs {over_start}-{over_end} and sort highest first.
+800,combinatorial_templates,Compute boundary balls by bowler where bowler is {bowler} and sort highest first.
+801,combinatorial_templates,Compute sixes by batsman on boundary balls only and sort lowest first.
+802,combinatorial_templates,Compute boundary balls by batsman where batsman is {batsman} and sort highest first.
+803,combinatorial_templates,Compute boundary balls by bowler and over on dot balls only and sort highest first.
+804,combinatorial_templates,Compute avg bat runs/ball by bowler and over on dot balls only and sort lowest first.
+805,combinatorial_templates,Compute dot balls by batsman in overs {over_start}-{over_end} and sort highest first.
+806,combinatorial_templates,Compute fours by bowler on non-boundary scoring balls and sort highest first.
+807,combinatorial_templates,Compute avg bat runs/ball by bowler where commentary contains '{term}' and sort lowest first.
+808,combinatorial_templates,Compute max ball runs by bowler and over where implied extras > 0 and sort lowest first.
+809,combinatorial_templates,Compute bat runs by bowler on boundary balls only and sort highest first.
+810,combinatorial_templates,Compute boundary balls by bowler where implied extras > 0 and sort lowest first.
+811,combinatorial_templates,Compute bat runs by batsman where implied extras > 0 and sort highest first.
+812,combinatorial_templates,Compute max bat runs by over on boundary balls only and sort highest first.
+813,combinatorial_templates,Compute fours by bowler on dot balls only and sort highest first.
+814,combinatorial_templates,Compute avg bat runs/ball by bowler on non-boundary scoring balls and sort highest first.
+815,combinatorial_templates,Compute boundary balls by over where bowler is {bowler} and sort lowest first.
+816,combinatorial_templates,Compute boundary balls by batsman vs bowler where commentary contains '{term}' and sort highest first.
+817,combinatorial_templates,Compute bat runs by bowler and over in overs {over_start}-{over_end} and sort highest first.
+818,combinatorial_templates,Compute max bat runs by batsman where batsman is {batsman} and sort lowest first.
+819,combinatorial_templates,Compute max bat runs by bowler where batsman is {batsman} and sort lowest first.
+820,combinatorial_templates,Compute avg runs/ball by batsman and over where batsman is {batsman} and sort highest first.
+821,combinatorial_templates,Compute total runs by batsman where batsman is {batsman} and sort lowest first.
+822,combinatorial_templates,Compute avg runs/ball by batsman on dot balls only and sort highest first.
+823,combinatorial_templates,Compute implied extras by bowler on non-boundary scoring balls and sort lowest first.
+824,combinatorial_templates,Compute sixes by batsman and over on dot balls only and sort lowest first.
+825,combinatorial_templates,Compute boundary balls by bowler and over in the final {window_overs} overs and sort highest first.
+826,combinatorial_templates,Compute max bat runs by batsman and over where batsman is {batsman} and sort lowest first.
+827,combinatorial_templates,Compute bat runs by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+828,combinatorial_templates,Compute fours by over on dot balls only and sort lowest first.
+829,combinatorial_templates,Compute dot balls by batsman vs bowler on boundary balls only and sort highest first.
+830,combinatorial_templates,Compute max bat runs by batsman and over in the final {window_overs} overs and sort highest first.
+831,combinatorial_templates,Compute avg runs/ball by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+832,combinatorial_templates,Compute fours by bowler and over on dot balls only and sort lowest first.
+833,combinatorial_templates,Compute boundary balls by batsman and over in overs {over_start}-{over_end} and sort highest first.
+834,combinatorial_templates,Compute avg runs/ball by bowler and over where bowler is {bowler} and sort lowest first.
+835,combinatorial_templates,Compute total runs by over on boundary balls only and sort lowest first.
+836,combinatorial_templates,Compute max ball runs by batsman where batsman is {batsman} and sort highest first.
+837,combinatorial_templates,Compute bat runs by over where bowler is {bowler} and sort highest first.
+838,combinatorial_templates,Compute bat runs by batsman vs bowler where batsman is {batsman} and sort lowest first.
+839,combinatorial_templates,Compute implied extras by batsman on non-boundary scoring balls and sort highest first.
+840,combinatorial_templates,Compute implied extras by batsman vs bowler on boundary balls only and sort lowest first.
+841,combinatorial_templates,Compute max ball runs by over in overs {over_start}-{over_end} and sort highest first.
+842,combinatorial_templates,Compute avg bat runs/ball by bowler and over in the final {window_overs} overs and sort highest first.
+843,combinatorial_templates,Compute dot balls by bowler in overs {over_start}-{over_end} and sort lowest first.
+844,combinatorial_templates,Compute avg bat runs/ball by batsman where commentary contains '{term}' and sort highest first.
+845,combinatorial_templates,Compute boundary balls by batsman vs bowler where batsman is {batsman} and sort lowest first.
+846,combinatorial_templates,Compute implied extras by bowler and over in the final {window_overs} overs and sort highest first.
+847,combinatorial_templates,Compute total runs by bowler and over on non-boundary scoring balls and sort highest first.
+848,combinatorial_templates,Compute bat runs by batsman and over on boundary balls only and sort lowest first.
+849,combinatorial_templates,Compute max ball runs by batsman where implied extras > 0 and sort lowest first.
+850,combinatorial_templates,Compute sixes by over on dot balls only and sort lowest first.
+851,combinatorial_templates,Compute avg runs/ball by bowler and over on dot balls only and sort lowest first.
+852,combinatorial_templates,Compute avg runs/ball by over in the final {window_overs} overs and sort lowest first.
+853,combinatorial_templates,Compute avg runs/ball by bowler where commentary contains '{term}' and sort lowest first.
+854,combinatorial_templates,Compute max bat runs by over where implied extras > 0 and sort lowest first.
+855,combinatorial_templates,Compute dot balls by batsman where batsman is {batsman} and sort lowest first.
+856,combinatorial_templates,Compute fours by bowler and over where commentary contains '{term}' and sort lowest first.
+857,combinatorial_templates,Compute max bat runs by batsman where commentary contains '{term}' and sort lowest first.
+858,combinatorial_templates,Compute avg runs/ball by batsman on boundary balls only and sort lowest first.
+859,combinatorial_templates,Compute avg runs/ball by batsman and over in the final {window_overs} overs and sort lowest first.
+860,combinatorial_templates,Compute implied extras by bowler and over where batsman is {batsman} and sort lowest first.
+861,combinatorial_templates,Compute implied extras by batsman vs bowler where batsman is {batsman} and sort lowest first.
+862,combinatorial_templates,Compute total runs by batsman in overs {over_start}-{over_end} and sort highest first.
+863,combinatorial_templates,Compute fours by bowler in the final {window_overs} overs and sort lowest first.
+864,combinatorial_templates,Compute dot balls by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+865,combinatorial_templates,Compute implied extras by batsman vs bowler in the final {window_overs} overs and sort highest first.
+866,combinatorial_templates,Compute fours by over where bowler is {bowler} and sort highest first.
+867,combinatorial_templates,Compute fours by batsman vs bowler in overs {over_start}-{over_end} and sort highest first.
+868,combinatorial_templates,Compute max bat runs by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+869,combinatorial_templates,Compute max bat runs by batsman where commentary contains '{term}' and sort highest first.
+870,combinatorial_templates,Compute dot balls by batsman vs bowler where implied extras > 0 and sort highest first.
+871,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler where commentary contains '{term}' and sort highest first.
+872,combinatorial_templates,Compute avg runs/ball by batsman on boundary balls only and sort highest first.
+873,combinatorial_templates,Compute max bat runs by bowler on boundary balls only and sort highest first.
+874,combinatorial_templates,Compute implied extras by bowler and over on non-boundary scoring balls and sort highest first.
+875,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+876,combinatorial_templates,Compute max bat runs by over in the final {window_overs} overs and sort highest first.
+877,combinatorial_templates,Compute dot balls by batsman vs bowler where batsman is {batsman} and sort highest first.
+878,combinatorial_templates,Compute implied extras by batsman vs bowler on boundary balls only and sort highest first.
+879,combinatorial_templates,Compute boundary balls by bowler and over on non-boundary scoring balls and sort lowest first.
+880,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where bowler is {bowler} and sort lowest first.
+881,combinatorial_templates,Compute bat runs by bowler in overs {over_start}-{over_end} and sort lowest first.
+882,combinatorial_templates,Compute sixes by over where implied extras > 0 and sort highest first.
+883,combinatorial_templates,Compute max ball runs by batsman and over where bowler is {bowler} and sort lowest first.
+884,combinatorial_templates,Compute max ball runs by bowler where implied extras > 0 and sort lowest first.
+885,combinatorial_templates,Compute sixes by bowler on non-boundary scoring balls and sort highest first.
+886,combinatorial_templates,Compute avg runs/ball by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+887,combinatorial_templates,Compute max ball runs by batsman on boundary balls only and sort highest first.
+888,combinatorial_templates,Compute dot balls by over on dot balls only and sort highest first.
+889,combinatorial_templates,Compute bat runs by batsman vs bowler in the final {window_overs} overs and sort lowest first.
+890,combinatorial_templates,Compute sixes by over in the final {window_overs} overs and sort highest first.
+891,combinatorial_templates,Compute fours by batsman on boundary balls only and sort lowest first.
+892,combinatorial_templates,Compute boundary balls by batsman vs bowler on boundary balls only and sort highest first.
+893,combinatorial_templates,Compute max ball runs by bowler and over on boundary balls only and sort lowest first.
+894,combinatorial_templates,Compute sixes by over on non-boundary scoring balls and sort lowest first.
+895,combinatorial_templates,Compute avg runs/ball by over in overs {over_start}-{over_end} and sort highest first.
+896,combinatorial_templates,Compute implied extras by over where commentary contains '{term}' and sort highest first.
+897,combinatorial_templates,Compute avg bat runs/ball by over where bowler is {bowler} and sort lowest first.
+898,combinatorial_templates,Compute max ball runs by bowler in the final {window_overs} overs and sort lowest first.
+899,combinatorial_templates,Compute dot balls by batsman and over where implied extras > 0 and sort highest first.
+900,combinatorial_templates,Compute sixes by batsman and over where commentary contains '{term}' and sort highest first.
+901,combinatorial_templates,Compute boundary balls by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+902,combinatorial_templates,Compute fours by bowler and over where commentary contains '{term}' and sort highest first.
+903,combinatorial_templates,Compute boundary balls by batsman on non-boundary scoring balls and sort highest first.
+904,combinatorial_templates,Compute avg runs/ball by batsman vs bowler on non-boundary scoring balls and sort highest first.
+905,combinatorial_templates,Compute dot balls by bowler on boundary balls only and sort lowest first.
+906,combinatorial_templates,Compute boundary balls by batsman on dot balls only and sort highest first.
+907,combinatorial_templates,Compute fours by batsman and over where implied extras > 0 and sort highest first.
+908,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler on boundary balls only and sort highest first.
+909,combinatorial_templates,Compute avg bat runs/ball by over on boundary balls only and sort highest first.
+910,combinatorial_templates,Compute avg runs/ball by bowler and over on boundary balls only and sort lowest first.
+911,combinatorial_templates,Compute fours by batsman and over in overs {over_start}-{over_end} and sort highest first.
+912,combinatorial_templates,Compute bat runs by bowler and over in the final {window_overs} overs and sort highest first.
+913,combinatorial_templates,Compute max bat runs by batsman in the final {window_overs} overs and sort highest first.
+914,combinatorial_templates,Compute avg runs/ball by batsman and over where batsman is {batsman} and sort lowest first.
+915,combinatorial_templates,Compute total runs by bowler on boundary balls only and sort highest first.
+916,combinatorial_templates,Compute dot balls by batsman on non-boundary scoring balls and sort lowest first.
+917,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler where bowler is {bowler} and sort highest first.
+918,combinatorial_templates,Compute sixes by over on boundary balls only and sort lowest first.
+919,combinatorial_templates,Compute dot balls by bowler and over on dot balls only and sort lowest first.
+920,combinatorial_templates,Compute boundary balls by bowler and over where implied extras > 0 and sort lowest first.
+921,combinatorial_templates,Compute sixes by batsman where commentary contains '{term}' and sort highest first.
+922,combinatorial_templates,Compute dot balls by bowler where implied extras > 0 and sort lowest first.
+923,combinatorial_templates,Compute sixes by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+924,combinatorial_templates,Compute total runs by batsman and over where implied extras > 0 and sort lowest first.
+925,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler in overs {over_start}-{over_end} and sort lowest first.
+926,combinatorial_templates,Compute dot balls by batsman on dot balls only and sort highest first.
+927,combinatorial_templates,Compute dot balls by bowler and over on dot balls only and sort highest first.
+928,combinatorial_templates,Compute bat runs by bowler and over where implied extras > 0 and sort lowest first.
+929,combinatorial_templates,Compute sixes by bowler where commentary contains '{term}' and sort lowest first.
+930,combinatorial_templates,Compute total runs by bowler where bowler is {bowler} and sort highest first.
+931,combinatorial_templates,Compute max ball runs by batsman vs bowler on boundary balls only and sort highest first.
+932,combinatorial_templates,Compute implied extras by batsman where implied extras > 0 and sort lowest first.
+933,combinatorial_templates,Compute implied extras by batsman vs bowler where bowler is {bowler} and sort highest first.
+934,combinatorial_templates,Compute dot balls by bowler where implied extras > 0 and sort highest first.
+935,combinatorial_templates,Compute boundary balls by over in the final {window_overs} overs and sort lowest first.
+936,combinatorial_templates,Compute bat runs by batsman vs bowler where bowler is {bowler} and sort highest first.
+937,combinatorial_templates,Compute implied extras by batsman on boundary balls only and sort lowest first.
+938,combinatorial_templates,Compute boundary balls by over on dot balls only and sort lowest first.
+939,combinatorial_templates,Compute max ball runs by bowler and over where commentary contains '{term}' and sort highest first.
+940,combinatorial_templates,Compute dot balls by batsman and over on dot balls only and sort lowest first.
+941,combinatorial_templates,Compute bat runs by batsman in the final {window_overs} overs and sort highest first.
+942,combinatorial_templates,Compute sixes by batsman and over where implied extras > 0 and sort highest first.
+943,combinatorial_templates,Compute max bat runs by batsman and over in overs {over_start}-{over_end} and sort highest first.
+944,combinatorial_templates,Compute implied extras by batsman and over in the final {window_overs} overs and sort lowest first.
+945,combinatorial_templates,Compute avg bat runs/ball by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+946,combinatorial_templates,Compute avg runs/ball by batsman vs bowler where implied extras > 0 and sort highest first.
+947,combinatorial_templates,Compute dot balls by batsman vs bowler where bowler is {bowler} and sort lowest first.
+948,combinatorial_templates,Compute dot balls by batsman where implied extras > 0 and sort highest first.
+949,combinatorial_templates,Compute bat runs by bowler and over in the final {window_overs} overs and sort lowest first.
+950,combinatorial_templates,Compute total runs by bowler where bowler is {bowler} and sort lowest first.
+951,combinatorial_templates,Compute dot balls by batsman vs bowler where commentary contains '{term}' and sort highest first.
+952,combinatorial_templates,Compute bat runs by bowler and over in overs {over_start}-{over_end} and sort lowest first.
+953,combinatorial_templates,Compute bat runs by batsman and over where batsman is {batsman} and sort highest first.
+954,combinatorial_templates,Compute avg bat runs/ball by batsman and over where implied extras > 0 and sort lowest first.
+955,combinatorial_templates,Compute avg bat runs/ball by over where commentary contains '{term}' and sort highest first.
+956,combinatorial_templates,Compute fours by batsman vs bowler where batsman is {batsman} and sort lowest first.
+957,combinatorial_templates,Compute avg bat runs/ball by batsman and over on non-boundary scoring balls and sort lowest first.
+958,combinatorial_templates,Compute fours by bowler on non-boundary scoring balls and sort lowest first.
+959,combinatorial_templates,Compute max ball runs by batsman where commentary contains '{term}' and sort lowest first.
+960,combinatorial_templates,Compute total runs by batsman vs bowler on non-boundary scoring balls and sort lowest first.
+961,combinatorial_templates,Compute sixes by bowler where implied extras > 0 and sort highest first.
+962,combinatorial_templates,Compute avg bat runs/ball by bowler and over where implied extras > 0 and sort lowest first.
+963,combinatorial_templates,Compute sixes by over on non-boundary scoring balls and sort highest first.
+964,combinatorial_templates,Compute avg runs/ball by over on non-boundary scoring balls and sort lowest first.
+965,combinatorial_templates,Compute dot balls by over where bowler is {bowler} and sort highest first.
+966,combinatorial_templates,Compute avg bat runs/ball by bowler on boundary balls only and sort highest first.
+967,combinatorial_templates,Compute dot balls by over on dot balls only and sort lowest first.
+968,combinatorial_templates,Compute implied extras by batsman vs bowler where commentary contains '{term}' and sort lowest first.
+969,combinatorial_templates,Compute total runs by over where bowler is {bowler} and sort highest first.
+970,combinatorial_templates,Compute max bat runs by batsman in overs {over_start}-{over_end} and sort lowest first.
+971,combinatorial_templates,Compute max bat runs by bowler and over where batsman is {batsman} and sort lowest first.
+972,combinatorial_templates,Compute bat runs by over where bowler is {bowler} and sort lowest first.
+973,combinatorial_templates,Compute fours by bowler where bowler is {bowler} and sort lowest first.
+974,combinatorial_templates,Compute fours by batsman and over in the final {window_overs} overs and sort highest first.
+975,combinatorial_templates,Compute avg runs/ball by bowler and over where bowler is {bowler} and sort highest first.
+976,combinatorial_templates,Compute total runs by over in overs {over_start}-{over_end} and sort highest first.
+977,combinatorial_templates,Compute fours by bowler in overs {over_start}-{over_end} and sort highest first.
+978,combinatorial_templates,Compute bat runs by over where commentary contains '{term}' and sort highest first.
+979,combinatorial_templates,Compute sixes by batsman and over where batsman is {batsman} and sort lowest first.
+980,combinatorial_templates,Compute avg bat runs/ball by bowler and over on non-boundary scoring balls and sort highest first.
+981,combinatorial_templates,Compute max bat runs by bowler on non-boundary scoring balls and sort highest first.
+982,combinatorial_templates,Compute avg runs/ball by batsman vs bowler in the final {window_overs} overs and sort highest first.
+983,combinatorial_templates,Compute fours by bowler where implied extras > 0 and sort highest first.
+984,combinatorial_templates,Compute boundary balls by batsman where batsman is {batsman} and sort lowest first.
+985,combinatorial_templates,Compute sixes by bowler and over in the final {window_overs} overs and sort highest first.
+986,combinatorial_templates,Compute fours by bowler where bowler is {bowler} and sort highest first.
+987,combinatorial_templates,Compute boundary balls by bowler in the final {window_overs} overs and sort highest first.
+988,combinatorial_templates,Compute avg runs/ball by batsman in the final {window_overs} overs and sort lowest first.
+989,combinatorial_templates,Compute bat runs by batsman and over in the final {window_overs} overs and sort lowest first.
+990,combinatorial_templates,Compute implied extras by over where implied extras > 0 and sort highest first.
+991,combinatorial_templates,Compute sixes by batsman where batsman is {batsman} and sort highest first.
+992,combinatorial_templates,Compute bat runs by bowler where bowler is {bowler} and sort lowest first.
+993,combinatorial_templates,Compute avg runs/ball by bowler on non-boundary scoring balls and sort lowest first.
+994,combinatorial_templates,Compute dot balls by batsman where implied extras > 0 and sort lowest first.
+995,combinatorial_templates,Compute total runs by batsman in the final {window_overs} overs and sort lowest first.
+996,combinatorial_templates,Compute total runs by over where commentary contains '{term}' and sort lowest first.
+997,combinatorial_templates,Compute max bat runs by batsman on boundary balls only and sort highest first.
+998,combinatorial_templates,Compute avg bat runs/ball by over where implied extras > 0 and sort highest first.
+999,combinatorial_templates,Compute avg bat runs/ball by over on dot balls only and sort lowest first.
+1000,combinatorial_templates,Compute total runs by batsman vs bowler where batsman is {batsman} and sort highest first.

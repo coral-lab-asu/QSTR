@@ -10,6 +10,12 @@ templates + CSV tables -> generation -> SQL/answer validation -> valid-only dedu
 Run commands from the QSTR repository root. Paths are accepted explicitly, so
 the commands also work from another directory after QSTR is installed.
 
+The paper-facing cricket inputs are versioned at `data/Cricket_tables/`; the
+121 raw seeds are at
+`data/data_manual_template/template_q_param_cricket_pk.py`; and the 4,256
+generated-query snapshot is at `data/data_final/test_generated_sql_nl.json`.
+See `docs/cricket-reproduction.md` for lineage and full reproduction commands.
+
 ## Verify the installation
 
 The included fixture needs no API key:
@@ -39,12 +45,12 @@ automation job.
 
 ## Production template generation
 
-Place source tables under `data/raw/cricket/` or pass any explicit glob:
+Use the versioned cricket tables or pass another explicit glob:
 
 ```bash
 python -m pipelines.cmt2.pipeline.run run \
   --templates pipelines/cmt2/template_q_param_cricket_pk.py \
-  --matches-glob 'data/raw/cricket/*.csv' \
+  --matches-glob 'data/Cricket_tables/*.csv' \
   --out-dir artifacts/runs/cmt2-cricket \
   --max-matches 10 \
   --total-examples 5000 \
@@ -61,7 +67,7 @@ Generate only:
 ```bash
 python -m pipelines.cmt2.pipeline.run generate \
   --templates pipelines/cmt2/template_q_param_cricket_pk.py \
-  --matches-glob 'data/raw/cricket/*.csv' \
+  --matches-glob 'data/Cricket_tables/*.csv' \
   --out-dir artifacts/runs/cmt2-cricket \
   --seed 42
 ```
@@ -93,11 +99,13 @@ Install the LLM profile and set the key in the environment or QSTR `.env`:
 ```bash
 python -m pip install -e '.[llm]'
 export GEMINI_API_KEY='...'
-python -m pipelines.cmt2.run_sql_generation_dedup \
-  --csv data/raw/cricket/example.csv \
+mkdir -p artifacts/runs/cmt2-crewai
+python pipelines/cmt2/run_sql_generation_dedup.py \
+  --csv 'data/Cricket_tables/Ball by Ball Commentary & Live Score - AFG vs AUS, 10th Match, Group B.csv' \
   --output artifacts/runs/cmt2-crewai/sql.json \
   --progress artifacts/runs/cmt2-crewai/sql.progress.json \
-  --target 5000
+  --target 5000 \
+  --diversity-csv data/data_manual_template/cricket_sql_question_templates_1000.csv
 ```
 
 The files directly under `pipelines/cmt2/` remain compatibility entry points.

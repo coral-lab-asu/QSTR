@@ -1,0 +1,1427 @@
+raw_data,overs,runs,team_runs,commentary,bowler,batsman,batsman_runs,batsman_fours,batsman_sixes,batsman_bowls_faced,bowler_bowls_done,bowler_runs_given,bowler_wickets,dismissal,runs_given_bool
+"0.1 
+1w 
+Sumerauer to Johnson, 1 wide",0.1,1w,1.0,"Sumerauer to Johnson, 1 wide",Sumerauer,Johnson,0.0,0,0,0,0,1.0,0,,1
+"0.1 
+4 
+Sumerauer to Johnson, FOUR runs",0.1,4,4.0,"Sumerauer to Johnson, FOUR runs",Sumerauer,Johnson,4.0,1,0,1,1,4.0,0,,1
+"0.2 
+W 
+Sumerauer to Johnson, OUT 
+Aaron Johnson lbw b Sumerauer 4 (2b 1x4 0x6) SR: 200",0.2,W,0.0,"Sumerauer to Johnson, OUT  .Aaron Johnson lbw b Sumerauer 4 (2b 1x4 0x6) SR: 200",Sumerauer,Johnson,0.0,0,0,1,1,0.0,1,lbw b Sumerauer,0
+"0.3 
+1w 
+Sumerauer to Spoors, 1 wide",0.3,1w,1.0,"Sumerauer to Spoors, 1 wide",Sumerauer,Spoors,0.0,0,0,0,0,1.0,0,,1
+"0.3 
+5w 
+Sumerauer to Spoors, 5 wide",0.3,5w,5.0,"Sumerauer to Spoors, 5 wide",Sumerauer,Spoors,0.0,0,0,0,0,5.0,0,,1
+"0.3 
+• 
+Sumerauer to Spoors, no run",0.3,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"0.4 
+1w 
+Sumerauer to Spoors, 1 wide",0.4,1w,1.0,"Sumerauer to Spoors, 1 wide",Sumerauer,Spoors,0.0,0,0,0,0,1.0,0,,1
+"0.4 
+• 
+Sumerauer to Spoors, no run",0.4,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"0.5 
+• 
+Sumerauer to Spoors, no run",0.5,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"0.6 
+• 
+Sumerauer to Spoors, no run 
+end of over 112 runs • 1 wicket 
+CAN: 12/1CRR: 12.00  
+Matthew Spoors0 (4b) 
+Pargat Singh0 (0b) 
+Julius Sumerauer 1-0-12-1",0.6,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"1.1 
+• 
+AW Hawkins-Kay to Pargat Singh, no run",1.1,0,0.0,"AW Hawkins-Kay to Pargat Singh, no run",AW Hawkins-Kay,Pargat Singh,0.0,0,0,1,1,0.0,0,,0
+"1.2 
+• 
+AW Hawkins-Kay to Pargat Singh, no run",1.2,0,0.0,"AW Hawkins-Kay to Pargat Singh, no run",AW Hawkins-Kay,Pargat Singh,0.0,0,0,1,1,0.0,0,,0
+"1.3 
+• 
+AW Hawkins-Kay to Pargat Singh, no run",1.3,0,0.0,"AW Hawkins-Kay to Pargat Singh, no run",AW Hawkins-Kay,Pargat Singh,0.0,0,0,1,1,0.0,0,,0
+"1.4 
+1 
+AW Hawkins-Kay to Pargat Singh, 1 run",1.4,1,1.0,"AW Hawkins-Kay to Pargat Singh, 1 run",AW Hawkins-Kay,Pargat Singh,1.0,0,0,1,1,1.0,0,,1
+"1.5 
+• 
+AW Hawkins-Kay to Spoors, no run",1.5,0,0.0,"AW Hawkins-Kay to Spoors, no run",AW Hawkins-Kay,Spoors,0.0,0,0,1,1,0.0,0,,0
+"1.6 
+4 
+AW Hawkins-Kay to Spoors, FOUR runs 
+end of over 25 runs  
+CAN: 17/1CRR: 8.50  
+Matthew Spoors4 (6b 1x4) 
+Pargat Singh1 (4b) 
+Anthony Hawkins-Kay 1-0-5-0 
+Julius Sumerauer 1-0-12-1",1.6,4,4.0,"AW Hawkins-Kay to Spoors, FOUR runs",AW Hawkins-Kay,Spoors,4.0,1,0,1,1,4.0,0,,1
+"2.1 
+1w 
+Sumerauer to Pargat Singh, 1 wide",2.1,1w,1.0,"Sumerauer to Pargat Singh, 1 wide",Sumerauer,Pargat Singh,0.0,0,0,0,0,1.0,0,,1
+"2.1 
+1 
+Sumerauer to Pargat Singh, 1 run",2.1,1,1.0,"Sumerauer to Pargat Singh, 1 run",Sumerauer,Pargat Singh,1.0,0,0,1,1,1.0,0,,1
+"2.2 
+• 
+Sumerauer to Spoors, no run",2.2,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"2.3 
+• 
+Sumerauer to Spoors, no run",2.3,0,0.0,"Sumerauer to Spoors, no run",Sumerauer,Spoors,0.0,0,0,1,1,0.0,0,,0
+"2.4 
+1 
+Sumerauer to Spoors, 1 run",2.4,1,1.0,"Sumerauer to Spoors, 1 run",Sumerauer,Spoors,1.0,0,0,1,1,1.0,0,,1
+"2.5 
+4 
+Sumerauer to Pargat Singh, FOUR runs",2.5,4,4.0,"Sumerauer to Pargat Singh, FOUR runs",Sumerauer,Pargat Singh,4.0,1,0,1,1,4.0,0,,1
+"2.6 
+4 
+Sumerauer to Pargat Singh, FOUR runs 
+end of over 311 runs  
+CAN: 28/1CRR: 9.33  
+Pargat Singh10 (7b 2x4) 
+Matthew Spoors5 (9b 1x4) 
+Julius Sumerauer 2-0-23-1 
+Anthony Hawkins-Kay 1-0-5-0",2.6,4,4.0,"Sumerauer to Pargat Singh, FOUR runs",Sumerauer,Pargat Singh,4.0,1,0,1,1,4.0,0,,1
+"3.1 
+• 
+AW Hawkins-Kay to Spoors, no run",3.1,0,0.0,"AW Hawkins-Kay to Spoors, no run",AW Hawkins-Kay,Spoors,0.0,0,0,1,1,0.0,0,,0
+"3.2 
+• 
+AW Hawkins-Kay to Spoors, no run",3.2,0,0.0,"AW Hawkins-Kay to Spoors, no run",AW Hawkins-Kay,Spoors,0.0,0,0,1,1,0.0,0,,0
+"3.3 
+• 
+AW Hawkins-Kay to Spoors, no run",3.3,0,0.0,"AW Hawkins-Kay to Spoors, no run",AW Hawkins-Kay,Spoors,0.0,0,0,1,1,0.0,0,,0
+"3.4 
+1 
+AW Hawkins-Kay to Spoors, 1 run",3.4,1,1.0,"AW Hawkins-Kay to Spoors, 1 run",AW Hawkins-Kay,Spoors,1.0,0,0,1,1,1.0,0,,1
+"3.5 
+1 
+AW Hawkins-Kay to Pargat Singh, 1 run",3.5,1,1.0,"AW Hawkins-Kay to Pargat Singh, 1 run",AW Hawkins-Kay,Pargat Singh,1.0,0,0,1,1,1.0,0,,1
+"3.6 
+W 
+AW Hawkins-Kay to Spoors, OUT 
+Matthew Spoors b Hawkins-Kay 6 (14b 1x4 0x6) SR: 42.85 
+end of over 42 runs • 1 wicket 
+CAN: 30/2CRR: 7.50  
+Pargat Singh11 (8b 2x4) 
+Anthony Hawkins-Kay 2-0-7-1 
+Julius Sumerauer 2-0-23-1",3.6,W,0.0,"AW Hawkins-Kay to Spoors, OUT  .Matthew Spoors b Hawkins-Kay 6 (14b 1x4 0x6) SR: 42.85",AW Hawkins-Kay,Spoors,0.0,0,0,1,1,0.0,1,b Hawkins-Kay,0
+"4.1 
+W 
+Sumerauer to Pargat Singh, OUT 
+Pargat Singh c Greenwood b Sumerauer 11 (9b 2x4 0x6) SR: 122.22",4.1,W,0.0,"Sumerauer to Pargat Singh, OUT  .Pargat Singh c Greenwood b Sumerauer 11 (9b 2x4 0x6) SR: 122.22",Sumerauer,Pargat Singh,0.0,0,0,1,1,0.0,1,c Greenwood b Sumerauer,0
+"4.2 
+• 
+Sumerauer to Kirton, no run",4.2,0,0.0,"Sumerauer to Kirton, no run",Sumerauer,Kirton,0.0,0,0,1,1,0.0,0,,0
+"4.3 
+4b 
+Sumerauer to Kirton, 4 byes",4.3,4b,4.0,"Sumerauer to Kirton, 4 byes",Sumerauer,Kirton,0.0,1,0,1,1,0.0,0,,1
+"4.4 
+1 
+Sumerauer to Kirton, 1 run",4.4,1,1.0,"Sumerauer to Kirton, 1 run",Sumerauer,Kirton,1.0,0,0,1,1,1.0,0,,1
+"4.5 
+• 
+Sumerauer to Wijeyeratne, no run",4.5,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"4.6 
+• 
+Sumerauer to Wijeyeratne, no run 
+end of over 55 runs • 1 wicket 
+CAN: 35/3CRR: 7.00  
+Srimantha Wijeyeratne0 (2b) 
+Nicholas Kirton1 (3b) 
+Julius Sumerauer 3-0-24-2 
+Anthony Hawkins-Kay 2-0-7-1",4.6,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"5.1 
+• 
+AW Hawkins-Kay to Kirton, no run",5.1,0,0.0,"AW Hawkins-Kay to Kirton, no run",AW Hawkins-Kay,Kirton,0.0,0,0,1,1,0.0,0,,0
+"5.2 
+• 
+AW Hawkins-Kay to Kirton, no run",5.2,0,0.0,"AW Hawkins-Kay to Kirton, no run",AW Hawkins-Kay,Kirton,0.0,0,0,1,1,0.0,0,,0
+"5.3 
+• 
+AW Hawkins-Kay to Kirton, no run",5.3,0,0.0,"AW Hawkins-Kay to Kirton, no run",AW Hawkins-Kay,Kirton,0.0,0,0,1,1,0.0,0,,0
+"5.4 
+• 
+AW Hawkins-Kay to Kirton, no run",5.4,0,0.0,"AW Hawkins-Kay to Kirton, no run",AW Hawkins-Kay,Kirton,0.0,0,0,1,1,0.0,0,,0
+"5.5 
+4 
+AW Hawkins-Kay to Kirton, FOUR runs",5.5,4,4.0,"AW Hawkins-Kay to Kirton, FOUR runs",AW Hawkins-Kay,Kirton,4.0,1,0,1,1,4.0,0,,1
+"5.6 
+• 
+AW Hawkins-Kay to Kirton, no run 
+end of over 64 runs  
+CAN: 39/3CRR: 6.50  
+Nicholas Kirton5 (9b 1x4) 
+Srimantha Wijeyeratne0 (2b) 
+Anthony Hawkins-Kay 3-0-11-1 
+Julius Sumerauer 3-0-24-2",5.6,0,0.0,"AW Hawkins-Kay to Kirton, no run",AW Hawkins-Kay,Kirton,0.0,0,0,1,1,0.0,0,,0
+"6.1 
+• 
+Sumerauer to Wijeyeratne, no run",6.1,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"6.2 
+• 
+Sumerauer to Wijeyeratne, no run",6.2,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"6.3 
+1 
+Sumerauer to Wijeyeratne, 1 run",6.3,1,1.0,"Sumerauer to Wijeyeratne, 1 run",Sumerauer,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"6.4 
+• 
+Sumerauer to Kirton, no run",6.4,0,0.0,"Sumerauer to Kirton, no run",Sumerauer,Kirton,0.0,0,0,1,1,0.0,0,,0
+"6.5 
+1 
+Sumerauer to Kirton, 1 run",6.5,1,1.0,"Sumerauer to Kirton, 1 run",Sumerauer,Kirton,1.0,0,0,1,1,1.0,0,,1
+"6.6 
+• 
+Sumerauer to Wijeyeratne, no run 
+end of over 72 runs  
+CAN: 41/3CRR: 5.85  
+Srimantha Wijeyeratne1 (6b) 
+Nicholas Kirton6 (11b 1x4) 
+Julius Sumerauer 4-0-26-2 
+Anthony Hawkins-Kay 3-0-11-1",6.6,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"7.1 
+1w 
+AW Hawkins-Kay to Kirton, 1 wide",7.1,1w,1.0,"AW Hawkins-Kay to Kirton, 1 wide",AW Hawkins-Kay,Kirton,0.0,0,0,0,0,1.0,0,,1
+"7.1 
+1 
+AW Hawkins-Kay to Kirton, 1 run",7.1,1,1.0,"AW Hawkins-Kay to Kirton, 1 run",AW Hawkins-Kay,Kirton,1.0,0,0,1,1,1.0,0,,1
+"7.2 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",7.2,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"7.3 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",7.3,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"7.4 
+1 
+AW Hawkins-Kay to Wijeyeratne, 1 run",7.4,1,1.0,"AW Hawkins-Kay to Wijeyeratne, 1 run",AW Hawkins-Kay,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"7.5 
+4 
+AW Hawkins-Kay to Kirton, FOUR runs",7.5,4,4.0,"AW Hawkins-Kay to Kirton, FOUR runs",AW Hawkins-Kay,Kirton,4.0,1,0,1,1,4.0,0,,1
+"7.6 
+1w 
+AW Hawkins-Kay to Kirton, 1 wide",7.6,1w,1.0,"AW Hawkins-Kay to Kirton, 1 wide",AW Hawkins-Kay,Kirton,0.0,0,0,0,0,1.0,0,,1
+"7.6 
+1 
+AW Hawkins-Kay to Kirton, 1 run 
+end of over 89 runs  
+CAN: 50/3CRR: 6.25  
+Nicholas Kirton12 (14b 2x4) 
+Srimantha Wijeyeratne2 (9b) 
+Anthony Hawkins-Kay 4-0-20-1 
+Julius Sumerauer 4-0-26-2",7.6,1,1.0,"AW Hawkins-Kay to Kirton, 1 run",AW Hawkins-Kay,Kirton,1.0,0,0,1,1,1.0,0,,1
+"8.1 
+• 
+Perchard to Kirton, no run",8.1,0,0.0,"Perchard to Kirton, no run",Perchard,Kirton,0.0,0,0,1,1,0.0,0,,0
+"8.2 
+1 
+Perchard to Kirton, 1 run",8.2,1,1.0,"Perchard to Kirton, 1 run",Perchard,Kirton,1.0,0,0,1,1,1.0,0,,1
+"8.3 
+1 
+Perchard to Wijeyeratne, 1 run",8.3,1,1.0,"Perchard to Wijeyeratne, 1 run",Perchard,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"8.4 
+• 
+Perchard to Kirton, no run",8.4,0,0.0,"Perchard to Kirton, no run",Perchard,Kirton,0.0,0,0,1,1,0.0,0,,0
+"8.5 
+W 
+Perchard to Kirton, OUT 
+Nicholas Kirton c Lawrenson b Perchard 13 (18b 2x4 0x6) SR: 72.22",8.5,W,0.0,"Perchard to Kirton, OUT  .Nicholas Kirton c Lawrenson b Perchard 13 (18b 2x4 0x6) SR: 72.22",Perchard,Kirton,0.0,0,0,1,1,0.0,1,c Lawrenson b Perchard,0
+"8.6 
+• 
+Perchard to Thaker, no run 
+end of over 92 runs • 1 wicket 
+CAN: 52/4CRR: 5.77  
+Harsh Thaker0 (1b) 
+Srimantha Wijeyeratne3 (10b) 
+Charles Perchard 1-0-2-1 
+Anthony Hawkins-Kay 4-0-20-1",8.6,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"9.1 
+1 
+Miles to Wijeyeratne, 1 run",9.1,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"9.2 
+1w 
+Miles to Thaker, 1 wide",9.2,1w,1.0,"Miles to Thaker, 1 wide",Miles,Thaker,0.0,0,0,0,0,1.0,0,,1
+"9.2 
+• 
+Miles to Thaker, no run",9.2,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"9.3 
+• 
+Miles to Thaker, no run",9.3,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"9.4 
+• 
+Miles to Thaker, no run",9.4,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"9.5 
+1 
+Miles to Thaker, 1 run",9.5,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"9.6 
+1 
+Miles to Wijeyeratne, 1 run 
+end of over 104 runs  
+CAN: 56/4CRR: 5.60  
+Srimantha Wijeyeratne5 (12b) 
+Harsh Thaker1 (5b) 
+Elliot Miles 1-0-4-0 
+Charles Perchard 1-0-2-1",9.6,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"10.1 
+• 
+Perchard to Wijeyeratne, no run",10.1,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"10.2 
+• 
+Perchard to Wijeyeratne, no run",10.2,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"10.3 
+1 
+Perchard to Wijeyeratne, 1 run",10.3,1,1.0,"Perchard to Wijeyeratne, 1 run",Perchard,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"10.4 
+1 
+Perchard to Thaker, 1 run",10.4,1,1.0,"Perchard to Thaker, 1 run",Perchard,Thaker,1.0,0,0,1,1,1.0,0,,1
+"10.5 
+• 
+Perchard to Wijeyeratne, no run",10.5,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"10.6 
+• 
+Perchard to Wijeyeratne, no run 
+end of over 112 runs  
+CAN: 58/4CRR: 5.27  
+Srimantha Wijeyeratne6 (17b) 
+Harsh Thaker2 (6b) 
+Charles Perchard 2-0-4-1 
+Elliot Miles 1-0-4-0",10.6,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"11.1 
+1 
+Miles to Thaker, 1 run",11.1,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"11.2 
+• 
+Miles to Wijeyeratne, no run",11.2,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"11.3 
+• 
+Miles to Wijeyeratne, no run",11.3,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"11.4 
+1 
+Miles to Wijeyeratne, 1 run",11.4,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"11.5 
+• 
+Miles to Thaker, no run",11.5,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"11.6 
+• 
+Miles to Thaker, no run 
+end of over 122 runs  
+CAN: 60/4CRR: 5.00  
+Harsh Thaker3 (9b) 
+Srimantha Wijeyeratne7 (20b) 
+Elliot Miles 2-0-6-0 
+Charles Perchard 2-0-4-1",11.6,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"12.1 
+• 
+Perchard to Wijeyeratne, no run",12.1,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"12.2 
+• 
+Perchard to Wijeyeratne, no run",12.2,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"12.3 
+• 
+Perchard to Wijeyeratne, no run",12.3,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"12.4 
+• 
+Perchard to Wijeyeratne, no run",12.4,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"12.5 
+• 
+Perchard to Wijeyeratne, no run",12.5,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"12.6 
+• 
+Perchard to Wijeyeratne, no run 
+end of over 13Maiden 
+CAN: 60/4CRR: 4.61  
+Srimantha Wijeyeratne7 (26b) 
+Harsh Thaker3 (9b) 
+Charles Perchard 3-1-4-1 
+Elliot Miles 2-0-6-0",12.6,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"13.1 
+• 
+Miles to Thaker, no run",13.1,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"13.2 
+• 
+Miles to Thaker, no run",13.2,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"13.3 
+1 
+Miles to Thaker, 1 run",13.3,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"13.4 
+4 
+Miles to Wijeyeratne, FOUR runs",13.4,4,4.0,"Miles to Wijeyeratne, FOUR runs",Miles,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"13.5 
+1 
+Miles to Wijeyeratne, 1 run",13.5,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"13.6 
+1 
+Miles to Thaker, 1 run 
+end of over 147 runs  
+CAN: 67/4CRR: 4.78  
+Harsh Thaker5 (13b) 
+Srimantha Wijeyeratne12 (28b 1x4) 
+Elliot Miles 3-0-13-0 
+Charles Perchard 3-1-4-1",13.6,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"14.1 
+• 
+Perchard to Thaker, no run",14.1,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"14.2 
+• 
+Perchard to Thaker, no run",14.2,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"14.3 
+• 
+Perchard to Thaker, no run",14.3,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"14.4 
+1 
+Perchard to Thaker, 1 run",14.4,1,1.0,"Perchard to Thaker, 1 run",Perchard,Thaker,1.0,0,0,1,1,1.0,0,,1
+"14.5 
+• 
+Perchard to Wijeyeratne, no run",14.5,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"14.6 
+• 
+Perchard to Wijeyeratne, no run 
+end of over 151 run  
+CAN: 68/4CRR: 4.53  
+Srimantha Wijeyeratne12 (30b 1x4) 
+Harsh Thaker6 (17b) 
+Charles Perchard 4-1-5-1 
+Elliot Miles 3-0-13-0",14.6,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"15.1 
+• 
+Asa Tribe to Thaker, no run",15.1,0,0.0,"Asa Tribe to Thaker, no run",Asa Tribe,Thaker,0.0,0,0,1,1,0.0,0,,0
+"15.2 
+• 
+Asa Tribe to Thaker, no run",15.2,0,0.0,"Asa Tribe to Thaker, no run",Asa Tribe,Thaker,0.0,0,0,1,1,0.0,0,,0
+"15.3 
+• 
+Asa Tribe to Thaker, no run",15.3,0,0.0,"Asa Tribe to Thaker, no run",Asa Tribe,Thaker,0.0,0,0,1,1,0.0,0,,0
+"15.4 
+• 
+Asa Tribe to Thaker, no run",15.4,0,0.0,"Asa Tribe to Thaker, no run",Asa Tribe,Thaker,0.0,0,0,1,1,0.0,0,,0
+"15.5 
+1 
+Asa Tribe to Thaker, 1 run",15.5,1,1.0,"Asa Tribe to Thaker, 1 run",Asa Tribe,Thaker,1.0,0,0,1,1,1.0,0,,1
+"15.6 
+4 
+Asa Tribe to Wijeyeratne, FOUR runs 
+end of over 165 runs  
+CAN: 73/4CRR: 4.56  
+Srimantha Wijeyeratne16 (31b 2x4) 
+Harsh Thaker7 (22b) 
+Asa Tribe 1-0-5-0 
+Charles Perchard 4-1-5-1",15.6,4,4.0,"Asa Tribe to Wijeyeratne, FOUR runs",Asa Tribe,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"16.1 
+• 
+Ward to Thaker, no run",16.1,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"16.2 
+• 
+Ward to Thaker, no run",16.2,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"16.3 
+1 
+Ward to Thaker, 1 run",16.3,1,1.0,"Ward to Thaker, 1 run",Ward,Thaker,1.0,0,0,1,1,1.0,0,,1
+"16.4 
+1 
+Ward to Wijeyeratne, 1 run",16.4,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"16.5 
+• 
+Ward to Thaker, no run",16.5,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"16.6 
+• 
+Ward to Thaker, no run 
+end of over 172 runs  
+CAN: 75/4CRR: 4.41  
+Harsh Thaker8 (27b) 
+Srimantha Wijeyeratne17 (32b 2x4) 
+Benjamin Ward 1-0-2-0 
+Asa Tribe 1-0-5-0",16.6,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"17.1 
+1 
+Asa Tribe to Wijeyeratne, 1 run",17.1,1,1.0,"Asa Tribe to Wijeyeratne, 1 run",Asa Tribe,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"17.2 
+1 
+Asa Tribe to Thaker, 1 run",17.2,1,1.0,"Asa Tribe to Thaker, 1 run",Asa Tribe,Thaker,1.0,0,0,1,1,1.0,0,,1
+"17.3 
+1 
+Asa Tribe to Wijeyeratne, 1 run",17.3,1,1.0,"Asa Tribe to Wijeyeratne, 1 run",Asa Tribe,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"17.4 
+• 
+Asa Tribe to Thaker, no run",17.4,0,0.0,"Asa Tribe to Thaker, no run",Asa Tribe,Thaker,0.0,0,0,1,1,0.0,0,,0
+"17.5 
+2nb 
+Asa Tribe to Thaker, (no ball) 1 run",17.5,2nb,2.0,"Asa Tribe to Thaker, (no ball) 1 run",Asa Tribe,Thaker,1.0,0,0,1,0,2.0,0,,1
+"17.5 
+• 
+Asa Tribe to Wijeyeratne, no run",17.5,0,0.0,"Asa Tribe to Wijeyeratne, no run",Asa Tribe,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"17.6 
+1 
+Asa Tribe to Wijeyeratne, 1 run 
+end of over 186 runs  
+CAN: 81/4CRR: 4.50  
+Srimantha Wijeyeratne20 (36b 2x4) 
+Harsh Thaker10 (30b) 
+Asa Tribe 2-0-11-0 
+Benjamin Ward 1-0-2-0",17.6,1,1.0,"Asa Tribe to Wijeyeratne, 1 run",Asa Tribe,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"18.1 
+1 
+Ward to Wijeyeratne, 1 run",18.1,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"18.2 
+1 
+Ward to Thaker, 1 run",18.2,1,1.0,"Ward to Thaker, 1 run",Ward,Thaker,1.0,0,0,1,1,1.0,0,,1
+"18.3 
+• 
+Ward to Wijeyeratne, no run",18.3,0,0.0,"Ward to Wijeyeratne, no run",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"18.4 
+1 
+Ward to Wijeyeratne, 1 run",18.4,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"18.5 
+1 
+Ward to Thaker, 1 run",18.5,1,1.0,"Ward to Thaker, 1 run",Ward,Thaker,1.0,0,0,1,1,1.0,0,,1
+"18.6 
+1 
+Ward to Wijeyeratne, 1 run 
+end of over 195 runs  
+CAN: 86/4CRR: 4.52  
+Srimantha Wijeyeratne23 (40b 2x4) 
+Harsh Thaker12 (32b) 
+Benjamin Ward 2-0-7-0 
+Asa Tribe 2-0-11-0",18.6,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"19.1 
+• 
+Miles to Wijeyeratne, no run",19.1,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"19.2 
+4 
+Miles to Wijeyeratne, FOUR runs",19.2,4,4.0,"Miles to Wijeyeratne, FOUR runs",Miles,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"19.3 
+• 
+Miles to Wijeyeratne, no run",19.3,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"19.4 
+1 
+Miles to Wijeyeratne, 1 run",19.4,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"19.5 
+• 
+Miles to Thaker, no run",19.5,0,0.0,"Miles to Thaker, no run",Miles,Thaker,0.0,0,0,1,1,0.0,0,,0
+"19.6 
+1 
+Miles to Thaker, 1 run 
+end of over 206 runs  
+CAN: 92/4CRR: 4.60  
+Harsh Thaker13 (34b) 
+Srimantha Wijeyeratne28 (44b 3x4) 
+Elliot Miles 4-0-19-0 
+Benjamin Ward 2-0-7-0",19.6,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"20.1 
+• 
+Ward to Thaker, no run",20.1,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"20.2 
+7nb 
+Ward to Thaker, (no ball) SIX runs",20.2,7nb,7.0,"Ward to Thaker, (no ball) SIX runs",Ward,Thaker,6.0,0,0,1,0,7.0,0,,1
+"20.2 
+2 
+Ward to Thaker, 2 runs",20.2,2,2.0,"Ward to Thaker, 2 runs",Ward,Thaker,2.0,0,0,1,1,2.0,0,,1
+"20.3 
+• 
+Ward to Thaker, no run",20.3,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"20.4 
+• 
+Ward to Thaker, no run",20.4,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"20.5 
+• 
+Ward to Thaker, no run",20.5,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"20.6 
+• 
+Ward to Thaker, no run 
+end of over 219 runs  
+CAN: 101/4CRR: 4.80  
+Harsh Thaker21 (41b 1x6) 
+Srimantha Wijeyeratne28 (44b 3x4) 
+Benjamin Ward 3-0-16-0 
+Elliot Miles 4-0-19-0",20.6,0,0.0,"Ward to Thaker, no run",Ward,Thaker,0.0,0,0,1,1,0.0,0,,0
+"21.1 
+• 
+Miles to Wijeyeratne, no run",21.1,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"21.2 
+• 
+Miles to Wijeyeratne, no run",21.2,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"21.3 
+1 
+Miles to Wijeyeratne, 1 run",21.3,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"21.4 
+1 
+Miles to Thaker, 1 run",21.4,1,1.0,"Miles to Thaker, 1 run",Miles,Thaker,1.0,0,0,1,1,1.0,0,,1
+"21.5 
+4 
+Miles to Wijeyeratne, FOUR runs",21.5,4,4.0,"Miles to Wijeyeratne, FOUR runs",Miles,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"21.6 
+1 
+Miles to Wijeyeratne, 1 run 
+end of over 227 runs  
+CAN: 108/4CRR: 4.90  
+Srimantha Wijeyeratne34 (49b 4x4) 
+Harsh Thaker22 (42b 1x6) 
+Elliot Miles 5-0-26-0 
+Benjamin Ward 3-0-16-0",21.6,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"22.1 
+• 
+Sumerauer to Wijeyeratne, no run",22.1,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"22.2 
+1 
+Sumerauer to Wijeyeratne, 1 run",22.2,1,1.0,"Sumerauer to Wijeyeratne, 1 run",Sumerauer,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"22.3 
+1 
+Sumerauer to Thaker, 1 run",22.3,1,1.0,"Sumerauer to Thaker, 1 run",Sumerauer,Thaker,1.0,0,0,1,1,1.0,0,,1
+"22.4 
+• 
+Sumerauer to Wijeyeratne, no run",22.4,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"22.5 
+• 
+Sumerauer to Wijeyeratne, no run",22.5,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"22.6 
+• 
+Sumerauer to Wijeyeratne, no run 
+end of over 232 runs  
+CAN: 110/4CRR: 4.78  
+Srimantha Wijeyeratne35 (54b 4x4) 
+Harsh Thaker23 (43b 1x6) 
+Julius Sumerauer 5-0-28-2 
+Elliot Miles 5-0-26-0",22.6,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"23.1 
+• 
+Perchard to Thaker, no run",23.1,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"23.2 
+4 
+Perchard to Thaker, FOUR runs",23.2,4,4.0,"Perchard to Thaker, FOUR runs",Perchard,Thaker,4.0,1,0,1,1,4.0,0,,1
+"23.3 
+• 
+Perchard to Thaker, no run",23.3,0,0.0,"Perchard to Thaker, no run",Perchard,Thaker,0.0,0,0,1,1,0.0,0,,0
+"23.4 
+W 
+Perchard to Thaker, OUT 
+Harsh Thaker b Perchard 27 (47b 1x4 1x6) SR: 57.44",23.4,W,0.0,"Perchard to Thaker, OUT  .Harsh Thaker b Perchard 27 (47b 1x4 1x6) SR: 57.44",Perchard,Thaker,0.0,0,0,1,1,0.0,1,b Perchard,0
+"23.5 
+• 
+Perchard to Dutta, no run",23.5,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"23.6 
+• 
+Perchard to Dutta, no run 
+end of over 244 runs • 1 wicket 
+CAN: 114/5CRR: 4.75  
+Nikhil Dutta0 (2b) 
+Srimantha Wijeyeratne35 (54b 4x4) 
+Charles Perchard 5-1-9-2 
+Julius Sumerauer 5-0-28-2",23.6,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"24.1 
+• 
+Sumerauer to Wijeyeratne, no run",24.1,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"24.2 
+1 
+Sumerauer to Wijeyeratne, 1 run",24.2,1,1.0,"Sumerauer to Wijeyeratne, 1 run",Sumerauer,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"24.3 
+• 
+Sumerauer to Dutta, no run",24.3,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"24.4 
+• 
+Sumerauer to Dutta, no run",24.4,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"24.5 
+• 
+Sumerauer to Dutta, no run",24.5,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"24.6 
+• 
+Sumerauer to Dutta, no run 
+end of over 251 run  
+CAN: 115/5CRR: 4.60  
+Nikhil Dutta0 (6b) 
+Srimantha Wijeyeratne36 (56b 4x4) 
+Julius Sumerauer 6-0-29-2 
+Charles Perchard 5-1-9-2",24.6,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"25.1 
+1 
+Perchard to Wijeyeratne, 1 run",25.1,1,1.0,"Perchard to Wijeyeratne, 1 run",Perchard,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"25.2 
+• 
+Perchard to Dutta, no run",25.2,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"25.3 
+• 
+Perchard to Dutta, no run",25.3,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"25.4 
+• 
+Perchard to Dutta, no run",25.4,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"25.5 
+6 
+Perchard to Dutta, SIX runs",25.5,6,6.0,"Perchard to Dutta, SIX runs",Perchard,Dutta,6.0,0,1,1,1,6.0,0,,1
+"25.6 
+1 
+Perchard to Dutta, 1 run 
+end of over 268 runs  
+CAN: 123/5CRR: 4.73  
+Nikhil Dutta7 (11b 1x6) 
+Srimantha Wijeyeratne37 (57b 4x4) 
+Charles Perchard 6-1-17-2 
+Julius Sumerauer 6-0-29-2",25.6,1,1.0,"Perchard to Dutta, 1 run",Perchard,Dutta,1.0,0,0,1,1,1.0,0,,1
+"26.1 
+• 
+Ward to Dutta, no run",26.1,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"26.2 
+• 
+Ward to Dutta, no run",26.2,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"26.3 
+2 
+Ward to Dutta, 2 runs",26.3,2,2.0,"Ward to Dutta, 2 runs",Ward,Dutta,2.0,0,0,1,1,2.0,0,,1
+"26.4 
+• 
+Ward to Dutta, no run",26.4,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"26.5 
+• 
+Ward to Dutta, no run",26.5,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"26.6 
+• 
+Ward to Dutta, no run 
+end of over 272 runs  
+CAN: 125/5CRR: 4.62  
+Nikhil Dutta9 (17b 1x6) 
+Srimantha Wijeyeratne37 (57b 4x4) 
+Benjamin Ward 4-0-18-0 
+Charles Perchard 6-1-17-2",26.6,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"27.1 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",27.1,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"27.2 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",27.2,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"27.3 
+1 
+AW Hawkins-Kay to Wijeyeratne, 1 run",27.3,1,1.0,"AW Hawkins-Kay to Wijeyeratne, 1 run",AW Hawkins-Kay,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"27.4 
+1w 
+AW Hawkins-Kay to Dutta, 1 wide",27.4,1w,1.0,"AW Hawkins-Kay to Dutta, 1 wide",AW Hawkins-Kay,Dutta,0.0,0,0,0,0,1.0,0,,1
+"27.4 
+1w 
+AW Hawkins-Kay to Dutta, 1 wide",27.4,1w,1.0,"AW Hawkins-Kay to Dutta, 1 wide",AW Hawkins-Kay,Dutta,0.0,0,0,0,0,1.0,0,,1
+"27.4 
+• 
+AW Hawkins-Kay to Dutta, no run",27.4,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"27.5 
+• 
+AW Hawkins-Kay to Dutta, no run",27.5,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"27.6 
+• 
+AW Hawkins-Kay to Dutta, no run 
+end of over 283 runs  
+CAN: 128/5CRR: 4.57  
+Nikhil Dutta9 (20b 1x6) 
+Srimantha Wijeyeratne38 (60b 4x4) 
+Anthony Hawkins-Kay 5-0-23-1 
+Benjamin Ward 4-0-18-0",27.6,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"28.1 
+1 
+Ward to Wijeyeratne, 1 run",28.1,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"28.2 
+• 
+Ward to Dutta, no run",28.2,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"28.3 
+• 
+Ward to Dutta, no run",28.3,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"28.4 
+• 
+Ward to Dutta, no run",28.4,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"28.5 
+• 
+Ward to Dutta, no run",28.5,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"28.6 
+• 
+Ward to Dutta, no run 
+end of over 291 run  
+CAN: 129/5CRR: 4.44  
+Nikhil Dutta9 (25b 1x6) 
+Srimantha Wijeyeratne39 (61b 4x4) 
+Benjamin Ward 5-0-19-0 
+Anthony Hawkins-Kay 5-0-23-1",28.6,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"29.1 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",29.1,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"29.2 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",29.2,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"29.3 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",29.3,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"29.4 
+• 
+AW Hawkins-Kay to Wijeyeratne, no run",29.4,0,0.0,"AW Hawkins-Kay to Wijeyeratne, no run",AW Hawkins-Kay,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"29.5 
+1 
+AW Hawkins-Kay to Wijeyeratne, 1 run",29.5,1,1.0,"AW Hawkins-Kay to Wijeyeratne, 1 run",AW Hawkins-Kay,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"29.6 
+• 
+AW Hawkins-Kay to Dutta, no run 
+end of over 301 run  
+CAN: 130/5CRR: 4.33  
+Nikhil Dutta9 (26b 1x6) 
+Srimantha Wijeyeratne40 (66b 4x4) 
+Anthony Hawkins-Kay 6-0-24-1 
+Benjamin Ward 5-0-19-0",29.6,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"30.1 
+• 
+Ward to Wijeyeratne, no run",30.1,0,0.0,"Ward to Wijeyeratne, no run",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"30.2 
+1 
+Ward to Wijeyeratne, 1 run",30.2,1,1.0,"Ward to Wijeyeratne, 1 run",Ward,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"30.3 
+• 
+Ward to Dutta, no run",30.3,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"30.4 
+• 
+Ward to Dutta, no run",30.4,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"30.5 
+1 
+Ward to Dutta, 1 run",30.5,1,1.0,"Ward to Dutta, 1 run",Ward,Dutta,1.0,0,0,1,1,1.0,0,,1
+"30.6 
+• 
+Ward to Wijeyeratne, no run 
+end of over 312 runs  
+CAN: 132/5CRR: 4.25  
+Srimantha Wijeyeratne41 (69b 4x4) 
+Nikhil Dutta10 (29b 1x6) 
+Benjamin Ward 6-0-21-0 
+Anthony Hawkins-Kay 6-0-24-1",30.6,0,0.0,"Ward to Wijeyeratne, no run",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"31.1 
+1w 
+Miles to Dutta, 1 wide",31.1,1w,1.0,"Miles to Dutta, 1 wide",Miles,Dutta,0.0,0,0,0,0,1.0,0,,1
+"31.1 
+• 
+Miles to Dutta, no run",31.1,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"31.2 
+1 
+Miles to Dutta, 1 run",31.2,1,1.0,"Miles to Dutta, 1 run",Miles,Dutta,1.0,0,0,1,1,1.0,0,,1
+"31.3 
+• 
+Miles to Wijeyeratne, no run",31.3,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"31.4 
+• 
+Miles to Wijeyeratne, no run",31.4,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"31.5 
+1 
+Miles to Wijeyeratne, 1 run",31.5,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"31.6 
+1 
+Miles to Dutta, 1 run 
+end of over 324 runs  
+CAN: 136/5CRR: 4.25  
+Nikhil Dutta12 (32b 1x6) 
+Srimantha Wijeyeratne42 (72b 4x4) 
+Elliot Miles 6-0-30-0 
+Benjamin Ward 6-0-21-0",31.6,1,1.0,"Miles to Dutta, 1 run",Miles,Dutta,1.0,0,0,1,1,1.0,0,,1
+"32.1 
+• 
+Ward to Dutta, no run",32.1,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"32.2 
+• 
+Ward to Dutta, no run",32.2,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"32.3 
+1 
+Ward to Dutta, 1 run",32.3,1,1.0,"Ward to Dutta, 1 run",Ward,Dutta,1.0,0,0,1,1,1.0,0,,1
+"32.4 
+4 
+Ward to Wijeyeratne, FOUR runs",32.4,4,4.0,"Ward to Wijeyeratne, FOUR runs",Ward,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"32.5 
+• 
+Ward to Wijeyeratne, no run",32.5,0,0.0,"Ward to Wijeyeratne, no run",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"32.6 
+4 
+Ward to Wijeyeratne, FOUR runs 
+end of over 339 runs  
+CAN: 145/5CRR: 4.39  
+Srimantha Wijeyeratne50 (75b 6x4) 
+Nikhil Dutta13 (35b 1x6) 
+Benjamin Ward 7-0-30-0 
+Elliot Miles 6-0-30-0",32.6,4,4.0,"Ward to Wijeyeratne, FOUR runs",Ward,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"33.1 
+• 
+Miles to Dutta, no run",33.1,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"33.2 
+• 
+Miles to Dutta, no run",33.2,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"33.3 
+• 
+Miles to Dutta, no run",33.3,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"33.4 
+6 
+Miles to Dutta, SIX runs",33.4,6,6.0,"Miles to Dutta, SIX runs",Miles,Dutta,6.0,0,1,1,1,6.0,0,,1
+"33.5 
+• 
+Miles to Dutta, no run",33.5,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"33.6 
+• 
+Miles to Dutta, no run 
+end of over 346 runs  
+CAN: 151/5CRR: 4.44  
+Nikhil Dutta19 (41b 2x6) 
+Srimantha Wijeyeratne50 (75b 6x4) 
+Elliot Miles 7-0-36-0 
+Benjamin Ward 7-0-30-0",33.6,0,0.0,"Miles to Dutta, no run",Miles,Dutta,0.0,0,0,1,1,0.0,0,,0
+"34.1 
+• 
+Sumerauer to Wijeyeratne, no run",34.1,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"34.2 
+• 
+Sumerauer to Wijeyeratne, no run",34.2,0,0.0,"Sumerauer to Wijeyeratne, no run",Sumerauer,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"34.3 
+1 
+Sumerauer to Wijeyeratne, 1 run",34.3,1,1.0,"Sumerauer to Wijeyeratne, 1 run",Sumerauer,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"34.4 
+• 
+Sumerauer to Dutta, no run",34.4,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"34.5 
+• 
+Sumerauer to Dutta, no run",34.5,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"34.6 
+4 
+Sumerauer to Dutta, FOUR runs 
+end of over 355 runs  
+CAN: 156/5CRR: 4.45  
+Nikhil Dutta23 (44b 1x4 2x6) 
+Srimantha Wijeyeratne51 (78b 6x4) 
+Julius Sumerauer 7-0-34-2 
+Elliot Miles 7-0-36-0",34.6,4,4.0,"Sumerauer to Dutta, FOUR runs",Sumerauer,Dutta,4.0,1,0,1,1,4.0,0,,1
+"35.1 
+• 
+Perchard to Wijeyeratne, no run",35.1,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"35.2 
+• 
+Perchard to Wijeyeratne, no run",35.2,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"35.3 
+• 
+Perchard to Wijeyeratne, no run",35.3,0,0.0,"Perchard to Wijeyeratne, no run",Perchard,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"35.4 
+1 
+Perchard to Wijeyeratne, 1 run",35.4,1,1.0,"Perchard to Wijeyeratne, 1 run",Perchard,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"35.5 
+• 
+Perchard to Dutta, no run",35.5,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"35.6 
+• 
+Perchard to Dutta, no run 
+end of over 361 run  
+CAN: 157/5CRR: 4.36  
+Nikhil Dutta23 (46b 1x4 2x6) 
+Srimantha Wijeyeratne52 (82b 6x4) 
+Charles Perchard 7-1-18-2 
+Julius Sumerauer 7-0-34-2",35.6,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"36.1 
+1 
+Sumerauer to Wijeyeratne, 1 run",36.1,1,1.0,"Sumerauer to Wijeyeratne, 1 run",Sumerauer,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"36.2 
+• 
+Sumerauer to Dutta, no run",36.2,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"36.3 
+• 
+Sumerauer to Dutta, no run",36.3,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"36.4 
+• 
+Sumerauer to Dutta, no run",36.4,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"36.5 
+• 
+Sumerauer to Dutta, no run",36.5,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"36.6 
+• 
+Sumerauer to Dutta, no run 
+end of over 371 run  
+CAN: 158/5CRR: 4.27  
+Nikhil Dutta23 (51b 1x4 2x6) 
+Srimantha Wijeyeratne53 (83b 6x4) 
+Julius Sumerauer 8-0-35-2 
+Charles Perchard 7-1-18-2",36.6,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"37.1 
+1 
+AW Hawkins-Kay to Wijeyeratne, 1 run",37.1,1,1.0,"AW Hawkins-Kay to Wijeyeratne, 1 run",AW Hawkins-Kay,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"37.2 
+• 
+AW Hawkins-Kay to Dutta, no run",37.2,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"37.3 
+• 
+AW Hawkins-Kay to Dutta, no run",37.3,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"37.4 
+6 
+AW Hawkins-Kay to Dutta, SIX runs",37.4,6,6.0,"AW Hawkins-Kay to Dutta, SIX runs",AW Hawkins-Kay,Dutta,6.0,0,1,1,1,6.0,0,,1
+"37.5 
+• 
+AW Hawkins-Kay to Dutta, no run",37.5,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"37.6 
+1w 
+AW Hawkins-Kay to Dutta, 1 wide",37.6,1w,1.0,"AW Hawkins-Kay to Dutta, 1 wide",AW Hawkins-Kay,Dutta,0.0,0,0,0,0,1.0,0,,1
+"37.6 
+• 
+AW Hawkins-Kay to Dutta, no run 
+end of over 388 runs  
+CAN: 166/5CRR: 4.36  
+Nikhil Dutta29 (56b 1x4 3x6) 
+Srimantha Wijeyeratne54 (84b 6x4) 
+Anthony Hawkins-Kay 7-0-32-1 
+Julius Sumerauer 8-0-35-2",37.6,0,0.0,"AW Hawkins-Kay to Dutta, no run",AW Hawkins-Kay,Dutta,0.0,0,0,1,1,0.0,0,,0
+"38.1 
+1 
+Miles to Wijeyeratne, 1 run",38.1,1,1.0,"Miles to Wijeyeratne, 1 run",Miles,Wijeyeratne,1.0,0,0,1,1,1.0,0,,1
+"38.2 
+1 
+Miles to Dutta, 1 run",38.2,1,1.0,"Miles to Dutta, 1 run",Miles,Dutta,1.0,0,0,1,1,1.0,0,,1
+"38.3 
+4 
+Miles to Wijeyeratne, FOUR runs",38.3,4,4.0,"Miles to Wijeyeratne, FOUR runs",Miles,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"38.4 
+4 
+Miles to Wijeyeratne, FOUR runs",38.4,4,4.0,"Miles to Wijeyeratne, FOUR runs",Miles,Wijeyeratne,4.0,1,0,1,1,4.0,0,,1
+"38.5 
+• 
+Miles to Wijeyeratne, no run",38.5,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"38.6 
+• 
+Miles to Wijeyeratne, no run 
+end of over 3910 runs  
+CAN: 176/5CRR: 4.51  
+Srimantha Wijeyeratne63 (89b 8x4) 
+Nikhil Dutta30 (57b 1x4 3x6) 
+Elliot Miles 8-0-46-0 
+Anthony Hawkins-Kay 7-0-32-1",38.6,0,0.0,"Miles to Wijeyeratne, no run",Miles,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"39.1 
+• 
+Perchard to Dutta, no run",39.1,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"39.2 
+4 
+Perchard to Dutta, FOUR runs",39.2,4,4.0,"Perchard to Dutta, FOUR runs",Perchard,Dutta,4.0,1,0,1,1,4.0,0,,1
+"39.3 
+• 
+Perchard to Dutta, no run",39.3,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"39.4 
+• 
+Perchard to Dutta, no run",39.4,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"39.5 
+4 
+Perchard to Dutta, FOUR runs",39.5,4,4.0,"Perchard to Dutta, FOUR runs",Perchard,Dutta,4.0,1,0,1,1,4.0,0,,1
+"39.6 
+• 
+Perchard to Dutta, no run 
+end of over 408 runs  
+CAN: 184/5CRR: 4.60  
+Nikhil Dutta38 (63b 3x4 3x6) 
+Srimantha Wijeyeratne63 (89b 8x4) 
+Charles Perchard 8-1-26-2 
+Elliot Miles 8-0-46-0",39.6,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"40.1 
+• 
+Ward to Wijeyeratne, no run",40.1,0,0.0,"Ward to Wijeyeratne, no run",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,0,,0
+"40.2 
+W 
+Ward to Wijeyeratne, OUT 
+Srimantha Wijeyeratne lbw b Ward 63 (91b 8x4 0x6) SR: 69.23",40.2,W,0.0,"Ward to Wijeyeratne, OUT  .Srimantha Wijeyeratne lbw b Ward 63 (91b 8x4 0x6) SR: 69.23",Ward,Wijeyeratne,0.0,0,0,1,1,0.0,1,lbw b Ward,0
+"40.3 
+2 
+Ward to Saad, 2 runs",40.3,2,2.0,"Ward to Saad, 2 runs",Ward,Saad,2.0,0,0,1,1,2.0,0,,1
+"40.4 
+• 
+Ward to Saad, no run",40.4,0,0.0,"Ward to Saad, no run",Ward,Saad,0.0,0,0,1,1,0.0,0,,0
+"40.5 
+• 
+Ward to Saad, no run",40.5,0,0.0,"Ward to Saad, no run",Ward,Saad,0.0,0,0,1,1,0.0,0,,0
+"40.6 
+• 
+Ward to Saad, no run 
+end of over 412 runs • 1 wicket 
+CAN: 186/6CRR: 4.53  
+Saad Bin Zafar2 (4b) 
+Nikhil Dutta38 (63b 3x4 3x6) 
+Benjamin Ward 8-0-32-1 
+Charles Perchard 8-1-26-2",40.6,0,0.0,"Ward to Saad, no run",Ward,Saad,0.0,0,0,1,1,0.0,0,,0
+"41.1 
+1 
+Sumerauer to Dutta, 1 run",41.1,1,1.0,"Sumerauer to Dutta, 1 run",Sumerauer,Dutta,1.0,0,0,1,1,1.0,0,,1
+"41.2 
+1 
+Sumerauer to Saad, 1 run",41.2,1,1.0,"Sumerauer to Saad, 1 run",Sumerauer,Saad,1.0,0,0,1,1,1.0,0,,1
+"41.3 
+1 
+Sumerauer to Dutta, 1 run",41.3,1,1.0,"Sumerauer to Dutta, 1 run",Sumerauer,Dutta,1.0,0,0,1,1,1.0,0,,1
+"41.4 
+• 
+Sumerauer to Saad, no run",41.4,0,0.0,"Sumerauer to Saad, no run",Sumerauer,Saad,0.0,0,0,1,1,0.0,0,,0
+"41.5 
+• 
+Sumerauer to Saad, no run",41.5,0,0.0,"Sumerauer to Saad, no run",Sumerauer,Saad,0.0,0,0,1,1,0.0,0,,0
+"41.6 
+1 
+Sumerauer to Saad, 1 run 
+end of over 424 runs  
+CAN: 190/6CRR: 4.52  
+Saad Bin Zafar4 (8b) 
+Nikhil Dutta40 (65b 3x4 3x6) 
+Julius Sumerauer 9-0-39-2 
+Benjamin Ward 8-0-32-1",41.6,1,1.0,"Sumerauer to Saad, 1 run",Sumerauer,Saad,1.0,0,0,1,1,1.0,0,,1
+"42.1 
+• 
+Ward to Saad, no run",42.1,0,0.0,"Ward to Saad, no run",Ward,Saad,0.0,0,0,1,1,0.0,0,,0
+"42.2 
+• 
+Ward to Saad, no run",42.2,0,0.0,"Ward to Saad, no run",Ward,Saad,0.0,0,0,1,1,0.0,0,,0
+"42.3 
+W 
+Ward to Saad, OUT 
+Saad Bin Zafar c & b Ward 4 (11b 0x4 0x6) SR: 36.36",42.3,W,0.0,"Ward to Saad, OUT  .Saad Bin Zafar c & b Ward 4 (11b 0x4 0x6) SR: 36.36",Ward,Saad,0.0,0,0,1,1,0.0,1,c & b Ward,0
+"42.4 
+• 
+Ward to Ravinderpal Singh, no run",42.4,0,0.0,"Ward to Ravinderpal Singh, no run",Ward,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"42.5 
+• 
+Ward to Ravinderpal Singh, no run",42.5,0,0.0,"Ward to Ravinderpal Singh, no run",Ward,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"42.6 
+• 
+Ward to Ravinderpal Singh, no run 
+end of over 43Wicket maiden 
+CAN: 190/7CRR: 4.41  
+Ravinderpal Singh0 (3b) 
+Nikhil Dutta40 (65b 3x4 3x6) 
+Benjamin Ward 9-1-32-2 
+Julius Sumerauer 9-0-39-2",42.6,0,0.0,"Ward to Ravinderpal Singh, no run",Ward,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"43.1 
+• 
+Perchard to Dutta, no run",43.1,0,0.0,"Perchard to Dutta, no run",Perchard,Dutta,0.0,0,0,1,1,0.0,0,,0
+"43.2 
+4 
+Perchard to Dutta, FOUR runs",43.2,4,4.0,"Perchard to Dutta, FOUR runs",Perchard,Dutta,4.0,1,0,1,1,4.0,0,,1
+"43.3 
+1 
+Perchard to Dutta, 1 run",43.3,1,1.0,"Perchard to Dutta, 1 run",Perchard,Dutta,1.0,0,0,1,1,1.0,0,,1
+"43.4 
+1 
+Perchard to Ravinderpal Singh, 1 run",43.4,1,1.0,"Perchard to Ravinderpal Singh, 1 run",Perchard,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"43.5 
+1 
+Perchard to Dutta, 1 run",43.5,1,1.0,"Perchard to Dutta, 1 run",Perchard,Dutta,1.0,0,0,1,1,1.0,0,,1
+"43.6 
+• 
+Perchard to Ravinderpal Singh, no run 
+end of over 447 runs  
+CAN: 197/7CRR: 4.47  
+Ravinderpal Singh1 (5b) 
+Nikhil Dutta46 (69b 4x4 3x6) 
+Charles Perchard 9-1-33-2 
+Benjamin Ward 9-1-32-2",43.6,0,0.0,"Perchard to Ravinderpal Singh, no run",Perchard,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"44.1 
+• 
+Ward to Dutta, no run",44.1,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"44.2 
+• 
+Ward to Dutta, no run",44.2,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"44.3 
+1 
+Ward to Dutta, 1 run",44.3,1,1.0,"Ward to Dutta, 1 run",Ward,Dutta,1.0,0,0,1,1,1.0,0,,1
+"44.4 
+1 
+Ward to Ravinderpal Singh, 1 run",44.4,1,1.0,"Ward to Ravinderpal Singh, 1 run",Ward,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"44.5 
+1 
+Ward to Dutta, 1 run",44.5,1,1.0,"Ward to Dutta, 1 run",Ward,Dutta,1.0,0,0,1,1,1.0,0,,1
+"44.6 
+• 
+Ward to Dutta, no run 
+end of over 4510 runs  
+CAN: 200/7CRR: 4.44  
+Nikhil Dutta48 (74b 4x4 3x6) 
+Ravinderpal Singh2 (6b) 
+Benjamin Ward 10-1-35-2 
+Charles Perchard 9-1-33-2",44.6,0,0.0,"Ward to Dutta, no run",Ward,Dutta,0.0,0,0,1,1,0.0,0,,0
+"45.1 
+1 
+Sumerauer to Ravinderpal Singh, 1 run",45.1,1,1.0,"Sumerauer to Ravinderpal Singh, 1 run",Sumerauer,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"45.2 
+• 
+Sumerauer to Dutta, no run",45.2,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"45.3 
+1 
+Sumerauer to Dutta, 1 run",45.3,1,1.0,"Sumerauer to Dutta, 1 run",Sumerauer,Dutta,1.0,0,0,1,1,1.0,0,,1
+"45.4 
+• 
+Sumerauer to Dutta, no run",45.4,0,0.0,"Sumerauer to Dutta, no run",Sumerauer,Dutta,0.0,0,0,1,1,0.0,0,,0
+"45.5 
+1 
+Sumerauer to Dutta, 1 run",45.5,1,1.0,"Sumerauer to Dutta, 1 run",Sumerauer,Dutta,1.0,0,0,1,1,1.0,0,,1
+"45.6 
+• 
+Sumerauer to Ravinderpal Singh, no run 
+end of over 463 runs  
+CAN: 203/7CRR: 4.41  
+Ravinderpal Singh3 (8b) 
+Nikhil Dutta50 (78b 4x4 3x6) 
+Julius Sumerauer 10-0-42-2 
+Benjamin Ward 10-1-35-2",45.6,0,0.0,"Sumerauer to Ravinderpal Singh, no run",Sumerauer,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"46.1 
+4 
+AW Hawkins-Kay to Dutta, FOUR runs",46.1,4,4.0,"AW Hawkins-Kay to Dutta, FOUR runs",AW Hawkins-Kay,Dutta,4.0,1,0,1,1,4.0,0,,1
+"46.2 
+5w 
+AW Hawkins-Kay to Dutta, 5 wide",46.2,5w,5.0,"AW Hawkins-Kay to Dutta, 5 wide",AW Hawkins-Kay,Dutta,0.0,0,0,0,0,5.0,0,,1
+"46.2 
+1 
+AW Hawkins-Kay to Dutta, 1 run",46.2,1,1.0,"AW Hawkins-Kay to Dutta, 1 run",AW Hawkins-Kay,Dutta,1.0,0,0,1,1,1.0,0,,1
+"46.3 
+• 
+AW Hawkins-Kay to Ravinderpal Singh, no run",46.3,0,0.0,"AW Hawkins-Kay to Ravinderpal Singh, no run",AW Hawkins-Kay,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"46.4 
+4 
+AW Hawkins-Kay to Ravinderpal Singh, FOUR runs",46.4,4,4.0,"AW Hawkins-Kay to Ravinderpal Singh, FOUR runs",AW Hawkins-Kay,Ravinderpal Singh,4.0,1,0,1,1,4.0,0,,1
+"46.5 
+• 
+AW Hawkins-Kay to Ravinderpal Singh, no run",46.5,0,0.0,"AW Hawkins-Kay to Ravinderpal Singh, no run",AW Hawkins-Kay,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"46.6 
+• 
+AW Hawkins-Kay to Ravinderpal Singh, no run 
+end of over 4714 runs  
+CAN: 217/7CRR: 4.61  
+Ravinderpal Singh7 (12b 1x4) 
+Nikhil Dutta55 (80b 5x4 3x6) 
+Anthony Hawkins-Kay 8-0-46-1 
+Julius Sumerauer 10-0-42-2",46.6,0,0.0,"AW Hawkins-Kay to Ravinderpal Singh, no run",AW Hawkins-Kay,Ravinderpal Singh,0.0,0,0,1,1,0.0,0,,0
+"47.1 
+1 
+Perchard to Dutta, 1 run",47.1,1,1.0,"Perchard to Dutta, 1 run",Perchard,Dutta,1.0,0,0,1,1,1.0,0,,1
+"47.2 
+3 
+Perchard to Ravinderpal Singh, 3 runs",47.2,3,3.0,"Perchard to Ravinderpal Singh, 3 runs",Perchard,Ravinderpal Singh,3.0,0,0,1,1,3.0,0,,1
+"47.3 
+W 
+Perchard to Dutta, OUT 
+Nikhil Dutta c Greenwood b Perchard 56 (82b 5x4 3x6) SR: 68.29",47.3,W,0.0,"Perchard to Dutta, OUT  .Nikhil Dutta c Greenwood b Perchard 56 (82b 5x4 3x6) SR: 68.29",Perchard,Dutta,0.0,0,0,1,1,0.0,1,c Greenwood b Perchard,0
+"47.4 
+• 
+Perchard to Kaleem Sana, no run",47.4,0,0.0,"Perchard to Kaleem Sana, no run",Perchard,Kaleem Sana,0.0,0,0,1,1,0.0,0,,0
+"47.5 
+• 
+Perchard to Kaleem Sana, no run",47.5,0,0.0,"Perchard to Kaleem Sana, no run",Perchard,Kaleem Sana,0.0,0,0,1,1,0.0,0,,0
+"47.6 
+1 
+Perchard to Kaleem Sana, 1 run 
+end of over 485 runs • 1 wicket 
+CAN: 222/8CRR: 4.62  
+Kaleem Sana1 (3b) 
+Ravinderpal Singh10 (13b 1x4) 
+Charles Perchard 10-1-38-3 
+Anthony Hawkins-Kay 8-0-46-1",47.6,1,1.0,"Perchard to Kaleem Sana, 1 run",Perchard,Kaleem Sana,1.0,0,0,1,1,1.0,0,,1
+"48.1 
+• 
+Miles to Kaleem Sana, no run",48.1,0,0.0,"Miles to Kaleem Sana, no run",Miles,Kaleem Sana,0.0,0,0,1,1,0.0,0,,0
+"48.2 
+1 
+Miles to Kaleem Sana, 1 run",48.2,1,1.0,"Miles to Kaleem Sana, 1 run",Miles,Kaleem Sana,1.0,0,0,1,1,1.0,0,,1
+"48.3 
+1 
+Miles to Ravinderpal Singh, 1 run",48.3,1,1.0,"Miles to Ravinderpal Singh, 1 run",Miles,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"48.4 
+2 
+Miles to Kaleem Sana, 2 runs",48.4,2,2.0,"Miles to Kaleem Sana, 2 runs",Miles,Kaleem Sana,2.0,0,0,1,1,2.0,0,,1
+"48.5 
+• 
+Miles to Kaleem Sana, no run",48.5,0,0.0,"Miles to Kaleem Sana, no run",Miles,Kaleem Sana,0.0,0,0,1,1,0.0,0,,0
+"48.6 
+• 
+Miles to Kaleem Sana, no run 
+end of over 494 runs  
+CAN: 226/8CRR: 4.61  
+Kaleem Sana4 (8b) 
+Ravinderpal Singh11 (14b 1x4) 
+Elliot Miles 9-0-50-0 
+Charles Perchard 10-1-38-3",48.6,0,0.0,"Miles to Kaleem Sana, no run",Miles,Kaleem Sana,0.0,0,0,1,1,0.0,0,,0
+"49.1 
+1 
+AW Hawkins-Kay to Ravinderpal Singh, 1 run",49.1,1,1.0,"AW Hawkins-Kay to Ravinderpal Singh, 1 run",AW Hawkins-Kay,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"49.2 
+1 
+AW Hawkins-Kay to Kaleem Sana, 1 run",49.2,1,1.0,"AW Hawkins-Kay to Kaleem Sana, 1 run",AW Hawkins-Kay,Kaleem Sana,1.0,0,0,1,1,1.0,0,,1
+"49.3 
+2 
+AW Hawkins-Kay to Ravinderpal Singh, 2 runs",49.3,2,2.0,"AW Hawkins-Kay to Ravinderpal Singh, 2 runs",AW Hawkins-Kay,Ravinderpal Singh,2.0,0,0,1,1,2.0,0,,1
+"49.4 
+1 
+AW Hawkins-Kay to Ravinderpal Singh, 1 run",49.4,1,1.0,"AW Hawkins-Kay to Ravinderpal Singh, 1 run",AW Hawkins-Kay,Ravinderpal Singh,1.0,0,0,1,1,1.0,0,,1
+"49.5 
+1 
+AW Hawkins-Kay to Kaleem Sana, 1 run",49.5,1,1.0,"AW Hawkins-Kay to Kaleem Sana, 1 run",AW Hawkins-Kay,Kaleem Sana,1.0,0,0,1,1,1.0,0,,1
+"49.6 
+6 
+AW Hawkins-Kay to Ravinderpal Singh, SIX runs 
+Match State: Innings Break 
+end of over 5012 runs  
+CAN: 238/8CRR: 4.76  
+Ravinderpal Singh21 (18b 1x4 1x6) 
+Kaleem Sana6 (10b) 
+Anthony Hawkins-Kay 9-0-58-1 
+Elliot Miles 9-0-50-0 
+Sponsored Headlines 
+ 
+England beat Zimbabwe, England won by an innings and 45 runsDiscover 
+ 
+Points Table Standings - PBKS vs RCB Qualifier 1Discover 
+ 
+Mixbook |  
+Sponsored by TaboolaSponsored by Taboola 
+Shop Now 
+For the Dad You Know BestRead MoreSkip 
+ 
+PSL 2025, IU vs QG Qualifier 1 Match Report, May 21, 2025 - Faheem's all-round show 
+leads Gladiators into finalDiscover 
+ 
+Ipl 2025 - marcus stoinis, josh inglis, aaron hardie और kyle jamieson pbks के साथ जुड़ने को 
+तैयार | ESPNcricinfoDiscover 
+ 
+Ask a Pro: ""How Long Does $1.5M Last in Retirement?""Get a Complimentary Intro Call 
+With a Wealth AdvisorSmartAsset |  
+SponsoredSponsored 
+Click Here 
+Undo 
+ 
+Spruce up your space with a HELOCOpen the door to exciting home improvements with 
+Desert Financial, Arizona’s #1 HELOC provider.Desert Financial Credit Union |  
+SponsoredSponsored 
+Apply Now 
+Undo 
+ 
+More in your wallet, less on your mind with an auto refiWhen you refinance, you could 
+get lower monthly payments. That means more money, miles and memories.Desert 
+Financial Credit Union |  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+Take the scenic route in OregonPlan your trip to Oregon's outdoors for hiking trails, 
+sweeping views and grand adventures.Travel Oregon |  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+Your Best Life Starts TodayBoost energy, mood, libido, and lean muscle with our 
+powerful TRT Gel. Feel the difference, track your progress, and maximize your results 
+with ease. Prescription products require an online consultation with a doctor. Results 
+may vary.Maximus |  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+Arizona Many Retirees Unaware Of Zero-Cost Car Insurance Based On Their AgeStop 
+spending hundreds on car insurance every month & do this before you pay your next 
+bill.OTTO Insurance |  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+Why Golfers Love This Whiskey BottleGolf enthusiasts and whiskey connoisseurs, this 
+limited-edition bottle is crafted with precision. Embody the spirit of victory.topgadgetlife 
+|  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+Neuropathy Concerns? This Pink Salt Habit Is Getting Quiet AttentionPain Report |  
+SponsoredSponsored 
+Undo 
+ 
+Unsure Which Dental Implant Solution is Right for You? Take Our 60-Second Quiz to 
+Find Out!Dentures, Snap-In’s, All-On-4, Permanent Teeth in 24 Hours—what’s the best 
+choice for you? Don’t waste time guessing! Take our quick 60-second quiz below the 
+video to discover which solution fits your needs, lifestyle, and budget.Nuvia Dental 
+Implant Center |  
+SponsoredSponsored 
+Undo 
+Sponsored  
+ 
+New Tech Bracelet Blocks MosquitoesDiscover the simple way to keep mosquitoes 
+away. Try our advanced bracelet.Hilipert SafeBuzz™ |  
+SponsoredSponsored 
+Shop Now 
+Undo 
+ 
+Cinnamon: The Greatest Enemy Of Blood Sugar (See How To Use It)See this amazing 
+trick rigth now!bloghealthnet |  
+SponsoredSponsored 
+Learn More 
+Undo 
+ 
+The Real Rival Of Neuropathy & Nerve Pain (Not Vitamin B)Pain Report |  
+SponsoredSponsored 
+Undo 
+Unmute 
+Language 
+English 
+ICC Cricket World Cup Qualifier Play-off News 
+ 
+Ali Khan banned for two matches after breach of ICC 
+code 
+USA's Jasdeep Singh and Jersey's Elliot Miles were also penalised 
+ 
+ 
+ 
+No DRS as teams battle it out for final two World Cup 
+spots 
+The qualifying tournament to be held in Zimbabwe in June-July is the final stepping 
+stone for teams still in contention for the 2023 ODI World Cup 
+ 
+ 
+ 
+USA clinch spot in World Cup Qualifier courtesy Ali 
+Khan's historic 7 for 32 
+UAE also claim berth for the Zimbabwe event, which will decide who takes the two 
+remaining open spots at the 2023 World Cup 
+ 
+ 
+ 
+Instant answers to T20 questions 
+What is the lowest team total in the IPL? 
+Which batter has hit the most sixes in an innings in the IPL? 
+Which team has scored the most runs in death overs in an IPL match? 
+Ask a question 
+Jersey Innings 
+Player Name 
+R 
+B 
+HL Carlyon caught 
+18 21 
+NA 
+Greenwood caught 
+59 70 
+JAD 
+Lawrenson stumped 
+66 101 
+AM Tribe 
+caught 
+4 
+12 
+JW Jenner bowled 
+20 23 
+B Ward 
+caught 
+6 
+15 
+JTS 
+Sumerauer stumped 
+13 14 
+AW 
+Hawkins-
+Kay 
+caught 
+7 
+15 
+Player Name 
+R 
+B 
+JSE 
+Dunford 
+bowled 
+4 
+10 
+CW 
+Perchard 
+caught 
+1 
+4 
+EJB Miles 
+not out 
+1 
+2 
+Extras 
+(lb 1, w 7) 
+Total 
+207(10 wkts;",49.6,6,6.0,"AW Hawkins-Kay to Ravinderpal Singh, SIX runs  .Match State: Innings Break",AW Hawkins-Kay,Ravinderpal Singh,6.0,0,1,1,1,6.0,0,,1

@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 
 from pipelines.cmt2.pipeline.dataset_pipeline import (
+    answer_signature,
     deduplicate_records,
     is_read_only_sql,
     load_records,
@@ -18,6 +19,19 @@ HAS_PIPELINE_DEPS = importlib.util.find_spec("duckdb") is not None and importlib
 
 
 class DatasetPipelineTests(unittest.TestCase):
+    def test_answer_signature_treats_rows_as_a_multiset(self):
+        first = {"columns": ["x"], "rows": [[1], [2]]}
+        reversed_rows = {"columns": ["x"], "rows": [[2], [1]]}
+        self.assertEqual(answer_signature(first), answer_signature(reversed_rows))
+
+    def test_legacy_serialized_list_fields_are_normalized(self):
+        from pipelines.cmt2.generate_questions import normalize_list_field
+
+        self.assertEqual([], normalize_list_field("[]"))
+        self.assertEqual(["bowler", "batsman"], normalize_list_field("['bowler', 'batsman']"))
+        self.assertEqual(["question one", "question two"], normalize_list_field('["question one", "question two"]'))
+        self.assertEqual(["single value"], normalize_list_field("single value"))
+
     def test_jsonl_round_trip(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "records.jsonl"

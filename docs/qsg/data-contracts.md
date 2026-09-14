@@ -26,7 +26,10 @@ Validation reports contain one entry per input record and include:
 
 Validation executes only one read-only `SELECT` or `WITH` statement against
 the registered `df` table. Mutation, extension loading, and external-file scan
-operations are rejected.
+operations are rejected. Result rows are compared as a multiset because SQL
+row order is undefined without a complete ordering and tied sort keys can be
+returned in either order. Column order and duplicate-row multiplicity remain
+significant.
 
 ## Deduplication
 

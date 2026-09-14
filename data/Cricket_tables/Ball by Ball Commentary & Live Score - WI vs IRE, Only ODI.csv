@@ -1,0 +1,832 @@
+raw_data,overs,runs,team_runs,commentary,bowler,batsman,batsman_runs,batsman_fours,batsman_sixes,batsman_bowls_faced,bowler_bowls_done,bowler_runs_given,bowler_wickets,dismissal,runs_given_bool
+"0.1 
+1 
+Connell to Fletcher, 1 run",0.1,1,1.0,"Connell to Fletcher, 1 run",Connell,Fletcher,1.0,0,0,1,1,1.0,0,,1
+"0.2 
+• 
+Connell to Chanderpaul, no run",0.2,0,0.0,"Connell to Chanderpaul, no run",Connell,Chanderpaul,0.0,0,0,1,1,0.0,0,,0
+"0.3 
+• 
+Connell to Chanderpaul, no run",0.3,0,0.0,"Connell to Chanderpaul, no run",Connell,Chanderpaul,0.0,0,0,1,1,0.0,0,,0
+"0.4 
+• 
+Connell to Chanderpaul, no run",0.4,0,0.0,"Connell to Chanderpaul, no run",Connell,Chanderpaul,0.0,0,0,1,1,0.0,0,,0
+"0.5 
+• 
+Connell to Chanderpaul, no run",0.5,0,0.0,"Connell to Chanderpaul, no run",Connell,Chanderpaul,0.0,0,0,1,1,0.0,0,,0
+"0.6 
+W 
+Connell to Chanderpaul, OUT 
+Shivnarine Chanderpaul c Botha b Connell 0 (5b 0x4 0x6) SR: 0 
+end of over 11 run • 1 wicket 
+WI: 1/1CRR: 1.00 • RRR: 4.46 
+Andre Fletcher1 (1b) 
+Peter Connell 1-0-1-1",0.6,W,0.0,"Connell to Chanderpaul, OUT  .Shivnarine Chanderpaul c Botha b Connell 0 (5b 0x4 0x6) SR: 0",Connell,Chanderpaul,0.0,0,0,1,1,0.0,1,c Botha b Connell,0
+"1.1 
+• 
+Johnston to Fletcher, no run",1.1,0,0.0,"Johnston to Fletcher, no run",Johnston,Fletcher,0.0,0,0,1,1,0.0,0,,0
+"1.2 
+• 
+Johnston to Fletcher, no run",1.2,0,0.0,"Johnston to Fletcher, no run",Johnston,Fletcher,0.0,0,0,1,1,0.0,0,,0
+"1.3 
+• 
+Johnston to Fletcher, no run",1.3,0,0.0,"Johnston to Fletcher, no run",Johnston,Fletcher,0.0,0,0,1,1,0.0,0,,0
+"1.4 
+W 
+Johnston to Fletcher, OUT 
+Andre Fletcher c Stirling b Johnston 1 (5b 0x4 0x6) SR: 20",1.4,W,0.0,"Johnston to Fletcher, OUT  .Andre Fletcher c Stirling b Johnston 1 (5b 0x4 0x6) SR: 20",Johnston,Fletcher,0.0,0,0,1,1,0.0,1,c Stirling b Johnston,0
+"1.5 
+• 
+Johnston to Sarwan, no run",1.5,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"1.6 
+• 
+Johnston to Sarwan, no run 
+end of over 2Wicket maiden 
+WI: 1/2CRR: 0.50 • RRR: 4.56 
+Ramnaresh Sarwan0 (2b) 
+Wavell Hinds0 (0b) 
+Trent Johnston 1-1-0-1",1.6,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"2.1 
+1 
+Connell to Hinds, 1 run",2.1,1,1.0,"Connell to Hinds, 1 run",Connell,Hinds,1.0,0,0,1,1,1.0,0,,1
+"2.2 
+• 
+Connell to Sarwan, no run",2.2,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"2.3 
+• 
+Connell to Sarwan, no run",2.3,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"2.4 
+• 
+Connell to Sarwan, no run",2.4,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"2.5 
+• 
+Connell to Sarwan, no run",2.5,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"2.6 
+• 
+Connell to Sarwan, no run 
+end of over 31 run  
+WI: 2/2CRR: 0.66 • RRR: 4.63 
+Ramnaresh Sarwan0 (7b) 
+Wavell Hinds1 (1b) 
+Peter Connell 2-0-2-1",2.6,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"3.1 
+• 
+Johnston to Hinds, no run",3.1,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"3.2 
+• 
+Johnston to Hinds, no run",3.2,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"3.3 
+• 
+Johnston to Hinds, no run",3.3,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"3.4 
+• 
+Johnston to Hinds, no run",3.4,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"3.5 
+• 
+Johnston to Hinds, no run",3.5,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"3.6 
+• 
+Johnston to Hinds, no run 
+end of over 4Maiden 
+WI: 2/2CRR: 0.50 • RRR: 4.73 
+Wavell Hinds1 (7b) 
+Ramnaresh Sarwan0 (7b) 
+Trent Johnston 2-2-0-1",3.6,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"4.1 
+1 
+Connell to Sarwan, 1 run",4.1,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"4.2 
+• 
+Connell to Hinds, no run",4.2,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"4.3 
+• 
+Connell to Hinds, no run",4.3,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"4.4 
+• 
+Connell to Hinds, no run",4.4,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"4.5 
+2 
+Connell to Hinds, 2 runs",4.5,2,2.0,"Connell to Hinds, 2 runs",Connell,Hinds,2.0,0,0,1,1,2.0,0,,1
+"4.6 
+• 
+Connell to Hinds, no run 
+end of over 53 runs  
+WI: 5/2CRR: 1.00 • RRR: 4.77 
+Wavell Hinds3 (12b) 
+Ramnaresh Sarwan1 (8b) 
+Peter Connell 3-0-5-1",4.6,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"5.1 
+4 
+Johnston to Sarwan, FOUR runs",5.1,4,4.0,"Johnston to Sarwan, FOUR runs",Johnston,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"5.2 
+• 
+Johnston to Sarwan, no run 
+Match State: Delay - Rain",5.2,0,0.0,"Johnston to Sarwan, no run  .Match State: Delay - Rain",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"5.3 
+• 
+Johnston to Sarwan, no run",5.3,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"5.4 
+1 
+Johnston to Sarwan, 1 run",5.4,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"5.5 
+• 
+Johnston to Hinds, no run",5.5,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"5.6 
+• 
+Johnston to Hinds, no run 
+end of over 65 runs  
+WI: 10/2CRR: 1.66 • RRR: 4.77 
+Wavell Hinds3 (14b) 
+Ramnaresh Sarwan6 (12b 1x4) 
+Trent Johnston 3-2-5-1",5.6,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"6.1 
+• 
+Connell to Sarwan, no run",6.1,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"6.2 
+1lb 
+Connell to Sarwan, 1 leg bye",6.2,1lb,1.0,"Connell to Sarwan, 1 leg bye",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"6.3 
+• 
+Connell to Hinds, no run",6.3,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"6.4 
+• 
+Connell to Hinds, no run",6.4,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"6.5 
+• 
+Connell to Hinds, no run",6.5,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"6.6 
+• 
+Connell to Hinds, no run 
+end of over 7Maiden 
+WI: 11/2CRR: 1.57 • RRR: 5.31 
+Wavell Hinds3 (18b) 
+Ramnaresh Sarwan6 (14b 1x4) 
+Peter Connell 4-1-5-1",6.6,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"7.1 
+• 
+Johnston to Sarwan, no run",7.1,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"7.2 
+• 
+Johnston to Sarwan, no run",7.2,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"7.3 
+2 
+Johnston to Sarwan, 2 runs",7.3,2,2.0,"Johnston to Sarwan, 2 runs",Johnston,Sarwan,2.0,0,0,1,1,2.0,0,,1
+"7.4 
+1 
+Johnston to Sarwan, 1 run",7.4,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"7.5 
+• 
+Johnston to Hinds, no run",7.5,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"7.6 
+• 
+Johnston to Hinds, no run 
+end of over 83 runs  
+WI: 14/2CRR: 1.75 • RRR: 5.37 
+Wavell Hinds3 (20b) 
+Ramnaresh Sarwan9 (18b 1x4) 
+Trent Johnston 4-2-8-1",7.6,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"8.1 
+• 
+Connell to Sarwan, no run",8.1,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"8.2 
+• 
+Connell to Sarwan, no run",8.2,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"8.3 
+• 
+Connell to Sarwan, no run",8.3,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"8.4 
+• 
+Connell to Sarwan, no run",8.4,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"8.5 
+• 
+Connell to Sarwan, no run",8.5,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"8.6 
+4 
+Connell to Sarwan, FOUR runs 
+end of over 94 runs  
+WI: 18/2CRR: 2.00 • RRR: 5.41 
+Ramnaresh Sarwan13 (24b 2x4) 
+Wavell Hinds3 (20b) 
+Peter Connell 5-1-9-1",8.6,4,4.0,"Connell to Sarwan, FOUR runs",Connell,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"9.1 
+• 
+Johnston to Hinds, no run",9.1,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"9.2 
+• 
+Johnston to Hinds, no run",9.2,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"9.3 
+• 
+Johnston to Hinds, no run",9.3,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"9.4 
+• 
+Johnston to Hinds, no run",9.4,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"9.5 
+• 
+Johnston to Hinds, no run",9.5,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"9.6 
+1 
+Johnston to Hinds, 1 run 
+end of over 101 run  
+WI: 19/2CRR: 1.90 • RRR: 5.54 
+Wavell Hinds4 (26b) 
+Ramnaresh Sarwan13 (24b 2x4) 
+Trent Johnston 5-2-9-1",9.6,1,1.0,"Johnston to Hinds, 1 run",Johnston,Hinds,1.0,0,0,1,1,1.0,0,,1
+"10.1 
+• 
+Connell to Hinds, no run",10.1,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"10.2 
+• 
+Connell to Hinds, no run",10.2,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"10.3 
+• 
+Connell to Hinds, no run",10.3,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"10.4 
+1 
+Connell to Hinds, 1 run",10.4,1,1.0,"Connell to Hinds, 1 run",Connell,Hinds,1.0,0,0,1,1,1.0,0,,1
+"10.5 
+1 
+Connell to Sarwan, 1 run",10.5,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"10.6 
+• 
+Connell to Hinds, no run 
+end of over 112 runs  
+WI: 21/2CRR: 1.90 • RRR: 5.64 
+Wavell Hinds5 (31b) 
+Ramnaresh Sarwan14 (25b 2x4) 
+Peter Connell 6-1-11-1",10.6,0,0.0,"Connell to Hinds, no run",Connell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"11.1 
+1 
+Johnston to Sarwan, 1 run",11.1,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"11.2 
+• 
+Johnston to Hinds, no run",11.2,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"11.3 
+• 
+Johnston to Hinds, no run",11.3,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"11.4 
+• 
+Johnston to Hinds, no run",11.4,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"11.5 
+• 
+Johnston to Hinds, no run",11.5,0,0.0,"Johnston to Hinds, no run",Johnston,Hinds,0.0,0,0,1,1,0.0,0,,0
+"11.6 
+1 
+Johnston to Hinds, 1 run 
+end of over 122 runs  
+WI: 23/2CRR: 1.91 • RRR: 5.75 
+Wavell Hinds6 (36b) 
+Ramnaresh Sarwan15 (26b 2x4) 
+Trent Johnston 6-2-11-1",11.6,1,1.0,"Johnston to Hinds, 1 run",Johnston,Hinds,1.0,0,0,1,1,1.0,0,,1
+"12.1 
+1 
+K O'Brien to Hinds, 1 run",12.1,1,1.0,"K O'Brien to Hinds, 1 run",K O'Brien,Hinds,1.0,0,0,1,1,1.0,0,,1
+"12.2 
+• 
+K O'Brien to Sarwan, no run",12.2,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"12.3 
+• 
+K O'Brien to Sarwan, no run",12.3,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"12.4 
+1 
+K O'Brien to Sarwan, 1 run",12.4,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"12.5 
+• 
+K O'Brien to Hinds, no run",12.5,0,0.0,"K O'Brien to Hinds, no run",K O'Brien,Hinds,0.0,0,0,1,1,0.0,0,,0
+"12.6 
+4 
+K O'Brien to Hinds, FOUR runs 
+end of over 136 runs  
+WI: 29/2CRR: 2.23 • RRR: 5.75 
+Wavell Hinds11 (39b 1x4) 
+Ramnaresh Sarwan16 (29b 2x4) 
+Kevin O'Brien 1-0-6-0",12.6,4,4.0,"K O'Brien to Hinds, FOUR runs",K O'Brien,Hinds,4.0,1,0,1,1,4.0,0,,1
+"13.1 
+1nb 
+Johnston to Sarwan, (no ball)",13.1,1nb,1.0,"Johnston to Sarwan, (no ball)",Johnston,Sarwan,0.0,0,0,1,0,1.0,0,,1
+"13.1 
+4 
+Johnston to Sarwan, FOUR runs",13.1,4,4.0,"Johnston to Sarwan, FOUR runs",Johnston,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"13.2 
+1w 
+Johnston to Sarwan, 1 wide",13.2,1w,1.0,"Johnston to Sarwan, 1 wide",Johnston,Sarwan,0.0,0,0,0,0,1.0,0,,1
+"13.2 
+• 
+Johnston to Sarwan, no run",13.2,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"13.3 
+4 
+Johnston to Sarwan, FOUR runs",13.3,4,4.0,"Johnston to Sarwan, FOUR runs",Johnston,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"13.4 
+4 
+Johnston to Sarwan, FOUR runs",13.4,4,4.0,"Johnston to Sarwan, FOUR runs",Johnston,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"13.5 
+• 
+Johnston to Sarwan, no run",13.5,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"13.6 
+1 
+Johnston to Sarwan, 1 run 
+end of over 1415 runs  
+WI: 44/2CRR: 3.14 • RRR: 5.45 
+Ramnaresh Sarwan29 (36b 5x4) 
+Wavell Hinds11 (39b 1x4) 
+Trent Johnston 7-2-26-1",13.6,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"14.1 
+• 
+K O'Brien to Sarwan, no run",14.1,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"14.2 
+• 
+K O'Brien to Sarwan, no run",14.2,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"14.3 
+• 
+K O'Brien to Sarwan, no run",14.3,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"14.4 
+1 
+K O'Brien to Sarwan, 1 run",14.4,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"14.5 
+• 
+K O'Brien to Hinds, no run",14.5,0,0.0,"K O'Brien to Hinds, no run",K O'Brien,Hinds,0.0,0,0,1,1,0.0,0,,0
+"14.6 
+1 
+K O'Brien to Hinds, 1 run 
+end of over 152 runs  
+WI: 46/2CRR: 3.06 • RRR: 5.56 
+Wavell Hinds12 (41b 1x4) 
+Ramnaresh Sarwan30 (40b 5x4) 
+Kevin O'Brien 2-0-8-0",14.6,1,1.0,"K O'Brien to Hinds, 1 run",K O'Brien,Hinds,1.0,0,0,1,1,1.0,0,,1
+"15.1 
+1 
+Dockrell to Hinds, 1 run",15.1,1,1.0,"Dockrell to Hinds, 1 run",Dockrell,Hinds,1.0,0,0,1,1,1.0,0,,1
+"15.2 
+1 
+Dockrell to Sarwan, 1 run",15.2,1,1.0,"Dockrell to Sarwan, 1 run",Dockrell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"15.3 
+6 
+Dockrell to Hinds, SIX runs",15.3,6,6.0,"Dockrell to Hinds, SIX runs",Dockrell,Hinds,6.0,0,1,1,1,6.0,0,,1
+"15.4 
+• 
+Dockrell to Hinds, no run",15.4,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"15.5 
+• 
+Dockrell to Hinds, no run",15.5,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"15.6 
+• 
+Dockrell to Hinds, no run 
+end of over 168 runs  
+WI: 54/2CRR: 3.37 • RRR: 5.48 
+Wavell Hinds19 (46b 1x4 1x6) 
+Ramnaresh Sarwan31 (41b 5x4) 
+George Dockrell 1-0-8-0",15.6,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"16.1 
+• 
+K O'Brien to Sarwan, no run",16.1,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"16.2 
+• 
+K O'Brien to Sarwan, no run",16.2,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"16.3 
+1 
+K O'Brien to Sarwan, 1 run",16.3,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"16.4 
+1 
+K O'Brien to Hinds, 1 run",16.4,1,1.0,"K O'Brien to Hinds, 1 run",K O'Brien,Hinds,1.0,0,0,1,1,1.0,0,,1
+"16.5 
+• 
+K O'Brien to Sarwan, no run",16.5,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"16.6 
+• 
+K O'Brien to Sarwan, no run 
+end of over 172 runs  
+WI: 56/2CRR: 3.29 • RRR: 5.60 
+Ramnaresh Sarwan32 (46b 5x4) 
+Wavell Hinds20 (47b 1x4 1x6) 
+Kevin O'Brien 3-0-10-0",16.6,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"17.1 
+• 
+Dockrell to Hinds, no run",17.1,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"17.2 
+• 
+Dockrell to Hinds, no run",17.2,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"17.3 
+• 
+Dockrell to Hinds, no run",17.3,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"17.4 
+• 
+Dockrell to Hinds, no run",17.4,0,0.0,"Dockrell to Hinds, no run",Dockrell,Hinds,0.0,0,0,1,1,0.0,0,,0
+"17.5 
+W 
+Dockrell to Hinds, OUT 
+Wavell Hinds c & b Dockrell 20 (52b 1x4 1x6) SR: 38.46",17.5,W,0.0,"Dockrell to Hinds, OUT  .Wavell Hinds c & b Dockrell 20 (52b 1x4 1x6) SR: 38.46",Dockrell,Hinds,0.0,0,0,1,1,0.0,1,c & b Dockrell,0
+"17.6 
+1 
+Dockrell to Deonarine, 1 run 
+end of over 181 run • 1 wicket 
+WI: 57/3CRR: 3.16 • RRR: 5.77 
+Narsingh Deonarine1 (1b) 
+Ramnaresh Sarwan32 (46b 5x4) 
+George Dockrell 2-0-9-1",17.6,1,1.0,"Dockrell to Deonarine, 1 run",Dockrell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"18.1 
+• 
+K O'Brien to Deonarine, no run",18.1,0,0.0,"K O'Brien to Deonarine, no run",K O'Brien,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"18.2 
+1 
+K O'Brien to Deonarine, 1 run",18.2,1,1.0,"K O'Brien to Deonarine, 1 run",K O'Brien,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"18.3 
+1 
+K O'Brien to Sarwan, 1 run",18.3,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"18.4 
+• 
+K O'Brien to Deonarine, no run",18.4,0,0.0,"K O'Brien to Deonarine, no run",K O'Brien,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"18.5 
+1 
+K O'Brien to Deonarine, 1 run",18.5,1,1.0,"K O'Brien to Deonarine, 1 run",K O'Brien,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"18.6 
+1 
+K O'Brien to Sarwan, 1 run 
+end of over 194 runs  
+WI: 61/3CRR: 3.21 • RRR: 5.84 
+Ramnaresh Sarwan34 (48b 5x4) 
+Narsingh Deonarine3 (5b) 
+Kevin O'Brien 4-0-14-0",18.6,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"19.1 
+• 
+Dockrell to Sarwan, no run",19.1,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"19.2 
+• 
+Dockrell to Sarwan, no run",19.2,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"19.3 
+2 
+Dockrell to Sarwan, 2 runs",19.3,2,2.0,"Dockrell to Sarwan, 2 runs",Dockrell,Sarwan,2.0,0,0,1,1,2.0,0,,1
+"19.4 
+• 
+Dockrell to Sarwan, no run",19.4,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"19.5 
+• 
+Dockrell to Sarwan, no run",19.5,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"19.6 
+• 
+Dockrell to Sarwan, no run 
+end of over 202 runs  
+WI: 63/3CRR: 3.15 • RRR: 6.00 
+Ramnaresh Sarwan36 (54b 5x4) 
+Narsingh Deonarine3 (5b) 
+George Dockrell 3-0-11-1",19.6,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"20.1 
+1 
+K O'Brien to Deonarine, 1 run",20.1,1,1.0,"K O'Brien to Deonarine, 1 run",K O'Brien,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"20.2 
+• 
+K O'Brien to Sarwan, no run",20.2,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"20.3 
+• 
+K O'Brien to Sarwan, no run",20.3,0,0.0,"K O'Brien to Sarwan, no run",K O'Brien,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"20.4 
+1 
+K O'Brien to Sarwan, 1 run",20.4,1,1.0,"K O'Brien to Sarwan, 1 run",K O'Brien,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"20.5 
+• 
+K O'Brien to Deonarine, no run",20.5,0,0.0,"K O'Brien to Deonarine, no run",K O'Brien,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"20.6 
+1 
+K O'Brien to Deonarine, 1 run 
+end of over 213 runs  
+WI: 66/3CRR: 3.14 • RRR: 6.12 
+Narsingh Deonarine5 (8b) 
+Ramnaresh Sarwan37 (57b 5x4) 
+Kevin O'Brien 5-0-17-0",20.6,1,1.0,"K O'Brien to Deonarine, 1 run",K O'Brien,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"21.1 
+1 
+Dockrell to Deonarine, 1 run",21.1,1,1.0,"Dockrell to Deonarine, 1 run",Dockrell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"21.2 
+1 
+Dockrell to Sarwan, 1 run",21.2,1,1.0,"Dockrell to Sarwan, 1 run",Dockrell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"21.3 
+6 
+Dockrell to Deonarine, SIX runs",21.3,6,6.0,"Dockrell to Deonarine, SIX runs",Dockrell,Deonarine,6.0,0,1,1,1,6.0,0,,1
+"21.4 
+1 
+Dockrell to Deonarine, 1 run",21.4,1,1.0,"Dockrell to Deonarine, 1 run",Dockrell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"21.5 
+• 
+Dockrell to Sarwan, no run",21.5,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"21.6 
+1 
+Dockrell to Sarwan, 1 run 
+end of over 2210 runs  
+WI: 76/3CRR: 3.45 • RRR: 5.95 
+Ramnaresh Sarwan39 (60b 5x4) 
+Narsingh Deonarine13 (11b 1x6) 
+George Dockrell 4-0-21-1",21.6,1,1.0,"Dockrell to Sarwan, 1 run",Dockrell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"22.1 
+1 
+Botha to Sarwan, 1 run",22.1,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"22.2 
+• 
+Botha to Deonarine, no run",22.2,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"22.3 
+1 
+Botha to Deonarine, 1 run",22.3,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"22.4 
+1 
+Botha to Sarwan, 1 run",22.4,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"22.5 
+1 
+Botha to Deonarine, 1 run",22.5,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"22.6 
+1w 
+Botha to Sarwan, 1 wide",22.6,1w,1.0,"Botha to Sarwan, 1 wide",Botha,Sarwan,0.0,0,0,0,0,1.0,0,,1
+"22.6 
+• 
+Botha to Sarwan, no run 
+end of over 235 runs  
+WI: 81/3CRR: 3.52 • RRR: 6.00 
+Ramnaresh Sarwan41 (63b 5x4) 
+Narsingh Deonarine15 (14b 1x6) 
+Andre Botha 1-0-5-0",22.6,0,0.0,"Botha to Sarwan, no run",Botha,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"23.1 
+6 
+Dockrell to Deonarine, SIX runs",23.1,6,6.0,"Dockrell to Deonarine, SIX runs",Dockrell,Deonarine,6.0,0,1,1,1,6.0,0,,1
+"23.2 
+1 
+Dockrell to Deonarine, 1 run",23.2,1,1.0,"Dockrell to Deonarine, 1 run",Dockrell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"23.3 
+• 
+Dockrell to Sarwan, no run",23.3,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"23.4 
+4 
+Dockrell to Sarwan, FOUR runs",23.4,4,4.0,"Dockrell to Sarwan, FOUR runs",Dockrell,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"23.5 
+4 
+Dockrell to Sarwan, FOUR runs",23.5,4,4.0,"Dockrell to Sarwan, FOUR runs",Dockrell,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"23.6 
+• 
+Dockrell to Sarwan, no run 
+end of over 2415 runs  
+WI: 96/3CRR: 4.00 • RRR: 5.57 
+Ramnaresh Sarwan49 (67b 7x4) 
+Narsingh Deonarine22 (16b 2x6) 
+George Dockrell 5-0-36-1",23.6,0,0.0,"Dockrell to Sarwan, no run",Dockrell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"24.1 
+• 
+Botha to Deonarine, no run",24.1,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"24.2 
+2 
+Botha to Deonarine, 2 runs",24.2,2,2.0,"Botha to Deonarine, 2 runs",Botha,Deonarine,2.0,0,0,1,1,2.0,0,,1
+"24.3 
+• 
+Botha to Deonarine, no run",24.3,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"24.4 
+1 
+Botha to Deonarine, 1 run",24.4,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"24.5 
+4 
+Botha to Sarwan, FOUR runs",24.5,4,4.0,"Botha to Sarwan, FOUR runs",Botha,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"24.6 
+1 
+Botha to Sarwan, 1 run 
+end of over 258 runs  
+WI: 104/3CRR: 4.16 • RRR: 5.45 
+Ramnaresh Sarwan54 (69b 8x4) 
+Narsingh Deonarine25 (20b 2x6) 
+Andre Botha 2-0-13-0",24.6,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"25.1 
+1 
+Cusack to Sarwan, 1 run",25.1,1,1.0,"Cusack to Sarwan, 1 run",Cusack,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"25.2 
+1 
+Cusack to Deonarine, 1 run",25.2,1,1.0,"Cusack to Deonarine, 1 run",Cusack,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"25.3 
+1 
+Cusack to Sarwan, 1 run",25.3,1,1.0,"Cusack to Sarwan, 1 run",Cusack,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"25.4 
+4 
+Cusack to Deonarine, FOUR runs",25.4,4,4.0,"Cusack to Deonarine, FOUR runs",Cusack,Deonarine,4.0,1,0,1,1,4.0,0,,1
+"25.5 
+• 
+Cusack to Deonarine, no run",25.5,0,0.0,"Cusack to Deonarine, no run",Cusack,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"25.6 
+1 
+Cusack to Deonarine, 1 run 
+end of over 268 runs  
+WI: 112/3CRR: 4.30 • RRR: 5.31 
+Narsingh Deonarine31 (24b 1x4 2x6) 
+Ramnaresh Sarwan56 (71b 8x4) 
+Alex Cusack 1-0-8-0",25.6,1,1.0,"Cusack to Deonarine, 1 run",Cusack,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"26.1 
+1 
+Botha to Deonarine, 1 run",26.1,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"26.2 
+1 
+Botha to Sarwan, 1 run",26.2,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"26.3 
+1 
+Botha to Deonarine, 1 run",26.3,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"26.4 
+1 
+Botha to Sarwan, 1 run",26.4,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"26.5 
+1 
+Botha to Deonarine, 1 run",26.5,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"26.6 
+1 
+Botha to Sarwan, 1 run 
+end of over 276 runs  
+WI: 118/3CRR: 4.37 • RRR: 5.27 
+Ramnaresh Sarwan59 (74b 8x4) 
+Narsingh Deonarine34 (27b 1x4 2x6) 
+Andre Botha 3-0-19-0",26.6,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"27.1 
+4 
+Cusack to Sarwan, FOUR runs",27.1,4,4.0,"Cusack to Sarwan, FOUR runs",Cusack,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"27.2 
+• 
+Cusack to Sarwan, no run",27.2,0,0.0,"Cusack to Sarwan, no run",Cusack,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"27.3 
+1 
+Cusack to Sarwan, 1 run",27.3,1,1.0,"Cusack to Sarwan, 1 run",Cusack,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"27.4 
+• 
+Cusack to Deonarine, no run",27.4,0,0.0,"Cusack to Deonarine, no run",Cusack,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"27.5 
+1 
+Cusack to Deonarine, 1 run",27.5,1,1.0,"Cusack to Deonarine, 1 run",Cusack,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"27.6 
+• 
+Cusack to Sarwan, no run 
+end of over 286 runs  
+WI: 124/3CRR: 4.42 • RRR: 5.23 
+Ramnaresh Sarwan64 (78b 9x4) 
+Narsingh Deonarine35 (29b 1x4 2x6) 
+Alex Cusack 2-0-14-0",27.6,0,0.0,"Cusack to Sarwan, no run",Cusack,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"28.1 
+• 
+Botha to Deonarine, no run",28.1,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"28.2 
+• 
+Botha to Deonarine, no run",28.2,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"28.3 
+1 
+Botha to Deonarine, 1 run",28.3,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"28.4 
+1 
+Botha to Sarwan, 1 run",28.4,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"28.5 
+4 
+Botha to Deonarine, FOUR runs",28.5,4,4.0,"Botha to Deonarine, FOUR runs",Botha,Deonarine,4.0,1,0,1,1,4.0,0,,1
+"28.6 
+• 
+Botha to Deonarine, no run 
+end of over 294 runs  
+WI: 128/3CRR: 4.41 • RRR: 5.31 
+Narsingh Deonarine40 (34b 2x4 2x6) 
+Ramnaresh Sarwan63 (79b 9x4) 
+Andre Botha 4-0-25-0",28.6,0,0.0,"Botha to Deonarine, no run",Botha,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"29.1 
+• 
+Johnston to Sarwan, no run",29.1,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"29.2 
+• 
+Johnston to Sarwan, no run",29.2,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"29.3 
+• 
+Johnston to Sarwan, no run",29.3,0,0.0,"Johnston to Sarwan, no run",Johnston,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"29.4 
+1 
+Johnston to Sarwan, 1 run",29.4,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"29.5 
+2 
+Johnston to Deonarine, 2 runs",29.5,2,2.0,"Johnston to Deonarine, 2 runs",Johnston,Deonarine,2.0,0,0,1,1,2.0,0,,1
+"29.6 
+• 
+Johnston to Deonarine, no run 
+end of over 303 runs  
+WI: 131/3CRR: 4.36 • RRR: 5.46 
+Narsingh Deonarine42 (36b 2x4 2x6) 
+Ramnaresh Sarwan64 (83b 9x4) 
+Trent Johnston 8-2-29-1",29.6,0,0.0,"Johnston to Deonarine, no run",Johnston,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"30.1 
+1 
+Connell to Sarwan, 1 run",30.1,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"30.2 
+• 
+Connell to Deonarine, no run",30.2,0,0.0,"Connell to Deonarine, no run",Connell,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"30.3 
+1 
+Connell to Deonarine, 1 run",30.3,1,1.0,"Connell to Deonarine, 1 run",Connell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"30.4 
+• 
+Connell to Sarwan, no run",30.4,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"30.5 
+1 
+Connell to Sarwan, 1 run",30.5,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"30.6 
+• 
+Connell to Deonarine, no run 
+end of over 313 runs  
+WI: 134/3CRR: 4.32 • RRR: 5.64 
+Narsingh Deonarine43 (39b 2x4 2x6) 
+Ramnaresh Sarwan66 (86b 9x4) 
+Peter Connell 7-1-14-1",30.6,0,0.0,"Connell to Deonarine, no run",Connell,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"31.1 
+4 
+Johnston to Sarwan, FOUR runs",31.1,4,4.0,"Johnston to Sarwan, FOUR runs",Johnston,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"31.2 
+1 
+Johnston to Sarwan, 1 run",31.2,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"31.3 
+1 
+Johnston to Deonarine, 1 run",31.3,1,1.0,"Johnston to Deonarine, 1 run",Johnston,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"31.4 
+1 
+Johnston to Sarwan, 1 run",31.4,1,1.0,"Johnston to Sarwan, 1 run",Johnston,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"31.5 
+1nb 
+Johnston to Deonarine, (no ball)",31.5,1nb,1.0,"Johnston to Deonarine, (no ball)",Johnston,Deonarine,0.0,0,0,1,0,1.0,0,,1
+"31.5 
+4 
+Johnston to Deonarine, FOUR runs",31.5,4,4.0,"Johnston to Deonarine, FOUR runs",Johnston,Deonarine,4.0,1,0,1,1,4.0,0,,1
+"31.6 
+2 
+Johnston to Deonarine, 2 runs 
+end of over 3214 runs  
+WI: 148/3CRR: 4.62 • RRR: 5.00 
+Narsingh Deonarine50 (43b 3x4 2x6) 
+Ramnaresh Sarwan72 (89b 10x4) 
+Trent Johnston 9-2-43-1",31.6,2,2.0,"Johnston to Deonarine, 2 runs",Johnston,Deonarine,2.0,0,0,1,1,2.0,0,,1
+"32.1 
+4 
+Connell to Sarwan, FOUR runs",32.1,4,4.0,"Connell to Sarwan, FOUR runs",Connell,Sarwan,4.0,1,0,1,1,4.0,0,,1
+"32.2 
+1 
+Connell to Sarwan, 1 run",32.2,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"32.3 
+1 
+Connell to Deonarine, 1 run",32.3,1,1.0,"Connell to Deonarine, 1 run",Connell,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"32.4 
+1 
+Connell to Sarwan, 1 run",32.4,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"32.5 
+4 
+Connell to Deonarine, FOUR runs",32.5,4,4.0,"Connell to Deonarine, FOUR runs",Connell,Deonarine,4.0,1,0,1,1,4.0,0,,1
+"32.6 
+• 
+Connell to Deonarine, no run 
+end of over 3311 runs  
+WI: 159/3CRR: 4.81 • RRR: 4.50 
+Narsingh Deonarine55 (46b 4x4 2x6) 
+Ramnaresh Sarwan78 (92b 11x4) 
+Peter Connell 8-1-25-1",32.6,0,0.0,"Connell to Deonarine, no run",Connell,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"33.1 
+1 
+Botha to Sarwan, 1 run",33.1,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"33.2 
+1 
+Botha to Deonarine, 1 run",33.2,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"33.3 
+1 
+Botha to Sarwan, 1 run",33.3,1,1.0,"Botha to Sarwan, 1 run",Botha,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"33.4 
+1 
+Botha to Deonarine, 1 run",33.4,1,1.0,"Botha to Deonarine, 1 run",Botha,Deonarine,1.0,0,0,1,1,1.0,0,,1
+"33.5 
+1lb 
+Botha to Sarwan, 1 leg bye",33.5,1lb,1.0,"Botha to Sarwan, 1 leg bye",Botha,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"33.6 
+• 
+Stirling to Deonarine, no run 
+end of over 345 runs  
+WI: 164/3CRR: 4.82 • RRR: 4.45 
+Narsingh Deonarine57 (49b 4x4 2x6) 
+Ramnaresh Sarwan80 (95b 11x4) 
+Paul Stirling",33.6,0,0.0,"Stirling to Deonarine, no run",Stirling,Deonarine,0.0,0,0,1,1,0.0,0,,0
+"34.1 
+2 
+Connell to Sarwan, 2 runs",34.1,2,2.0,"Connell to Sarwan, 2 runs",Connell,Sarwan,2.0,0,0,1,1,2.0,0,,1
+"34.2 
+• 
+Connell to Sarwan, no run",34.2,0,0.0,"Connell to Sarwan, no run",Connell,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"34.3 
+1 
+Connell to Sarwan, 1 run",34.3,1,1.0,"Connell to Sarwan, 1 run",Connell,Sarwan,1.0,0,0,1,1,1.0,0,,1
+"34.4 
+W 
+Connell to Deonarine, OUT 
+Narsingh Deonarine c Cusack b Stirling 57 (49b 4x4 2x6) SR: 116.32",34.4,W,0.0,"Connell to Deonarine, OUT  .Narsingh Deonarine c Cusack b Stirling 57 (49b 4x4 2x6) SR: 116.32",Connell,Deonarine,0.0,0,0,1,1,0.0,1,c Cusack b Stirling,0
+"34.5 
+• 
+Connell to Darren Bravo, no run",34.5,0,0.0,"Connell to Darren Bravo, no run",Connell,Darren Bravo,0.0,0,0,1,1,0.0,0,,0
+"34.6 
+• 
+Connell to Darren Bravo, no run 
+end of over 353 runs • 1 wicket 
+WI: 167/4CRR: 4.77 • RRR: 4.60 
+Darren Bravo0 (2b) 
+Ramnaresh Sarwan83 (98b 11x4) 
+Peter Connell 9-1-28-2",34.6,0,0.0,"Connell to Darren Bravo, no run",Connell,Darren Bravo,0.0,0,0,1,1,0.0,0,,0
+"35.1 
+• 
+Botha to Sarwan, no run",35.1,0,0.0,"Botha to Sarwan, no run",Botha,Sarwan,0.0,0,0,1,1,0.0,0,,0
+"35.2 
+• 
+Botha to Sarwan, no run 
+end of over 360 run  
+WI: 167/4CRR: 4.63 • RRR: 5.11 
+Ramnaresh Sarwan83 (100b 11x4) 
+Andre Botha",35.2,0,0.0,"Botha to Sarwan, no run",Botha,Sarwan,0.0,0,0,1,1,0.0,0,,0

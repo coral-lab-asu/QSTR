@@ -9,7 +9,8 @@ This is the operational handoff for a new QSTR maintainer.
    `pip install -r requirements.txt` for every workflow.
 3. Copy `.env.example` to `.env`; fill only the providers you intend to call.
 4. Run `python scripts/doctor.py` and `python -m pytest -q`.
-5. Run the credential-free CMT2 smoke command from the root README.
+5. Run `python scripts/verify_cricket_release.py`.
+6. Run the credential-free CMT2 smoke command from the root README.
 
 A successful smoke run reports three valid records, zero invalid records, and
 two retained records after deduplication.
@@ -36,9 +37,10 @@ Canonical generated records use SQL table name `df` and should include
 answer object with `columns` and `rows`. See `docs/qsg/data-contracts.md` for
 the full compatibility contract.
 
-Do not commit large source tables or new run outputs. Put source data in
-`data/raw/` and outputs in `artifacts/runs/`. Preserve the generated
-`run_manifest.json` whenever an experiment is archived externally.
+The versioned paper dataset is under `data/`; its checksums and fixed counts
+are enforced by `scripts/verify_cricket_release.py`. Do not place new run
+outputs in that immutable release. Put them in `artifacts/runs/` and preserve
+the generated `run_manifest.json` whenever an experiment is archived.
 
 ## Provider configuration
 
@@ -82,6 +84,7 @@ Run:
 
 ```bash
 python scripts/doctor.py
+python scripts/verify_cricket_release.py
 python -m pytest -q
 python -m compileall -q src pipelines scripts baseline-scripts
 bash -n run_gemini_smoke_main.sh run_vllm_server.sh run_vllm_server_2.sh

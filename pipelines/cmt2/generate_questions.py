@@ -1,5 +1,6 @@
 import os
 import re
+import ast
 import json
 import glob
 import hashlib
@@ -880,6 +881,33 @@ def sample_params_for_template(
 # -----------------------------
 # Template loader
 # -----------------------------
+def normalize_list_field(value: Any) -> List[Any]:
+    """Normalize legacy list fields, including strings such as ``"['bowler']"``.
+
+    Historical CMT2 JSON serialized ``variables`` and ``paraphrases`` as
+    Python-list strings. Treating those strings as iterables would turn them
+    into individual characters and corrupt generation.
+    """
+    if value is None:
+        return []
+    if isinstance(value, list):
+        return value
+    if isinstance(value, tuple):
+        return list(value)
+    if isinstance(value, str):
+        stripped = value.strip()
+        if not stripped:
+            return []
+        try:
+            parsed = ast.literal_eval(stripped)
+        except (SyntaxError, ValueError):
+            return [stripped]
+        if isinstance(parsed, (list, tuple)):
+            return list(parsed)
+        return [parsed]
+    return [value]
+
+
 def _load_templates_one(path: str) -> List[Dict[str, Any]]:
     """Load templates from a single file path (.json/.py)."""
     p = Path(path)
@@ -1073,9 +1101,7 @@ def generate_dataset(cfg: PipelineConfig) -> Dict[str, Any]:
                 continue
 
             question_template = t.get("question", "")
-            variables = t.get("variables") or []
-            if not isinstance(variables, list):
-                variables = list(variables)
+            variables = normalize_list_field(t.get("variables"))
 
             template_id = t.get("template_id")
             item_id = t.get("item_id")
@@ -1115,7 +1141,7 @@ def generate_dataset(cfg: PipelineConfig) -> Dict[str, Any]:
                     base_q = (t.get("question") or "").strip()
                     if base_q:
                         q_variants.append(base_q)
-                    for pq in (t.get("paraphrases") or []):
+                    for pq in normalize_list_field(t.get("paraphrases")):
                         if isinstance(pq, str) and pq.strip():
                             q_variants.append(pq.strip())
 
@@ -1129,15 +1155,33 @@ def generate_dataset(cfg: PipelineConfig) -> Dict[str, Any]:
                     ans_df = execute_sql_on_df(df, sql_text, table_name=params_raw.get("table_name", "df"))
 
                     # analysis for downstream use
-                    row_info = extract_row_indices_from_query(
-                        query=sql_text,
-                        df=df,
-                        result_df=ans_df,
-                        table_name=params_raw.get("table_name", "df"),
-                    )
+                    row_analysis_error = None
+                    try:
+                        row_info = extract_row_indices_from_query(
+                            query=sql_text,
+                            df=df,
+                            result_df=ans_df,
+                            table_name=params_raw.get("table_name", "df"),
+                        )
+                    except Exception as exc:
+                        # Row attribution is diagnostic metadata. A limitation
+                        # in its lightweight SQL parser must not discard a query
+                        # whose SQL executed successfully.
+                        all_indices = df.index.tolist()
+                        row_info = {
+                            "row_indices_scanned": all_indices,
+                            "row_indices_contributing": all_indices,
+                            "row_indices_scanned_normalized": _normalize_positions(df, all_indices),
+                            "row_indices_contributing_normalized": _normalize_positions(df, all_indices),
+                            "row_indices_scanned_ranges": compress_indices_to_ranges(all_indices),
+                            "row_indices_contributing_ranges": compress_indices_to_ranges(all_indices),
+                        }
+                        row_analysis_error = f"{type(exc).__name__}: {exc}"
                     query_analysis = analyze_query(sql_text, allowed_columns=set(df.columns))
                     # attach row targeting info
                     query_analysis.update(row_info)
+                    if row_analysis_error:
+                        query_analysis["row_analysis_error"] = row_analysis_error
 
                     # Build a *focused* context from rows_contributing (match output-driving rows)
                     contrib_idxs = row_info.get("row_indices_contributing") or []

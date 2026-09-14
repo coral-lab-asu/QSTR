@@ -88,10 +88,19 @@ doctor reports whether credentials are present but never displays their values.
 
 ## Data and artifacts
 
-Large QSG/CMT2 source tables, model outputs, notebooks, and result trees are
-not part of this repository. Put local source tables under `data/raw/` and
-generated runs under `artifacts/runs/`; both are ignored. Compact synthetic
-fixtures from `naman_syn_data` are retained as examples and provenance.
+The paper-facing cricket release is versioned under `data/`: 638 source
+tables, 121 hand-authored seeds, 4,256 generated queries, and their historical
+ground-truth enrichment. Verify it with:
+
+```bash
+python scripts/verify_cricket_release.py
+```
+
+Read the [cricket data card](data/README.md) and the
+[reproduction runbook](docs/cricket-reproduction.md) before running an
+experiment. New generated runs, model outputs, notebooks, and result trees
+belong under `artifacts/runs/` and remain ignored. Compact synthetic fixtures
+from `naman_syn_data` are also retained as examples and provenance.
 
 Continue with the [KT runbook](docs/kt-runbook.md), the
 [CMT2 guide](pipelines/cmt2/README.md), and the
