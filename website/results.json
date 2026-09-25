@@ -1,0 +1,25 @@
+{
+  "source": "Refined Q-STR manuscript, Table 3 (coverage split)",
+  "provenance": "Manually transcribed manuscript results, not newly reproduced experiments. Seven strategies for Llama and Qwen; two for GPT-4.1 and Gemini.",
+  "metrics": {"exact": "Exact table match (%)", "pk": "Primary-key F1 (0–100)", "cell": "Aligned cell accuracy (%)", "rmse": "Weighted RMSE"},
+  "results": [
+    {"model":"Llama-3.3-70B-Instruct","method":"Zero Shot","exact":2.69,"pk":88.40,"cell":31.99,"rmse":20.42},
+    {"model":"Llama-3.3-70B-Instruct","method":"Zero-Shot CoT","exact":5.38,"pk":90.57,"cell":37.26,"rmse":17.67},
+    {"model":"Llama-3.3-70B-Instruct","method":"Guided CoT","exact":4.34,"pk":87.42,"cell":37.16,"rmse":17.01},
+    {"model":"Llama-3.3-70B-Instruct","method":"PlanFill","exact":3.65,"pk":83.65,"cell":34.33,"rmse":18.89},
+    {"model":"Llama-3.3-70B-Instruct","method":"SC Table Voting","exact":5.47,"pk":90.98,"cell":36.58,"rmse":18.12},
+    {"model":"Llama-3.3-70B-Instruct","method":"RowCoT","exact":3.30,"pk":88.09,"cell":38.98,"rmse":16.16},
+    {"model":"Llama-3.3-70B-Instruct","method":"Least-to-Most","exact":5.30,"pk":86.29,"cell":35.02,"rmse":17.66},
+    {"model":"Qwen2.5-72B-Instruct","method":"Zero Shot","exact":2.26,"pk":87.66,"cell":30.16,"rmse":21.29},
+    {"model":"Qwen2.5-72B-Instruct","method":"Zero-Shot CoT","exact":3.04,"pk":89.54,"cell":33.71,"rmse":17.58},
+    {"model":"Qwen2.5-72B-Instruct","method":"Guided CoT","exact":2.95,"pk":87.97,"cell":35.48,"rmse":17.60},
+    {"model":"Qwen2.5-72B-Instruct","method":"PlanFill","exact":3.04,"pk":86.44,"cell":33.09,"rmse":19.47},
+    {"model":"Qwen2.5-72B-Instruct","method":"SC Table Voting","exact":3.21,"pk":89.77,"cell":31.47,"rmse":19.34},
+    {"model":"Qwen2.5-72B-Instruct","method":"RowCoT","exact":3.39,"pk":87.69,"cell":36.63,"rmse":18.03},
+    {"model":"Qwen2.5-72B-Instruct","method":"Least-to-Most","exact":4.25,"pk":89.80,"cell":33.67,"rmse":18.28},
+    {"model":"GPT-4.1","method":"Zero Shot","exact":5.30,"pk":91.30,"cell":40.96,"rmse":14.09},
+    {"model":"GPT-4.1","method":"Guided CoT","exact":8.51,"pk":92.95,"cell":45.97,"rmse":12.37},
+    {"model":"Gemini-2.5-Flash","method":"Zero Shot","exact":28.56,"pk":94.51,"cell":71.52,"rmse":7.28},
+    {"model":"Gemini-2.5-Flash","method":"Guided CoT","exact":24.83,"pk":94.58,"cell":71.18,"rmse":6.28}
+  ]
+}

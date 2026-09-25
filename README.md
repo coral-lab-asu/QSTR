@@ -7,6 +7,10 @@ one fresh, credential-free history.
 
 ## Start here
 
+The [research website](website/README.md) presents the refined Q-STR paper,
+interactive results, and links to code and data. Preview it locally with
+`python -m http.server 8080 --bind 127.0.0.1 --directory website`.
+
 QSTR requires Python 3.10 or newer. From a fresh clone:
 
 ```bash
