@@ -65,10 +65,13 @@ pushed to `website`, not merged into `main` unless that layout is intentional.
 
 The `website/` directory is the complete deployable artifact. It uses relative
 asset paths, so it works at a domain root or a GitHub Pages project subpath.
-Upload its contents to a static host, or use a GitHub Pages Actions deployment
-that uploads `website/` as the Pages artifact. No deployment or repository
-settings changes are performed automatically. Deploying the public site is a
-separate step requiring approval.
+The `.github/workflows/deploy-website.yml` workflow deploys only `website/`
+on pushes to the `website` branch. Repository settings are not changed by the
+workflow. Before deployment, select **GitHub Actions** under repository
+**Settings → Pages → Build and deployment → Source**, and ensure the
+**github-pages** environment permits deployment from the `website` branch.
+If a run fails before these settings are configured, open that run under
+**Actions → Deploy research website** and choose **Re-run all jobs** afterward.
 
 For GitHub Pages, use an Actions deployment checking out the `website` branch
 and uploading its `website/` directory. The branch-based Pages selector cannot
